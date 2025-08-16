@@ -23,3 +23,8 @@ out/
 
 # Misc
 *.swp
+
+# ignore temporary python scripts
+*.py
+*.pyc
+__pycache__/
