@@ -30,7 +30,20 @@ figcaption {
 	line-height: 1.5em;
 }
 
+/* Basic blockquote styling (was inline in some episodes) */
+blockquote {
+	font-style: italic;
+}
+
 #lead-image {
+	width: 320px;
+	float: left;
+	margin: 5px;
+	margin-right: 10px;
+}
+
+/* Older episodes sometimes use a different id for the lead image */
+#hamburger_flagellants {
 	width: 320px;
 	float: left;
 	margin: 5px;
@@ -42,5 +55,10 @@ figcaption {
 		width: 100%;
 		float: none;
 		margin: 5px auto; /* center image on small screens */
+	}
+	#hamburger_flagellants {
+		width: 100%;
+		float: none;
+		margin: 5px auto;
 	}
 }
