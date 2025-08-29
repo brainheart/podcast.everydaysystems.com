@@ -87,8 +87,10 @@ document.addEventListener('DOMContentLoaded', function () {
         var mp3Href = mp3Link ? mp3Link.href : null;
 
         if (hasYouTube) {
-          // Remove entire container if YouTube player is present
-          if (container) container.remove();
+          // Remove only the top Listen/Discuss block; do NOT remove #main
+          if (container && mp3Link && container !== (document.getElementById('main'))) {
+            container.remove();
+          }
 
           // If we have an mp3 url, render a centered Download mp3 under the YouTube iframe
           if (mp3Href) {
