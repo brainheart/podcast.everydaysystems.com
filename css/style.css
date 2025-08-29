@@ -53,6 +53,13 @@ blockquote {
     display: none;
 }
 
+/* Ensure embedded players sit at the top, not wrapped by floats */
+iframe.yt-player {
+    display: block;
+    clear: both;
+    margin: 10px 0;
+}
+
 @media screen and (max-width: 600px) {
     #lead-image {
         width: 100%;

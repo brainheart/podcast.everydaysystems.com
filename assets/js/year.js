@@ -43,12 +43,13 @@ document.addEventListener('DOMContentLoaded', function () {
         var vid = YT_MAP[epNum];
         if (vid && !document.querySelector('iframe.yt-player, iframe[src*="youtube.com/embed/"]')) {
           var main = document.getElementById('main') || document.body;
-          // Prefer to place right after the Listen block; otherwise after the episode h2; otherwise top of main
+          // Prefer to place right after the Listen block; otherwise before the lead image; otherwise after the episode h2; otherwise top of main
           var mp3Container = Array.from(document.querySelectorAll('div')).find(function (d) {
             return !!Array.from(d.querySelectorAll('a')).find(function (a) { return /\.mp3($|\?)/i.test(a.href); });
           });
+          var leadImg = main.querySelector('#lead-image, #hamburger_flagellants');
           var h2 = main.querySelector('h2') || document.querySelector('h2');
-          var anchor = mp3Container || h2 || null;
+          var anchor = mp3Container || null;
           var iframe = document.createElement('iframe');
           iframe.className = 'yt-player';
           iframe.width = '100%';
@@ -61,6 +62,10 @@ document.addEventListener('DOMContentLoaded', function () {
           iframe.src = 'https://www.youtube-nocookie.com/embed/' + vid + '?modestbranding=1&rel=0&playsinline=1';
           if (anchor && anchor.parentNode) {
             anchor.insertAdjacentElement('afterend', iframe);
+          } else if (leadImg && leadImg.parentNode) {
+            leadImg.insertAdjacentElement('beforebegin', iframe);
+          } else if (h2 && h2.parentNode) {
+            h2.insertAdjacentElement('afterend', iframe);
           } else {
             main.insertAdjacentElement('afterbegin', iframe);
           }
