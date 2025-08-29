@@ -42,9 +42,10 @@ document.addEventListener('DOMContentLoaded', function () {
         var epNum = parseInt(epMatch[1], 10);
         var vid = YT_MAP[epNum];
         if (vid && !document.querySelector('iframe.yt-player, iframe[src*="youtube.com/embed/"]')) {
-          var topContainer = Array.from(document.querySelectorAll('div')).find(function (d) {
+          var main = document.getElementById('main') || document.body;
+          var mp3Container = Array.from(document.querySelectorAll('div')).find(function (d) {
             return !!Array.from(d.querySelectorAll('a')).find(function (a) { return /\.mp3($|\?)/i.test(a.href); });
-          }) || document.getElementById('main') || document.body;
+          });
           var iframe = document.createElement('iframe');
           iframe.className = 'yt-player';
           iframe.width = '100%';
@@ -55,10 +56,12 @@ document.addEventListener('DOMContentLoaded', function () {
           iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
           iframe.title = 'Everyday Systems Podcast Episode ' + epNum;
           iframe.src = 'https://www.youtube-nocookie.com/embed/' + vid + '?modestbranding=1&rel=0&playsinline=1';
-          if (topContainer && topContainer.parentNode) {
-            topContainer.insertAdjacentElement('afterend', iframe);
+          if (mp3Container && mp3Container.parentNode) {
+            // Place right after the mp3 Listen block
+            mp3Container.insertAdjacentElement('afterend', iframe);
           } else {
-            (document.getElementById('main') || document.body).prepend(iframe);
+            // Place at the very top of main content
+            main.insertAdjacentElement('afterbegin', iframe);
           }
         }
       }
