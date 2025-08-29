@@ -21,10 +21,25 @@ document.addEventListener('DOMContentLoaded', function () {
         var container = discussLink.closest('div');
         // Try to find the mp3 link within the same container
         var mp3Link = container ? Array.from(container.querySelectorAll('a')).find(function (a) { return /\.mp3($|\?)/i.test(a.href); }) : null;
+        var mp3Href = mp3Link ? mp3Link.href : null;
 
         if (hasYouTube) {
           // Remove entire container if YouTube player is present
           if (container) container.remove();
+
+          // If we have an mp3 url, render a centered Download mp3 under the YouTube iframe
+          if (mp3Href) {
+            var iframe = document.querySelector('iframe.yt-player, iframe[src*="youtube.com/embed/"]');
+            if (iframe && iframe.parentNode) {
+              var p = document.createElement('p');
+              p.style.textAlign = 'center';
+              var a = document.createElement('a');
+              a.href = mp3Href;
+              a.textContent = 'Download mp3';
+              p.appendChild(a);
+              iframe.insertAdjacentElement('afterend', p);
+            }
+          }
         } else if (container) {
           // Keep only the mp3 link, relabel as Download mp3
           if (mp3Link) {
