@@ -119,25 +119,45 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
 
-      // Move discuss link to bottom (centered)
+      // Move discuss link to bottom (centered) without duplicating
       if (discussLink) {
-        var href = discussLink.href;
         var main = document.getElementById('main') || document.body;
         var copyrightP = Array.from(main.querySelectorAll('p')).find(function (p) {
           return /©|&copy;/.test(p.innerHTML);
         });
-        var wrapper = document.createElement('p');
-        wrapper.style.textAlign = 'center';
-        var a = document.createElement('a');
-        a.href = href;
-        a.textContent = 'Discuss';
-        wrapper.appendChild(a);
+        var pWrap = discussLink.closest('p');
+        if (!pWrap) {
+          pWrap = document.createElement('p');
+          pWrap.appendChild(discussLink); // move existing link
+        }
+        pWrap.style.textAlign = 'center';
         if (copyrightP && copyrightP.parentNode === main) {
-          main.insertBefore(wrapper, copyrightP);
+          main.insertBefore(pWrap, copyrightP);
         } else {
-          main.appendChild(wrapper);
+          main.appendChild(pWrap);
         }
       }
+
+      // Final pass: dedupe identical Download/Discuss links if any
+      try {
+        var seen = {};
+        Array.from(document.querySelectorAll('a[href]')).forEach(function (a) {
+          var href = a.getAttribute('href');
+          if (!href) return;
+          // Only dedupe mp3 downloads and forum discuss links
+          if (!(/\.mp3(\?|$)/i.test(href) || /\/bb\/viewtopic\.php\?t=\d+/.test(href))) return;
+          if (seen[href]) {
+            // Remove duplicates; clean up empty wrappers
+            var parent = a.parentElement;
+            a.remove();
+            if (parent && parent.tagName === 'P' && parent.textContent.trim() === '') {
+              parent.remove();
+            }
+          } else {
+            seen[href] = true;
+          }
+        });
+      } catch (_) {}
     }
   } catch (e) {
     // No-op if anything unexpected happens
