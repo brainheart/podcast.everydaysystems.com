@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (isEpisode) {
       // YouTube mapping for episode pages (episode number -> videoId)
       var YT_MAP = {
+        98: 'VtHHrgsDjU8',
         97: '4q_A1BM5uVQ', 96: 'OviAmhuH5XQ', 95: '2GhvhyBxYzw', 94: 'jlYWnuZKF1o',
         93: '9llV0O3-3a4', 92: '0ky0-OOfwK8', 91: 'u3nG1o_0NJ4', 90: 'na0e_HBs4G4',
         89: 'Vj3iqj7t7hg', 88: 'f0kCUfnFxaA', 87: 'T1yWC786bdI', 86: 'hCDeVAQhR94',
