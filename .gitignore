@@ -24,7 +24,11 @@ out/
 # Misc
 *.swp
 
-# ignore temporary python scripts
-*.py
+# Python bytecode and caches
 *.pyc
 __pycache__/
+
+# One-off or scratch scripts (place ad-hoc throwaways here instead of ignoring all .py)
+scripts/oneoff/
+
+.devserver.pid
