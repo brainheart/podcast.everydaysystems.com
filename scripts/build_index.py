@@ -28,7 +28,7 @@ HEADER = """<!DOCTYPE html>
 </head>
 <body>
 <div id=\"main\">
-<h1><a href=\"/\">Everyday Systems</a>: Podcast [ <a href=\"http://reinhard.libsyn.com/rss\">rss</a> | <a href=\"https://podcasts.apple.com/us/podcast/everyday-systems-podcast/id188988881\">apple podcasts</a> | <a href=\"https://open.spotify.com/show/5ZSps0RuOWK3R1aCHpeeVZ\">spotify</a> | <a href=\"https://www.youtube.com/playlist?list=PLfC6J9cSGWC8PDkwb6KUWp_QShHr0S8SZ\">youtube</a>]</h1>
+<h1><a href=\"https://everydaysystems.com\">Everyday Systems</a>: Podcast [ <a href=\"http://reinhard.libsyn.com/rss\">rss</a> | <a href=\"https://podcasts.apple.com/us/podcast/everyday-systems-podcast/id188988881\">apple podcasts</a> | <a href=\"https://open.spotify.com/show/5ZSps0RuOWK3R1aCHpeeVZ\">spotify</a> | <a href=\"https://www.youtube.com/playlist?list=PLfC6J9cSGWC8PDkwb6KUWp_QShHr0S8SZ\">youtube</a>]</h1>
 <p>On this page you'll find links to Everyday Systems Podcast audio, approximate transcripts,
  and bulletin board discussions.</p>
 <p>Subscribe on  <a href=\"https://podcasts.apple.com/us/podcast/everyday-systems-podcast/id188988881\">Apple Podcasts</a>, <a href=\"https://open.spotify.com/show/5ZSps0RuOWK3R1aCHpeeVZ\">Spotify</a>, <a href=\"https://www.youtube.com/playlist?list=PLfC6J9cSGWC8PDkwb6KUWp_QShHr0S8SZ\">youtube</a>, or wherever you get your podcasts.</p>
