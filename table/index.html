@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Everyday Systems Podcast - Table View</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, Geneva, sans-serif;
+      background-image: url(../assets/images/random_grey_variations.png);
+      margin: 0;
+      padding: 20px;
+    }
+    
+    #main {
+      max-width: 1400px;
+      margin: 0 auto;
+      background-image: url(../assets/images/white_texture.png);
+      padding: 20px;
+      border-radius: 11px;
+    }
+    
+    h1 {
+      font-size: 125%;
+      margin-bottom: 10px;
+    }
+    
+    .nav-links {
+      margin-bottom: 20px;
+      font-size: 90%;
+    }
+    
+    .filter-container {
+      margin: 20px 0;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .filter-group label {
+      font-size: 90%;
+      font-weight: bold;
+    }
+    
+    .filter-group input {
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 90%;
+    }
+    
+    .clear-filters {
+      padding: 5px 10px;
+      background: #666;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 90%;
+    }
+    
+    .clear-filters:hover {
+      background: #444;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 90%;
+    }
+    
+    th {
+      background: #f0f0f0;
+      padding: 10px 8px;
+      text-align: left;
+      border-bottom: 2px solid #ccc;
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+    }
+    
+    th:hover {
+      background: #e0e0e0;
+    }
+    
+    th.sortable::after {
+      content: ' ⇅';
+      color: #999;
+      font-size: 80%;
+    }
+    
+    th.sort-asc::after {
+      content: ' ↑';
+      color: #333;
+    }
+    
+    th.sort-desc::after {
+      content: ' ↓';
+      color: #333;
+    }
+    
+    td {
+      padding: 8px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    tr:hover {
+      background: #f9f9f9;
+    }
+    
+    .episode-number {
+      text-align: center;
+      font-weight: bold;
+    }
+    
+    .episode-date {
+      white-space: nowrap;
+    }
+    
+    .episode-title a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    
+    .episode-title a:hover {
+      text-decoration: underline;
+    }
+    
+    .episode-length {
+      text-align: center;
+    }
+    
+    .no-results {
+      text-align: center;
+      padding: 40px;
+      color: #666;
+      font-style: italic;
+    }
+    
+    .results-count {
+      margin: 10px 0;
+      font-size: 90%;
+      color: #666;
+    }
+    
+    footer {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #ccc;
+      font-size: 85%;
+      text-align: center;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+<div id="main">
+  <h1><a href="https://everydaysystems.com">Everyday Systems</a>: <a href="../">Podcast</a> - Table View</h1>
+  
+  <div class="nav-links">
+    <a href="../">List View</a> | 
+    <a href="http://reinhard.libsyn.com/rss">RSS</a> | 
+    <a href="https://podcasts.apple.com/us/podcast/everyday-systems-podcast/id188988881">Apple Podcasts</a> | 
+    <a href="https://open.spotify.com/show/5ZSps0RuOWK3R1aCHpeeVZ">Spotify</a> | 
+    <a href="https://www.youtube.com/playlist?list=PLfC6J9cSGWC8PDkwb6KUWp_QShHr0S8SZ">YouTube</a>
+  </div>
+  
+  <div class="filter-container">
+    <div class="filter-group">
+      <label for="filter-number">Episode #:</label>
+      <input type="text" id="filter-number" placeholder="e.g., 99">
+    </div>
+    <div class="filter-group">
+      <label for="filter-date">Date:</label>
+      <input type="text" id="filter-date" placeholder="e.g., 2025">
+    </div>
+    <div class="filter-group">
+      <label for="filter-title">Title:</label>
+      <input type="text" id="filter-title" placeholder="Search title">
+    </div>
+    <div class="filter-group">
+      <label for="filter-blurb">Blurb:</label>
+      <input type="text" id="filter-blurb" placeholder="Search description">
+    </div>
+    <button class="clear-filters" onclick="clearFilters()">Clear Filters</button>
+  </div>
+  
+  <div class="results-count" id="results-count"></div>
+  
+  <table id="episodes-table">
+    <thead>
+      <tr>
+        <th class="sortable" data-column="number" onclick="sortTable('number')">Episode #</th>
+        <th class="sortable" data-column="date" onclick="sortTable('date')">Release Date</th>
+        <th class="sortable" data-column="title" onclick="sortTable('title')">Title</th>
+        <th class="sortable" data-column="blurb" onclick="sortTable('blurb')">Description</th>
+        <th class="sortable" data-column="length" onclick="sortTable('length')">Length (min)</th>
+      </tr>
+    </thead>
+    <tbody id="episodes-tbody">
+      <tr><td colspan="5" class="no-results">Loading episodes...</td></tr>
+    </tbody>
+  </table>
+  
+  <footer>
+    <p>By <a href="mailto:reinhard.engels@gmail.com">Reinhard Engels</a></p>
+    <p>© 2002-<span id="current-year"></span> <a href="http://everydaysystems.com">Everyday Systems LLC</a>, All Rights Reserved.</p>
+  </footer>
+</div>
+
+<script>
+  let episodes = [];
+  let currentSort = { column: 'number', direction: 'desc' };
+  
+  // Fetch episodes data
+  fetch('../metadata/episodes.json')
+    .then(response => response.json())
+    .then(data => {
+      episodes = data;
+      renderTable();
+      updateResultsCount();
+    })
+    .catch(error => {
+      document.getElementById('episodes-tbody').innerHTML = 
+        '<tr><td colspan="5" class="no-results">Error loading episodes data.</td></tr>';
+      console.error('Error loading episodes:', error);
+    });
+  
+  function renderTable() {
+    const tbody = document.getElementById('episodes-tbody');
+    const filteredEpisodes = getFilteredEpisodes();
+    const sortedEpisodes = sortEpisodes(filteredEpisodes);
+    
+    if (sortedEpisodes.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="5" class="no-results">No episodes match your filters.</td></tr>';
+      return;
+    }
+    
+    tbody.innerHTML = sortedEpisodes.map(ep => {
+      const transcriptUrl = `../episode/${ep.number}/`;
+      const length = ep.length_minutes > 0 ? ep.length_minutes : '—';
+      
+      return `
+        <tr>
+          <td class="episode-number">${ep.number}</td>
+          <td class="episode-date">${ep.release_date || '—'}</td>
+          <td class="episode-title"><a href="${transcriptUrl}">${escapeHtml(ep.title || 'Episode ' + ep.number)}</a></td>
+          <td>${escapeHtml(ep.blurb || '')}</td>
+          <td class="episode-length">${length}</td>
+        </tr>
+      `;
+    }).join('');
+    
+    updateSortIndicators();
+  }
+  
+  function getFilteredEpisodes() {
+    const numberFilter = document.getElementById('filter-number').value.toLowerCase();
+    const dateFilter = document.getElementById('filter-date').value.toLowerCase();
+    const titleFilter = document.getElementById('filter-title').value.toLowerCase();
+    const blurbFilter = document.getElementById('filter-blurb').value.toLowerCase();
+    
+    return episodes.filter(ep => {
+      if (numberFilter && !String(ep.number).includes(numberFilter)) return false;
+      if (dateFilter && !(ep.release_date || '').toLowerCase().includes(dateFilter)) return false;
+      if (titleFilter && !(ep.title || '').toLowerCase().includes(titleFilter)) return false;
+      if (blurbFilter && !(ep.blurb || '').toLowerCase().includes(blurbFilter)) return false;
+      return true;
+    });
+  }
+  
+  function sortEpisodes(episodeList) {
+    const sorted = [...episodeList];
+    const { column, direction } = currentSort;
+    const multiplier = direction === 'asc' ? 1 : -1;
+    
+    sorted.sort((a, b) => {
+      let valA, valB;
+      
+      switch(column) {
+        case 'number':
+          valA = a.number;
+          valB = b.number;
+          return (valA - valB) * multiplier;
+        
+        case 'date':
+          valA = a.release_date || '';
+          valB = b.release_date || '';
+          return valA.localeCompare(valB) * multiplier;
+        
+        case 'title':
+          valA = (a.title || '').toLowerCase();
+          valB = (b.title || '').toLowerCase();
+          return valA.localeCompare(valB) * multiplier;
+        
+        case 'blurb':
+          valA = (a.blurb || '').toLowerCase();
+          valB = (b.blurb || '').toLowerCase();
+          return valA.localeCompare(valB) * multiplier;
+        
+        case 'length':
+          valA = a.length_minutes || 0;
+          valB = b.length_minutes || 0;
+          return (valA - valB) * multiplier;
+        
+        default:
+          return 0;
+      }
+    });
+    
+    return sorted;
+  }
+  
+  function sortTable(column) {
+    if (currentSort.column === column) {
+      // Toggle direction
+      currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+    } else {
+      // New column, default to descending for numbers, ascending for text
+      currentSort.column = column;
+      currentSort.direction = (column === 'number' || column === 'length') ? 'desc' : 'asc';
+    }
+    
+    renderTable();
+  }
+  
+  function updateSortIndicators() {
+    // Remove all sort classes
+    document.querySelectorAll('th').forEach(th => {
+      th.classList.remove('sort-asc', 'sort-desc');
+    });
+    
+    // Add class to current sort column
+    const th = document.querySelector(`th[data-column="${currentSort.column}"]`);
+    if (th) {
+      th.classList.add(`sort-${currentSort.direction}`);
+    }
+  }
+  
+  function updateResultsCount() {
+    const filtered = getFilteredEpisodes();
+    const total = episodes.length;
+    const countEl = document.getElementById('results-count');
+    
+    if (filtered.length === total) {
+      countEl.textContent = `Showing all ${total} episodes`;
+    } else {
+      countEl.textContent = `Showing ${filtered.length} of ${total} episodes`;
+    }
+  }
+  
+  function clearFilters() {
+    document.getElementById('filter-number').value = '';
+    document.getElementById('filter-date').value = '';
+    document.getElementById('filter-title').value = '';
+    document.getElementById('filter-blurb').value = '';
+    renderTable();
+    updateResultsCount();
+  }
+  
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+  
+  // Add filter event listeners
+  ['filter-number', 'filter-date', 'filter-title', 'filter-blurb'].forEach(id => {
+    document.getElementById(id).addEventListener('input', () => {
+      renderTable();
+      updateResultsCount();
+    });
+  });
+  
+  // Update copyright year
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

@@ -1,7 +1,5 @@
 [
-
-
-      {
+  {
     "number": 99,
     "title": "Bracket Journaling",
     "release_date": "2025-10-30",
@@ -14,10 +12,10 @@
       "episode/99/assets/bracket-journal-artificial-entry.jpg",
       "episode/99/assets/bracket-journal-pomona-entry.jpg",
       "episode/99/assets/bracket-journal-bst-ai.jpg"
-    ]
+    ],
+    "length_minutes": 0
   },
-
-    {
+  {
     "number": 98,
     "title": "Practical Panpsychism",
     "release_date": "2025-09-16",
@@ -28,7 +26,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12701",
     "image_files": [
       "episode/98/assets/panpsychic-fridge.jpg"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 97,
@@ -42,7 +41,8 @@
     "image_files": [
       "episode/97/assets/microreflections-LL-soul-screenshot.png",
       "episode/97/assets/microreflections2.png"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 96,
@@ -55,7 +55,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12691",
     "image_files": [
       "episode/96/assets/greenishness.jpg"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 95,
@@ -68,7 +69,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12689",
     "image_files": [
       "episode/95/assets/250000-mark-stamp.png"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 94,
@@ -81,7 +83,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12688",
     "image_files": [
       "episode/94/assets/supermanxraylois.jpg"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 93,
@@ -92,7 +95,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=9llV0O3-3a4",
     "mp3_url": "http://media.libsyn.com/media/reinhard/eds-93-weekend-luddite-2025.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12687",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 92,
@@ -105,7 +109,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12684",
     "image_files": [
       "episode/92/assets/mensch.jpg"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 91,
@@ -118,7 +123,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12680",
     "image_files": [
       "episode/91/assets/RE-2024-lifelog-monthlies.png"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 90,
@@ -131,7 +137,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12679",
     "image_files": [
       "episode/90/assets/grecian-urn-runners-cropped.jpg"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 89,
@@ -144,7 +151,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12677",
     "image_files": [
       "episode/89/assets/propro-plate.png"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 88,
@@ -157,7 +165,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12676",
     "image_files": [
       "episode/88/assets/todo-list-witches.png"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 87,
@@ -172,7 +181,8 @@
       "episode/87/assets/glass-ceiling-2024-details.png",
       "episode/87/assets/glass-ceiling-2024-summary.png",
       "episode/87/assets/glass-ceilings.png"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 86,
@@ -183,7 +193,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=hCDeVAQhR94",
     "mp3_url": "http://media.libsyn.com/media/reinhard/eds-86-motive-mixologist.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12670",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 85,
@@ -194,7 +205,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=Ug9OxZ4ajc4",
     "mp3_url": "http://media.libsyn.com/media/reinhard/eds-85-urban-ranger-2024.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12669",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 84,
@@ -205,7 +217,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=Bogr5W9K8ss",
     "mp3_url": "http://media.libsyn.com/media/reinhard/eds-84-hygiene-hypothesis-explains-everything.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12665",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 83,
@@ -216,7 +229,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=4lWvwcF5sh0",
     "mp3_url": "http://media.libsyn.com/media/reinhard/eds-83-nosdiet-chapter-for-compendium.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12663",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 82,
@@ -229,7 +243,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12660",
     "image_files": [
       "episode/82/assets/splinter-free.jpg"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 81,
@@ -240,7 +255,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=zFiXcq7pKuA",
     "mp3_url": "http://media.libsyn.com/media/reinhard/eds-81-state-of-systems-2023.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12659",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 80,
@@ -253,7 +269,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12656",
     "image_files": [
       "episode/80/assets/baseball-scream.png"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 79,
@@ -266,7 +283,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12655",
     "image_files": [
       "episode/79/assets/girl-with-pet-demon.webp"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 78,
@@ -281,7 +299,8 @@
       "episode/78/assets/CBT-Game-in-LL.png",
       "episode/78/assets/CBT-Game-in-PC.jpg",
       "episode/78/assets/GiantSpider.webp"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 77,
@@ -297,7 +316,8 @@
       "episode/77/assets/aristo-detailed-list.jpg",
       "episode/77/assets/aristo-van-gogh.png",
       "episode/77/assets/template-of-life.png"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 76,
@@ -310,7 +330,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12646",
     "image_files": [
       "episode/76/assets/mephisto-robo-harvey.png"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 75,
@@ -323,7 +344,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12644",
     "image_files": [
       "episode/75/assets/renaissance-mentat.png"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 74,
@@ -336,7 +358,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12642",
     "image_files": [
       "episode/74/assets/dwarves-cleaning-bilbos-plates.png"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 73,
@@ -349,7 +372,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12640",
     "image_files": [
       "episode/73/assets/demihuman-imposter.png"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 72,
@@ -362,7 +386,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12638",
     "image_files": [
       "episode/72/assets/sledgehammer-mosaic-2022.png"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 71,
@@ -375,7 +400,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12627",
     "image_files": [
       "episode/71/assets/bad-manners-at-table.png"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 70,
@@ -388,7 +414,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12626",
     "image_files": [
       "episode/70/assets/hamburger_flagellants.png"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 69,
@@ -401,7 +428,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12625",
     "image_files": [
       "episode/69/assets/shovelglove-recovering.jpg"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 68,
@@ -414,7 +442,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12622",
     "image_files": [
       "episode/68/assets/mustang-water.jpg"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 67,
@@ -427,7 +456,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12620",
     "image_files": [
       "episode/67/assets/whackimage.jpg"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 66,
@@ -440,7 +470,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12616",
     "image_files": [
       "episode/66/assets/gregor.jpg"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 65,
@@ -451,7 +482,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=hAGSy2mEGWU",
     "mp3_url": "http://media.libsyn.com/media/reinhard/eds-65-mindful-bagful.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12612",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 64,
@@ -470,7 +502,8 @@
       "episode/64/assets/image5.png",
       "episode/64/assets/image6.png",
       "episode/64/assets/image7.png"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 63,
@@ -481,7 +514,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=B9-mClalIrU",
     "mp3_url": "http://media.libsyn.com/media/reinhard/eds-63-state-2021-part-2.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12607",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 62,
@@ -492,7 +526,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=DjwabKO0oiE",
     "mp3_url": "http://media.libsyn.com/media/reinhard/eds-62-state-2021-part-1.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12605",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 61,
@@ -505,7 +540,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12601",
     "image_files": [
       "episode/61/assets/vc-cat.jpg"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 60,
@@ -516,7 +552,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=ZnLkwOMtb8U",
     "mp3_url": "http://media.libsyn.com/media/reinhard/EDS_60_Study_Habit_II.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12595",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 59,
@@ -527,7 +564,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=Tu3RFavl1q8",
     "mp3_url": "http://media.libsyn.com/media/reinhard/eds-59-study-habit-part-1.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12595",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 58,
@@ -538,7 +576,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=LnsFIjF7Zh4",
     "mp3_url": "http://media.libsyn.com/media/reinhard/eds-58-loose-lips.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12590",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 57,
@@ -549,7 +588,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=C3ZKYmn_ivw",
     "mp3_url": "http://media.libsyn.com/media/reinhard/eds-57-posifactive.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12581",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 56,
@@ -560,7 +600,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=X9-wv8HyQfc",
     "mp3_url": "http://media.libsyn.com/media/reinhard/eds-56-good-redundancy.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12578",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 55,
@@ -578,7 +619,8 @@
       "episode/55/assets/image4.png",
       "episode/55/assets/image5.png",
       "episode/55/assets/image6.png"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 54,
@@ -589,7 +631,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=hHNdgaVPFhY",
     "mp3_url": "http://media.libsyn.com/media/reinhard/201231_1750.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12466",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 53,
@@ -600,7 +643,8 @@
     "youtube_url": null,
     "mp3_url": "http://media.libsyn.com/media/reinhard/eds-53-timebox-lord-final.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12463",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 52,
@@ -613,7 +657,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12457",
     "image_files": [
       "episode/52/assets/demoVasmo.png"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 51,
@@ -624,7 +669,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=6wcn7NP4zRw",
     "mp3_url": "http://media.libsyn.com/media/reinhard/200402_1649.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=12417",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 50,
@@ -637,7 +683,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=11041",
     "image_files": [
       "episode/50/assets/mindbody.gif"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 49,
@@ -650,7 +697,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=10996",
     "image_files": [
       "episode/49/assets/2016-during.jpg"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 48,
@@ -661,7 +709,8 @@
     "youtube_url": null,
     "mp3_url": null,
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=10779",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 47,
@@ -672,7 +721,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=Ha1ZXNcAlKQ",
     "mp3_url": null,
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=10741",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 46,
@@ -683,7 +733,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=fxsexDDdi4U",
     "mp3_url": null,
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=10705",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 45,
@@ -694,7 +745,8 @@
     "youtube_url": null,
     "mp3_url": null,
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=10699",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 44,
@@ -705,7 +757,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=BRqTjqXyUuE",
     "mp3_url": "http://media.libsyn.com/media/reinhard/44_Everyday_Systems_44__The_Return_of_the_General.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=9819",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 43,
@@ -716,7 +769,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=EVcY51Z1sDM",
     "mp3_url": "http://media.libsyn.com/media/reinhard/43_Everyday_Systems_43__Scribal_Filter_and_medium-term_task_management.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=9819",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 42,
@@ -729,7 +783,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=9758",
     "image_files": [
       "episode/42/assets/card_20131203_a.jpg"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 41,
@@ -740,7 +795,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=rhOP08He2jE",
     "mp3_url": "http://media.libsyn.com/media/reinhard/41_Everyday_Systems_41__The__What_the_Hell__effect_and_negative_qualification.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=8416",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 40,
@@ -751,7 +807,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=fOAL1zVvLqU",
     "mp3_url": "http://media.libsyn.com/media/reinhard/40_Everyday_Systems_40__No_Solitary_Snacking_--_Even_on_S_days.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=8183",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 39,
@@ -764,7 +821,8 @@
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=6697",
     "image_files": [
       "episode/39/assets/Bike_joust64.jpg"
-    ]
+    ],
+    "length_minutes": 0
   },
   {
     "number": 38,
@@ -775,7 +833,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=MWHqKG0qef0",
     "mp3_url": "http://media.libsyn.com/media/reinhard/39_Everyday_Systems_38__14_minutes_of_ANYTHING.MP3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=6273",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 37,
@@ -786,7 +845,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=_hTUJ2Cr7Us",
     "mp3_url": "http://media.libsyn.com/media/reinhard/37_Everyday_Systems_37__Mods_and_Tweaks_Trilogy_Part_III__When_a_mere_mod_isnt_enough.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=5387",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 36,
@@ -797,7 +857,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=CR7U9KEgZPU",
     "mp3_url": "http://media.libsyn.com/media/reinhard/36_Everyday_Systems_36__Mods_and_Tweaks_Trilogy_Part_II__How_to_Tweak.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=5082",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 35,
@@ -808,7 +869,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=4zRsHWBGUkQ",
     "mp3_url": "http://media.libsyn.com/media/reinhard/35_Everyday_Systems_35__Mods_and_Tweaks_Trilogy_Part_I__To_Tweak_Or_Not_To_Tweak.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=4961",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 34,
@@ -819,7 +881,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=KYYPhPX9BvU",
     "mp3_url": "http://media.libsyn.com/media/reinhard/34_Everyday_Systems_34__S-days_Gone_Wild.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=3401",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 33,
@@ -830,7 +893,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=jRmq3Cux5BQ",
     "mp3_url": "http://media.libsyn.com/media/reinhard/33_Everyday_Systems_33__2007_Annual_Compliance_Review.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=2577",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 32,
@@ -841,7 +905,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=G8hf_-6VIeQ",
     "mp3_url": "http://media.libsyn.com/media/reinhard/32_Everyday_Systems_32__The_Bigger_8x11_Picture.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=2505",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 31,
@@ -852,7 +917,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=KfyUPqLJG-I",
     "mp3_url": "http://media.libsyn.com/media/reinhard/31_Everyday_Systems_31__The_best_piece_of_exercise_equipment_you_can_buy.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=2436",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 30,
@@ -863,7 +929,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=jwZBOn-9r88",
     "mp3_url": "http://media.libsyn.com/media/reinhard/30_Everyday_Systems_Podcast_30__Introducing_the_HabitCal.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=2177",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 29,
@@ -874,7 +941,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=REu0xnuwLi0",
     "mp3_url": "http://media.libsyn.com/media/reinhard/29_Everyday_Systems_29__Top_5_Health_and_Fitness_Books_sort_of.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=2175",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 28,
@@ -885,7 +953,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=ogV-8MIpqNw",
     "mp3_url": "http://media.libsyn.com/media/reinhard/28_Everyday_Systems_28__A_90_solution_for_diet_in_2_words.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=2063",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 27,
@@ -896,7 +965,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=LS_2ysSp0qc",
     "mp3_url": "http://media.libsyn.com/media/reinhard/27_Everyday_Systems_27__Audiodidact_output.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1878",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 26,
@@ -907,7 +977,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=X8vBD_m2KYk",
     "mp3_url": "http://media.libsyn.com/media/reinhard/26_Everyday_Systems_26__Audiodidact_input.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1818",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 25,
@@ -918,7 +989,8 @@
     "youtube_url": null,
     "mp3_url": "http://media.libsyn.com/media/reinhard/25_Everyday_Systems_Podcast_25__Compound_and_Atomic_Tasks.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1792",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 24,
@@ -929,7 +1001,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=5CJXX3E-G5Y",
     "mp3_url": "http://media.libsyn.com/media/reinhard/Everyday_Systems_24__Put_the_scale_in_perspective.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1741",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 23,
@@ -940,7 +1013,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=mvE83iNDO18",
     "mp3_url": "http://media.libsyn.com/media/reinhard/Everyday_Systems_23__Intelligent_Dietary_Defaults.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1726",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 22,
@@ -951,7 +1025,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=U6elINxzJmg",
     "mp3_url": "http://media.libsyn.com/media/reinhard/Everyday_Systems_22__In_Defense_of__Failure_.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1699",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 21,
@@ -962,7 +1037,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=ycEMVvJbta8",
     "mp3_url": "http://media.libsyn.com/media/reinhard/Everyday_Systems_21__Extreme_Moderation.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1669",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 20,
@@ -973,7 +1049,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=tzeQdXEqfxQ",
     "mp3_url": "http://media.libsyn.com/media/reinhard/Everyday_Systems_20__When_you_dont_have_14_minutes.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1643",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 19,
@@ -984,7 +1061,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=fPvDEGizPQM",
     "mp3_url": "http://media.libsyn.com/media/reinhard/Everyday_Systems_19__Personal_Punch_Cards.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1616",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 18,
@@ -995,7 +1073,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=FyofH6vfO70",
     "mp3_url": "http://media.libsyn.com/media/reinhard/Everyday_Systems_18__Chain_of_Self_Command.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1588",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 17,
@@ -1006,7 +1085,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=4P_xaLqYM00",
     "mp3_url": "http://media.libsyn.com/media/reinhard/Everyday_Systems_17__Personal_Olympics.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1523",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 16,
@@ -1017,7 +1097,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=4kiMYwG0ZMA",
     "mp3_url": "http://media.libsyn.com/media/reinhard/Everyday_Systems_16__Monthly_Resolution.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1504",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 15,
@@ -1028,7 +1109,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=FKpys7YpfTc",
     "mp3_url": "http://media.libsyn.com/media/reinhard/Everyday_Systems_15__Seasons_Warnings.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1483",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 14,
@@ -1039,7 +1121,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=YrP4i3sveVw",
     "mp3_url": "http://media.libsyn.com/media/reinhard/Everyday_Systems_14__Top_5_Abitrary_Numbers.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1439",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 13,
@@ -1050,7 +1133,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=4qLpv1v11RY",
     "mp3_url": "http://media.libsyn.com/media/reinhard/Everyday_Systems__13__Strictness.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1424",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 12,
@@ -1061,7 +1145,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=Ezn28IXkzIs",
     "mp3_url": "http://media.libsyn.com/media/reinhard/Everyday_Systems__12__Negative_Tracking.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1403",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 11,
@@ -1072,7 +1157,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=rYiM-ESfBsk",
     "mp3_url": "http://media.libsyn.com/media/reinhard/Everyday_Systems_11__Habit_Tracking.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1379",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 10,
@@ -1083,7 +1169,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=4QZ3ZvOATo0",
     "mp3_url": "http://media.libsyn.com/media/reinhard/Everyday_Systems_10__Habit_Friendly_Behaviors.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1366",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 9,
@@ -1094,7 +1181,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=xmhYMK409q8",
     "mp3_url": "http://media.libsyn.com/media/reinhard/Everyday_Systems_9__Habit_Management.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1348",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 8,
@@ -1105,7 +1193,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=k48amXIBeEo",
     "mp3_url": "http://media.libsyn.com/media/reinhard/Everyday_Systems_8__Glass_Ceiling.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1336",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 7,
@@ -1116,7 +1205,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=MNmPxrgnqx8",
     "mp3_url": "http://media.libsyn.com/media/reinhard/Everyday_Systems_7__Weekend_Luddite.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1321",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 6,
@@ -1127,7 +1217,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=vVj1rfekLmc",
     "mp3_url": "http://media.libsyn.com/media/reinhard/Everyday_Systems_6___Urban_Ranger.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1296",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 5,
@@ -1138,7 +1229,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=xUPKL5NDpZI",
     "mp3_url": "http://media.libsyn.com/media/reinhard/Everyday_Systems_5__Shovelglove__when_.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1251",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 4,
@@ -1149,7 +1241,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=uzyTCVEdeAI",
     "mp3_url": "http://media.libsyn.com/media/reinhard/Everyday_Systems_4__Shovelglove__what_.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1251",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 3,
@@ -1160,7 +1253,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=Fljyi2Uwm9I",
     "mp3_url": "http://media.libsyn.com/media/reinhard/Everyday_Systems_3__No_S_Diet_Rules.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1201",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 2,
@@ -1171,7 +1265,8 @@
     "youtube_url": "https://www.youtube.com/watch?v=7L_WRUIDBHs",
     "mp3_url": "http://media.libsyn.com/media/reinhard/Everyday_Systems_2__No_S_Diet_Overview.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1201",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   },
   {
     "number": 1,
@@ -1182,6 +1277,7 @@
     "youtube_url": "https://www.youtube.com/watch?v=hTe7-3Q0Tbw",
     "mp3_url": "http://media.libsyn.com/media/reinhard/Everyday_Systems_1__Introduction.mp3",
     "discuss_url": "https://everydaysystems.com/bb/viewtopic.php?t=1163",
-    "image_files": []
+    "image_files": [],
+    "length_minutes": 0
   }
 ]
