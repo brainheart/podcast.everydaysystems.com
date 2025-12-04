@@ -35,6 +35,32 @@ blockquote {
 	font-style: italic;
 }
 
+/* Clip blocks (quoted audio excerpts) */
+.clip {
+    border-left: 4px solid #ccc;
+    background: #f8f8f8;
+    padding: 10px 12px;
+    margin: 12px 0;
+    border-radius: 6px;
+}
+.clip em {
+    font-style: normal;
+    font-weight: bold;
+    color: #555;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+.clip blockquote {
+    font-style: italic;
+    margin: 0; /* remove default extra margins inside clip */
+}
+
+/* Longest clip gets a slightly stronger accent, still readable */
+.clip-full {
+    border-left-color: #6aa0d3; /* subtle blue accent */
+    background: #f6fbff;
+}
+
 /* Lead images will be hidden; keep styles for potential future use */
 #lead-image {
     width: 320px;
