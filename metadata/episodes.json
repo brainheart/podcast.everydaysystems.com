@@ -8,7 +8,9 @@
     "youtube_url": "https://www.youtube.com/watch?v=jG6jCdvI-_o",
     "mp3_url": "https://traffic.libsyn.com/secure/reinhard/251231_1153.mp3?dest-id=47156",
     "discuss_url": "http://everydaysystems.com/bb/viewtopic.php?f=6&t=12706",
-    "image_files": [],
+    "image_files": [
+      "episode/101/LL-2025-Summary.png"
+    ],
     "length_minutes": 30
   },
   {
