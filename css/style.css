@@ -84,6 +84,7 @@ iframe.yt-player {
     display: block;
     clear: both;
     margin: 10px 0;
+    height: 375px !important;
 }
 
 @media screen and (max-width: 600px) {
