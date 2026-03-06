@@ -19,7 +19,7 @@ HEADER = """<!DOCTYPE html>
 
 FOOTER = """
 <p>By <a href=\"mailto:reinhard.engels@gmail.com\">Reinhard Engels</a></p>
-<p>© 2002-2025  <a href=\"http://everydaysystems.com\">Everyday Systems LLC</a>, All Rights Reserved.</p>
+<p>© 2002-2025  Reinhard Engels, All Rights Reserved.</p>
 </div><script src=\"/assets/js/year.js?v=2\" defer></script><script src=\"/assets/js/youtube-embeds.js\" defer></script>
 </body>\n"""
 
@@ -68,4 +68,3 @@ def render_episode_table(ep: dict) -> str:
 def render_index_html(episodes: list[dict]) -> str:
     tables = [render_episode_table(ep) for ep in episodes]
     return HEADER + "\n".join(tables) + "\n" + FOOTER
-
