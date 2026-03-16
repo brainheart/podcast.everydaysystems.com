@@ -22,6 +22,16 @@ h1 { font-size: 125%; }
 h2 { font-size: 110%; }
 h3 { font-size: 100%; }
 
+/* Episode summary/deck immediately below the title */
+#main > h1 + p {
+    font-style: italic;
+    color: #444;
+    border-left: 3px solid #c8c8c8;
+    padding-left: 12px;
+    margin-top: 0.5em;
+    margin-bottom: 1.25em;
+}
+
 figcaption {
 	text-align: center;
 	font-style: italic;
