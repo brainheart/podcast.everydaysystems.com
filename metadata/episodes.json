@@ -1,5 +1,20 @@
 [
   {
+    "number": 104,
+    "title": "Aristocal",
+    "release_date": "2026-04-30",
+    "blurb": "Know thy calendar, know thyself.",
+    "youtube_id": "zKAv4xh4vig",
+    "youtube_url": "https://www.youtube.com/watch?v=zKAv4xh4vig",
+    "mp3_url": null,
+    "discuss_url": null,
+    "image_files": [
+      "episode/104/assets/aristocal-work-week.png",
+      "episode/104/assets/aristocal-phone.png"
+    ],
+    "length_minutes": 24
+  },
+  {
     "number": 103,
     "title": "Rule Burden, Decision Burden",
     "release_date": "2026-03-13",
