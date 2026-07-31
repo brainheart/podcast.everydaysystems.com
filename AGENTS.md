@@ -183,6 +183,18 @@ After changes, run:
 
 For small documentation-only changes, tests are not required, but validate by reading the changed file back.
 
+## Remote Preview On Klausheim
+
+When Codex is running this repository on `klausheim` but the side-panel browser
+is on another Mac, bind the preview server to all interfaces:
+
+`python3 -m http.server --bind 0.0.0.0 PORT`
+
+Then open `http://localhost:PORT/episode/NNN/` with the Codex browser-panel
+action. Codex forwards and remaps the remote port to a local `localhost` URL.
+Confirm the server logs HTTP 200 requests for the episode, stylesheet, and
+assets before reporting that the preview is ready.
+
 ## Git And Workspace Hygiene
 
 Do not revert unrelated user changes. If the worktree has unrelated changes, ignore them unless they directly affect the requested episode workflow.
