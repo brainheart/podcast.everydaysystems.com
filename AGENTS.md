@@ -33,7 +33,7 @@ When adding a new episode:
 3. Create `episode/NNN/index.html` from the transcript/script.
 4. Copy or reference episode assets under `episode/NNN/assets/`.
 5. Insert requested images at the appropriate transcript locations.
-6. Rebuild the main index:
+6. Rebuild the main index and sitemap:
    `python3 scripts/build_index.py`
 7. Validate JSON:
    `python3 -m json.tool metadata/episodes.json >/dev/null`
@@ -87,6 +87,7 @@ Follow existing static HTML style rather than introducing a template framework.
 The episode page should include:
 
 - Standard `<meta charset>`, viewport, and meta description.
+- A self-referencing canonical URL.
 - Title in the form:
   `Everyday Systems Podcast — Episode NNN: TITLE`
 - JSON-LD with `PodcastEpisode`, `name`, `episodeNumber`, `partOfSeries`, `url`, and `description`.
@@ -173,7 +174,7 @@ Examples:
 
 ## Generated Files And Tests
 
-`index.html` is generated from `metadata/episodes.json`. Do not hand-edit the episode list in `index.html`; update metadata and run:
+`index.html` and `sitemap.xml` are generated from `metadata/episodes.json`. Do not hand-edit the episode list or sitemap; update metadata and run:
 
 `python3 scripts/build_index.py`
 

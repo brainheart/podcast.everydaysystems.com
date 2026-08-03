@@ -14,11 +14,12 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from podcast_index import render_index_html
+from podcast_index import render_index_html, render_sitemap_xml
 
 ROOT = Path(__file__).resolve().parent.parent
 META = ROOT / 'metadata' / 'episodes.json'
 DEFAULT_OUT  = ROOT / 'index.html'
+DEFAULT_SITEMAP = ROOT / 'sitemap.xml'
 
 def load_meta():
     data = json.loads(META.read_text())
@@ -34,8 +35,11 @@ def main():
     args = parser.parse_args()
     out_path = Path(args.out).resolve() if args.out else DEFAULT_OUT
     episodes = load_meta()
-    out_path.write_text(render_index_html(episodes))
+    out_path.write_text(render_index_html(episodes), encoding='utf-8')
     print(f"Wrote {out_path} with {len(episodes)} episodes.")
+    if not args.out:
+        DEFAULT_SITEMAP.write_text(render_sitemap_xml(episodes), encoding='utf-8')
+        print(f"Wrote {DEFAULT_SITEMAP} with {len(episodes) + 2} URLs.")
 
 if __name__ == '__main__':
     main()

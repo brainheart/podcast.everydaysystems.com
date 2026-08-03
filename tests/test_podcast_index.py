@@ -106,6 +106,22 @@ class RenderIndexHtmlTests(unittest.TestCase):
         self.assertTrue(html.startswith(podcast_index.HEADER))
         self.assertTrue(html.endswith(podcast_index.FOOTER))
         self.assertEqual(html.count('<table border="0" cellpadding="2" cellspacing="0">'), 2)
+        self.assertIn('<meta name="description"', html)
+        self.assertIn('<link rel="canonical" href="https://podcast.everydaysystems.com/" />', html)
+
+
+class RenderSitemapXmlTests(unittest.TestCase):
+    def test_renders_root_table_and_episode_urls(self):
+        episodes = [{"number": 10}, {"number": 9}]
+
+        xml = podcast_index.render_sitemap_xml(episodes)
+
+        self.assertTrue(xml.startswith('<?xml version="1.0" encoding="UTF-8"?>'))
+        self.assertEqual(xml.count("<url><loc>"), 4)
+        self.assertIn("<loc>https://podcast.everydaysystems.com/</loc>", xml)
+        self.assertIn("<loc>https://podcast.everydaysystems.com/table/</loc>", xml)
+        self.assertIn("<loc>https://podcast.everydaysystems.com/episode/10/</loc>", xml)
+        self.assertIn("<loc>https://podcast.everydaysystems.com/episode/9/</loc>", xml)
 
 
 if __name__ == "__main__":
