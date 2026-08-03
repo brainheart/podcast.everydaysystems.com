@@ -2,11 +2,15 @@ from __future__ import annotations
 
 from html import escape
 
+SITE_URL = "https://podcast.everydaysystems.com"
+
 HEADER = """<!DOCTYPE html>
 <head>
   <meta charset=\"utf-8\" />
   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
   <title>Everyday Systems Podcast</title>
+  <meta name=\"description\" content=\"Episodes, transcripts, audio, and discussion links for the Everyday Systems Podcast by Reinhard Engels.\" />
+  <link rel=\"canonical\" href=\"https://podcast.everydaysystems.com/\" />
   <style type=\"text/css\">body { background-image: url(assets/images/random_grey_variations.png) } #main { padding: 7px; max-width:800px; margin-left: auto; margin-right: auto; background-image: url(assets/images/white_texture.png); border-radius: 11px; } h1,h2,h3 { font-family: Arial, Helvetica, Geneva, sans-serif; } h1 { font-size:125%; } h2 { font-size:110%; } h3 { font-size:100%; } .title { font-weight:bold; } .date { font-size:75%; }</style>
 </head>
 <body>
@@ -68,3 +72,18 @@ def render_episode_table(ep: dict) -> str:
 def render_index_html(episodes: list[dict]) -> str:
     tables = [render_episode_table(ep) for ep in episodes]
     return HEADER + "\n".join(tables) + "\n" + FOOTER
+
+
+def render_sitemap_xml(episodes: list[dict]) -> str:
+    urls = [
+        f"{SITE_URL}/",
+        f"{SITE_URL}/table/",
+        *(f"{SITE_URL}/episode/{episode['number']}/" for episode in episodes),
+    ]
+    entries = "\n".join(f"  <url><loc>{escape(url)}</loc></url>" for url in urls)
+    return (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        f"{entries}\n"
+        "</urlset>\n"
+    )
