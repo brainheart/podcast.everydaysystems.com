@@ -123,6 +123,10 @@ The episode page should include:
 - Commented discussion placeholder if discussion URL is not yet known.
 - The existing year script:
   `<script src="/assets/js/year.js?v=2" defer></script>`
+- The shared stylesheet with its cache-busting version:
+  `<link rel="stylesheet" href="../../css/style.css?v=2">`
+  GitHub Pages caches CSS for hours, so whenever `css/style.css` changes, bump
+  the `?v=` number on every episode page (a `sed` across `episode/*/index.html`).
 
 Use existing local linking style for prior episodes, for example `../103/`, when adding relevant cross-links. Add only obvious and helpful links; do not over-link every repeated mention.
 
