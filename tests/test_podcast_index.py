@@ -1,3 +1,4 @@
+import json
 import sys
 import unittest
 from pathlib import Path
@@ -77,6 +78,40 @@ class RenderEpisodeTableTests(unittest.TestCase):
         self.assertIn("Use &lt;b&gt;bold&lt;/b&gt; &amp; keep safe", html)
         self.assertNotIn("<b>bold</b>", html)
 
+    def test_renders_focus_and_mention_tags(self):
+        ep = {
+            "number": 5,
+            "title": "Tagged",
+            "release_date": "2026-01-05",
+            "blurb": "Example",
+            "youtube_url": None,
+            "mp3_url": None,
+            "discuss_url": None,
+            "systems": {
+                "focus": ["shovelglove"],
+                "mentions": ["no-s-diet"],
+            },
+        }
+        systems = {
+            "shovelglove": {
+                "name": "Shovelglove",
+                "group_label": "Body (output)",
+                "color": "#2f6b43",
+            },
+            "no-s-diet": {
+                "name": "No S Diet",
+                "group_label": "Body (input)",
+                "color": "#8f352d",
+            },
+        }
+
+        html = podcast_index.render_episode_table(ep, systems)
+
+        self.assertIn('system-tag--focus', html)
+        self.assertIn('system-tag--mention', html)
+        self.assertIn('title="Focus: Body (output)"', html)
+        self.assertIn('title="Mentioned: Body (input)"', html)
+
 
 class RenderIndexHtmlTests(unittest.TestCase):
     def test_renders_one_table_per_episode(self):
@@ -122,6 +157,34 @@ class RenderSitemapXmlTests(unittest.TestCase):
         self.assertIn("<loc>https://podcast.everydaysystems.com/table/</loc>", xml)
         self.assertIn("<loc>https://podcast.everydaysystems.com/episode/10/</loc>", xml)
         self.assertIn("<loc>https://podcast.everydaysystems.com/episode/9/</loc>", xml)
+
+
+class MetadataTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.episodes = json.loads((ROOT / "metadata" / "episodes.json").read_text())
+        cls.catalog = json.loads((ROOT / "metadata" / "systems.json").read_text())
+
+    def test_every_episode_has_a_known_positive_length(self):
+        self.assertTrue(all(episode.get("length_minutes", 0) > 0 for episode in self.episodes))
+
+    def test_episode_system_ids_are_valid_and_relationships_do_not_overlap(self):
+        valid_ids = {system["id"] for system in self.catalog["systems"]}
+        for episode in self.episodes:
+            relationships = episode.get("systems", {})
+            focus = relationships.get("focus", [])
+            mentions = relationships.get("mentions", [])
+            self.assertTrue(set(focus) <= valid_ids, episode["number"])
+            self.assertTrue(set(mentions) <= valid_ids, episode["number"])
+            self.assertFalse(set(focus) & set(mentions), episode["number"])
+            self.assertEqual(len(focus), len(set(focus)), episode["number"])
+            self.assertEqual(len(mentions), len(set(mentions)), episode["number"])
+
+    def test_system_colors_are_unique_and_groups_are_valid(self):
+        group_ids = {group["id"] for group in self.catalog["groups"]}
+        colors = [system["color"] for system in self.catalog["systems"]]
+        self.assertEqual(len(colors), len(set(colors)))
+        self.assertTrue(all(system["group"] in group_ids for system in self.catalog["systems"]))
 
 
 if __name__ == "__main__":

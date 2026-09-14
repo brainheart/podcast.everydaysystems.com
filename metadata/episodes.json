@@ -9,7 +9,13 @@
     "mp3_url": "https://traffic.libsyn.com/secure/reinhard/eds-107-spaghetti-western.mp3?dest-id=47156",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=12730",
     "image_files": [],
-    "length_minutes": 18
+    "length_minutes": 18,
+    "systems": {
+      "focus": [
+        "spaghetti-western-allocation"
+      ],
+      "mentions": []
+    }
   },
   {
     "number": 106,
@@ -21,19 +27,42 @@
     "mp3_url": null,
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=12727",
     "image_files": [],
-    "length_minutes": 27
+    "length_minutes": 27,
+    "systems": {
+      "focus": [
+        "narralogue"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove",
+        "audiodidact",
+        "study-habit",
+        "right-relationship-robots",
+        "mantrafication"
+      ]
+    }
   },
   {
     "number": 105,
     "title": "Intelligent Dietary Defaults 2026",
     "release_date": "2026-05-31",
-    "blurb": "No S not quite doing the trick? Intelligent dietary defaults are a safe way to layer a little more on top \u2014 without piling on rules or risking the habits you've already built. They make convenience your friend instead of your enemy. A revisit of one of my oldest systems, with eight battle-tested examples.",
+    "blurb": "No S not quite doing the trick? Intelligent dietary defaults are a safe way to layer a little more on top — without piling on rules or risking the habits you've already built. They make convenience your friend instead of your enemy. A revisit of one of my oldest systems, with eight battle-tested examples.",
     "youtube_id": "d6ZHLzQPhTg",
     "youtube_url": "https://www.youtube.com/watch?v=d6ZHLzQPhTg",
     "mp3_url": null,
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=12723",
     "image_files": [],
-    "length_minutes": 35
+    "length_minutes": 35,
+    "systems": {
+      "focus": [
+        "intelligent-dietary-defaults"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "urban-ranger",
+        "glass-ceiling"
+      ]
+    }
   },
   {
     "number": 104,
@@ -48,7 +77,22 @@
       "episode/104/assets/aristocal-work-week.png",
       "episode/104/assets/aristocal-phone.png"
     ],
-    "length_minutes": 24
+    "length_minutes": 24,
+    "systems": {
+      "focus": [
+        "aristocal"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove",
+        "spider-hunter",
+        "allocation-mind",
+        "proactive-procrastination",
+        "personal-punch-cards",
+        "good-redundancy",
+        "aristotelian-self-portrait"
+      ]
+    }
   },
   {
     "number": 103,
@@ -60,7 +104,23 @@
     "mp3_url": null,
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?f=6&t=12710",
     "image_files": [],
-    "length_minutes": 19
+    "length_minutes": 19,
+    "systems": {
+      "focus": [],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove",
+        "urban-ranger",
+        "glass-ceiling",
+        "study-habit",
+        "mindful-bagful",
+        "spider-hunter",
+        "allocation-mind",
+        "habit-traffic-light",
+        "personal-punch-cards",
+        "lifelog"
+      ]
+    }
   },
   {
     "number": 102,
@@ -72,7 +132,16 @@
     "mp3_url": null,
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?f=6&t=12707",
     "image_files": [],
-    "length_minutes": 15
+    "length_minutes": 15,
+    "systems": {
+      "focus": [
+        "no-s-diet"
+      ],
+      "mentions": [
+        "intelligent-dietary-defaults",
+        "surgical-flogging"
+      ]
+    }
   },
   {
     "number": 101,
@@ -86,19 +155,60 @@
     "image_files": [
       "episode/101/LL-2025-Summary.png"
     ],
-    "length_minutes": 30
+    "length_minutes": 30,
+    "systems": {
+      "focus": [
+        "lifelog",
+        "glass-ceiling",
+        "spider-hunter",
+        "greenishness",
+        "allocation-mind"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "intelligent-dietary-defaults",
+        "shovelglove",
+        "urban-ranger",
+        "study-habit",
+        "personal-punch-cards",
+        "habitcal",
+        "loose-lips",
+        "aristotelian-self-portrait",
+        "aristocal"
+      ]
+    }
   },
   {
     "number": 100,
     "title": "Mantrafication Clip Show",
     "release_date": "2025-12-04",
-    "blurb": "For the 100th episode, a clip show of course\u2014in which I revisit Mantrafication and share an actual full clip of my current mantra. Part tour of all the systems compressed and contained in that mantra, part useful tool you could use yourself.",
+    "blurb": "For the 100th episode, a clip show of course—in which I revisit Mantrafication and share an actual full clip of my current mantra. Part tour of all the systems compressed and contained in that mantra, part useful tool you could use yourself.",
     "youtube_id": "xY9aneJA8yU",
     "youtube_url": "https://www.youtube.com/watch?v=xY9aneJA8yU",
     "mp3_url": "https://traffic.libsyn.com/secure/reinhard/eds-100-mantrafication-clip-show.mp3?dest-id=47156",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?f=6&t=12705",
     "image_files": [],
-    "length_minutes": 30
+    "length_minutes": 30,
+    "systems": {
+      "focus": [
+        "mantrafication"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove",
+        "urban-ranger",
+        "zeno-exercise-plan",
+        "glass-ceiling",
+        "spider-hunter",
+        "allocation-mind",
+        "motive-mixologist",
+        "demihuman",
+        "personal-punch-cards",
+        "lifelog",
+        "greenishness",
+        "aristotelian-self-portrait"
+      ]
+    }
   },
   {
     "number": 99,
@@ -114,7 +224,22 @@
       "episode/99/assets/bracket-journal-pomona-entry.jpg",
       "episode/99/assets/bracket-journal-bst-ai.jpg"
     ],
-    "length_minutes": 0
+    "length_minutes": 31,
+    "systems": {
+      "focus": [
+        "bracket-journaling"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove",
+        "glass-ceiling",
+        "audiodidact",
+        "timebox-lord",
+        "personal-punch-cards",
+        "lifelog",
+        "good-redundancy"
+      ]
+    }
   },
   {
     "number": 98,
@@ -128,7 +253,17 @@
     "image_files": [
       "episode/98/assets/panpsychic-fridge.jpg"
     ],
-    "length_minutes": 0
+    "length_minutes": 9,
+    "systems": {
+      "focus": [
+        "practical-panpsychism"
+      ],
+      "mentions": [
+        "shovelglove",
+        "personal-punch-cards",
+        "good-redundancy"
+      ]
+    }
   },
   {
     "number": 97,
@@ -143,7 +278,21 @@
       "episode/97/assets/microreflections-LL-soul-screenshot.png",
       "episode/97/assets/microreflections2.png"
     ],
-    "length_minutes": 0
+    "length_minutes": 17,
+    "systems": {
+      "focus": [
+        "microreflection"
+      ],
+      "mentions": [
+        "surgical-flogging",
+        "shovelglove",
+        "audiodidact",
+        "spider-hunter",
+        "negative-tracking",
+        "personal-punch-cards",
+        "lifelog"
+      ]
+    }
   },
   {
     "number": 96,
@@ -157,7 +306,19 @@
     "image_files": [
       "episode/96/assets/greenishness.jpg"
     ],
-    "length_minutes": 0
+    "length_minutes": 24,
+    "systems": {
+      "focus": [
+        "greenishness"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "zeno-exercise-plan",
+        "habit-traffic-light",
+        "habitcal",
+        "lifelog"
+      ]
+    }
   },
   {
     "number": 95,
@@ -171,7 +332,22 @@
     "image_files": [
       "episode/95/assets/250000-mark-stamp.png"
     ],
-    "length_minutes": 0
+    "length_minutes": 21,
+    "systems": {
+      "focus": [
+        "allocation-mind"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove",
+        "zeno-exercise-plan",
+        "mindful-bagful",
+        "spider-hunter",
+        "personal-punch-cards",
+        "mantrafication",
+        "good-redundancy"
+      ]
+    }
   },
   {
     "number": 94,
@@ -185,7 +361,21 @@
     "image_files": [
       "episode/94/assets/supermanxraylois.jpg"
     ],
-    "length_minutes": 0
+    "length_minutes": 23,
+    "systems": {
+      "focus": [
+        "g-ray-vision"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "glass-ceiling",
+        "weekend-luddite",
+        "vc-cat",
+        "spider-hunter",
+        "personal-punch-cards",
+        "lifelog"
+      ]
+    }
   },
   {
     "number": 93,
@@ -197,7 +387,22 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/eds-93-weekend-luddite-2025.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=12687",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 26,
+    "systems": {
+      "focus": [
+        "weekend-luddite"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove",
+        "urban-ranger",
+        "glass-ceiling",
+        "right-relationship-robots",
+        "apps-for-mentats",
+        "my-friend-chatgpt",
+        "proactive-procrastination"
+      ]
+    }
   },
   {
     "number": 92,
@@ -211,7 +416,17 @@
     "image_files": [
       "episode/92/assets/mensch.jpg"
     ],
-    "length_minutes": 0
+    "length_minutes": 22,
+    "systems": {
+      "focus": [],
+      "mentions": [
+        "lawful-good-biker",
+        "demogorgon-vs-asmodeus",
+        "spider-hunter",
+        "personal-punch-cards",
+        "lifelog"
+      ]
+    }
   },
   {
     "number": 91,
@@ -225,7 +440,28 @@
     "image_files": [
       "episode/91/assets/RE-2024-lifelog-monthlies.png"
     ],
-    "length_minutes": 0
+    "length_minutes": 25,
+    "systems": {
+      "focus": [
+        "no-s-diet",
+        "shovelglove",
+        "urban-ranger",
+        "glass-ceiling",
+        "spider-hunter",
+        "proactive-procrastination",
+        "lifelog",
+        "personal-punch-cards"
+      ],
+      "mentions": [
+        "zeno-exercise-plan",
+        "weekend-luddite",
+        "audiodidact",
+        "motive-mixologist",
+        "right-relationship-robots",
+        "apps-for-mentats",
+        "habitcal"
+      ]
+    }
   },
   {
     "number": 90,
@@ -239,7 +475,18 @@
     "image_files": [
       "episode/90/assets/grecian-urn-runners-cropped.jpg"
     ],
-    "length_minutes": 0
+    "length_minutes": 28,
+    "systems": {
+      "focus": [
+        "zeno-exercise-plan",
+        "shovelglove"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "urban-ranger",
+        "spider-hunter"
+      ]
+    }
   },
   {
     "number": 89,
@@ -253,7 +500,19 @@
     "image_files": [
       "episode/89/assets/propro-plate.png"
     ],
-    "length_minutes": 0
+    "length_minutes": 10,
+    "systems": {
+      "focus": [
+        "proactive-procrastination"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "surgical-flogging",
+        "shovelglove",
+        "study-habit",
+        "negative-tracking"
+      ]
+    }
   },
   {
     "number": 88,
@@ -267,7 +526,14 @@
     "image_files": [
       "episode/88/assets/todo-list-witches.png"
     ],
-    "length_minutes": 0
+    "length_minutes": 14,
+    "systems": {
+      "focus": [],
+      "mentions": [
+        "timebox-lord",
+        "demihuman"
+      ]
+    }
   },
   {
     "number": 87,
@@ -283,7 +549,19 @@
       "episode/87/assets/glass-ceiling-2024-summary.png",
       "episode/87/assets/glass-ceilings.png"
     ],
-    "length_minutes": 0
+    "length_minutes": 33,
+    "systems": {
+      "focus": [
+        "glass-ceiling"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove",
+        "spider-hunter",
+        "negative-tracking",
+        "lifelog"
+      ]
+    }
   },
   {
     "number": 86,
@@ -295,19 +573,43 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/eds-86-motive-mixologist.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=12670",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 19,
+    "systems": {
+      "focus": [
+        "motive-mixologist"
+      ],
+      "mentions": [
+        "glass-ceiling",
+        "mantrafication"
+      ]
+    }
   },
   {
     "number": 85,
     "title": "Urban Ranger 2024",
     "release_date": "2024-06-02",
-    "blurb": "Urban Ranger, from scratch, as if I\u2019d never spoken or written about it before. Draft chapter for the upcoming Everyday Systems Compendium, and hopefully interesting and useful in its own right.",
+    "blurb": "Urban Ranger, from scratch, as if I’d never spoken or written about it before. Draft chapter for the upcoming Everyday Systems Compendium, and hopefully interesting and useful in its own right.",
     "youtube_id": "Ug9OxZ4ajc4",
     "youtube_url": "https://www.youtube.com/watch?v=Ug9OxZ4ajc4",
     "mp3_url": "https://media.libsyn.com/media/reinhard/eds-85-urban-ranger-2024.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=12669",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 40,
+    "systems": {
+      "focus": [
+        "urban-ranger"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove",
+        "audiodidact",
+        "study-habit",
+        "timebox-lord",
+        "vc-cat",
+        "lifelog",
+        "mantrafication"
+      ]
+    }
   },
   {
     "number": 84,
@@ -319,19 +621,43 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/eds-84-hygiene-hypothesis-explains-everything.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=12665",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 20,
+    "systems": {
+      "focus": [],
+      "mentions": [
+        "urban-ranger",
+        "glass-ceiling",
+        "spider-hunter"
+      ]
+    }
   },
   {
     "number": 83,
     "title": "The No S Diet 2024",
     "release_date": "2024-02-29",
-    "blurb": "The No S Diet, from scratch, as if I\u2019d never spoken or written about it before. Draft chapter for the upcoming Everyday Systems Compendium, and hopefully interesting and useful in its own right.",
+    "blurb": "The No S Diet, from scratch, as if I’d never spoken or written about it before. Draft chapter for the upcoming Everyday Systems Compendium, and hopefully interesting and useful in its own right.",
     "youtube_id": "4lWvwcF5sh0",
     "youtube_url": "https://www.youtube.com/watch?v=4lWvwcF5sh0",
     "mp3_url": "https://media.libsyn.com/media/reinhard/eds-83-nosdiet-chapter-for-compendium.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=12663",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 42,
+    "systems": {
+      "focus": [
+        "no-s-diet"
+      ],
+      "mentions": [
+        "intelligent-dietary-defaults",
+        "surgical-flogging",
+        "shovelglove",
+        "urban-ranger",
+        "fourteen-minutes",
+        "glass-ceiling",
+        "low-smoking",
+        "weekend-luddite",
+        "right-relationship-robots"
+      ]
+    }
   },
   {
     "number": 82,
@@ -345,7 +671,23 @@
     "image_files": [
       "episode/82/assets/splinter-free.jpg"
     ],
-    "length_minutes": 0
+    "length_minutes": 25,
+    "systems": {
+      "focus": [],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove",
+        "fourteen-minutes",
+        "glass-ceiling",
+        "weekend-luddite",
+        "timebox-lord",
+        "vc-cat",
+        "negative-tracking",
+        "personal-punch-cards",
+        "lifelog",
+        "good-redundancy"
+      ]
+    }
   },
   {
     "number": 81,
@@ -357,13 +699,32 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/eds-81-state-of-systems-2023.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=12659",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 25,
+    "systems": {
+      "focus": [
+        "no-s-diet",
+        "surgical-flogging",
+        "shovelglove",
+        "urban-ranger",
+        "glass-ceiling",
+        "weekend-luddite",
+        "study-habit",
+        "spider-hunter",
+        "personal-punch-cards",
+        "lifelog"
+      ],
+      "mentions": [
+        "right-relationship-robots",
+        "loose-lips",
+        "good-redundancy"
+      ]
+    }
   },
   {
     "number": 80,
     "title": "Antimantras & Repetitive Thought Injuries",
     "release_date": "2023-11-30",
-    "blurb": "I think I mix about 14 metaphors in this episode: We\u2019ve got a goose-stepping white bear baseball player with devil horns doing jiu jitsu on the death star. A ridiculous chimera, if you put it all together. But maybe just the guardian-gargoyle image you need to keep the antimantras at bay.",
+    "blurb": "I think I mix about 14 metaphors in this episode: We’ve got a goose-stepping white bear baseball player with devil horns doing jiu jitsu on the death star. A ridiculous chimera, if you put it all together. But maybe just the guardian-gargoyle image you need to keep the antimantras at bay.",
     "youtube_id": "8nkV_5d3MeU",
     "youtube_url": "https://www.youtube.com/watch?v=8nkV_5d3MeU",
     "mp3_url": "https://media.libsyn.com/media/reinhard/eds-80-antimantras.mp3",
@@ -371,7 +732,15 @@
     "image_files": [
       "episode/80/assets/baseball-scream.png"
     ],
-    "length_minutes": 0
+    "length_minutes": 29,
+    "systems": {
+      "focus": [],
+      "mentions": [
+        "audiodidact",
+        "spider-hunter",
+        "mantrafication"
+      ]
+    }
   },
   {
     "number": 79,
@@ -385,7 +754,14 @@
     "image_files": [
       "episode/79/assets/girl-with-pet-demon.webp"
     ],
-    "length_minutes": 0
+    "length_minutes": 14,
+    "systems": {
+      "focus": [],
+      "mentions": [
+        "demogorgon-vs-asmodeus",
+        "spider-hunter"
+      ]
+    }
   },
   {
     "number": 78,
@@ -401,7 +777,15 @@
       "episode/78/assets/CBT-Game-in-PC.jpg",
       "episode/78/assets/GiantSpider.png"
     ],
-    "length_minutes": 0
+    "length_minutes": 20,
+    "systems": {
+      "focus": [
+        "spider-hunter"
+      ],
+      "mentions": [
+        "lifelog"
+      ]
+    }
   },
   {
     "number": 77,
@@ -418,7 +802,17 @@
       "episode/77/assets/aristo-van-gogh.png",
       "episode/77/assets/template-of-life.png"
     ],
-    "length_minutes": 0
+    "length_minutes": 20,
+    "systems": {
+      "focus": [
+        "aristotelian-self-portrait"
+      ],
+      "mentions": [
+        "shovelglove",
+        "personal-punch-cards",
+        "mantrafication"
+      ]
+    }
   },
   {
     "number": 76,
@@ -432,7 +826,23 @@
     "image_files": [
       "episode/76/assets/mephisto-robo-harvey.png"
     ],
-    "length_minutes": 0
+    "length_minutes": 33,
+    "systems": {
+      "focus": [
+        "my-friend-chatgpt"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove",
+        "urban-ranger",
+        "weekend-luddite",
+        "study-habit",
+        "right-relationship-robots",
+        "apps-for-mentats",
+        "personal-punch-cards",
+        "lifelog"
+      ]
+    }
   },
   {
     "number": 75,
@@ -446,7 +856,22 @@
     "image_files": [
       "episode/75/assets/renaissance-mentat.png"
     ],
-    "length_minutes": 0
+    "length_minutes": 12,
+    "systems": {
+      "focus": [
+        "apps-for-mentats"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove",
+        "urban-ranger",
+        "weekend-luddite",
+        "study-habit",
+        "right-relationship-robots",
+        "personal-punch-cards",
+        "habitcal"
+      ]
+    }
   },
   {
     "number": 74,
@@ -460,7 +885,16 @@
     "image_files": [
       "episode/74/assets/dwarves-cleaning-bilbos-plates.png"
     ],
-    "length_minutes": 0
+    "length_minutes": 11,
+    "systems": {
+      "focus": [
+        "demihuman"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "vc-cat"
+      ]
+    }
   },
   {
     "number": 73,
@@ -474,7 +908,19 @@
     "image_files": [
       "episode/73/assets/demihuman-imposter.png"
     ],
-    "length_minutes": 0
+    "length_minutes": 16,
+    "systems": {
+      "focus": [
+        "demihuman"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove",
+        "glass-ceiling",
+        "vc-cat",
+        "posifactive"
+      ]
+    }
   },
   {
     "number": 72,
@@ -488,7 +934,28 @@
     "image_files": [
       "episode/72/assets/sledgehammer-mosaic-2022.png"
     ],
-    "length_minutes": 0
+    "length_minutes": 20,
+    "systems": {
+      "focus": [
+        "no-s-diet",
+        "surgical-flogging",
+        "shovelglove",
+        "urban-ranger",
+        "glass-ceiling",
+        "weekend-luddite",
+        "audiodidact",
+        "study-habit",
+        "vc-cat",
+        "posifactive",
+        "mindful-bagful",
+        "personal-punch-cards",
+        "lifelog"
+      ],
+      "mentions": [
+        "mantrafication",
+        "good-redundancy"
+      ]
+    }
   },
   {
     "number": 71,
@@ -502,13 +969,19 @@
     "image_files": [
       "episode/71/assets/bad-manners-at-table.png"
     ],
-    "length_minutes": 0
+    "length_minutes": 8,
+    "systems": {
+      "focus": [
+        "last-wordism"
+      ],
+      "mentions": []
+    }
   },
   {
     "number": 70,
     "title": "Surgical Flogging",
     "release_date": "2022-11-04",
-    "blurb": "Food logging: apparently it works. But it's torture to do long term. I discuss a way you can practice a limited, strategic, surgical form of food logging with the No S Diet (or any other diet) that gives you the benefits of food logging \u2013 which are real, potentially at least \u2013 without the protracted and probably futile misery.",
+    "blurb": "Food logging: apparently it works. But it's torture to do long term. I discuss a way you can practice a limited, strategic, surgical form of food logging with the No S Diet (or any other diet) that gives you the benefits of food logging – which are real, potentially at least – without the protracted and probably futile misery.",
     "youtube_id": "amzw6KB8SuI",
     "youtube_url": "https://www.youtube.com/watch?v=amzw6KB8SuI",
     "mp3_url": "https://media.libsyn.com/media/reinhard/eds-70-surgical-flogging.mp3",
@@ -516,7 +989,19 @@
     "image_files": [
       "episode/70/assets/hamburger_flagellants.png"
     ],
-    "length_minutes": 0
+    "length_minutes": 28,
+    "systems": {
+      "focus": [
+        "surgical-flogging",
+        "no-s-diet"
+      ],
+      "mentions": [
+        "negative-tracking",
+        "habitcal",
+        "lifelog",
+        "good-redundancy"
+      ]
+    }
   },
   {
     "number": 69,
@@ -530,7 +1015,18 @@
     "image_files": [
       "episode/69/assets/shovelglove-recovering.jpg"
     ],
-    "length_minutes": 0
+    "length_minutes": 32,
+    "systems": {
+      "focus": [
+        "shovelglove"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "fourteen-minutes",
+        "personal-punch-cards",
+        "lifelog"
+      ]
+    }
   },
   {
     "number": 68,
@@ -544,7 +1040,11 @@
     "image_files": [
       "episode/68/assets/mustang-water.jpg"
     ],
-    "length_minutes": 0
+    "length_minutes": 18,
+    "systems": {
+      "focus": [],
+      "mentions": []
+    }
   },
   {
     "number": 67,
@@ -558,7 +1058,19 @@
     "image_files": [
       "episode/67/assets/whackimage.jpg"
     ],
-    "length_minutes": 0
+    "length_minutes": 27,
+    "systems": {
+      "focus": [],
+      "mentions": [
+        "no-s-diet",
+        "glass-ceiling",
+        "audiodidact",
+        "personal-punch-cards",
+        "lifelog",
+        "mantrafication",
+        "good-redundancy"
+      ]
+    }
   },
   {
     "number": 66,
@@ -572,7 +1084,24 @@
     "image_files": [
       "episode/66/assets/gregor.jpg"
     ],
-    "length_minutes": 0
+    "length_minutes": 20,
+    "systems": {
+      "focus": [
+        "right-relationship-robots"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove",
+        "urban-ranger",
+        "weekend-luddite",
+        "study-habit",
+        "g-ray-vision",
+        "timebox-lord",
+        "vc-cat",
+        "personal-punch-cards",
+        "lifelog"
+      ]
+    }
   },
   {
     "number": 65,
@@ -584,7 +1113,13 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/eds-65-mindful-bagful.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=12612",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 9,
+    "systems": {
+      "focus": [
+        "mindful-bagful"
+      ],
+      "mentions": []
+    }
   },
   {
     "number": 64,
@@ -604,31 +1139,99 @@
       "episode/64/assets/image6.png",
       "episode/64/assets/image7.png"
     ],
-    "length_minutes": 0
+    "length_minutes": 35,
+    "systems": {
+      "focus": [
+        "personal-punch-cards",
+        "lifelog",
+        "mantrafication",
+        "loose-lips"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove",
+        "urban-ranger",
+        "glass-ceiling",
+        "low-smoking",
+        "weekend-luddite",
+        "audiodidact",
+        "study-habit",
+        "timebox-lord",
+        "vc-cat",
+        "right-relationship-robots",
+        "demihuman",
+        "habit-traffic-light",
+        "habitcal",
+        "aristotelian-self-portrait"
+      ]
+    }
   },
   {
     "number": 63,
     "title": "State of the Systems 2021, Part 2 (Soul Systems)",
     "release_date": "2022-02-28",
-    "blurb": "Soul systems are systems for detaching yourself from the frenzy of everyday life to reflect, for learning, for recovering, for devoting more of your limited time to what\u2019s important, for figuring out what\u2019s important to begin with. Systems discussed include: Audiodidact. The Study Habit. Demogorgon vs. Asmodeus, Timebox Lord, G-Ray Vision, VC Cat, Posifactive and Weekend Luddite..",
+    "blurb": "Soul systems are systems for detaching yourself from the frenzy of everyday life to reflect, for learning, for recovering, for devoting more of your limited time to what’s important, for figuring out what’s important to begin with. Systems discussed include: Audiodidact. The Study Habit. Demogorgon vs. Asmodeus, Timebox Lord, G-Ray Vision, VC Cat, Posifactive and Weekend Luddite..",
     "youtube_id": "B9-mClalIrU",
     "youtube_url": "https://www.youtube.com/watch?v=B9-mClalIrU",
     "mp3_url": "https://media.libsyn.com/media/reinhard/eds-63-state-2021-part-2.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=12607",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 29,
+    "systems": {
+      "focus": [
+        "weekend-luddite",
+        "audiodidact",
+        "study-habit",
+        "g-ray-vision",
+        "demogorgon-vs-asmodeus",
+        "timebox-lord",
+        "vc-cat",
+        "posifactive"
+      ],
+      "mentions": [
+        "shovelglove",
+        "urban-ranger",
+        "personal-punch-cards",
+        "lifelog",
+        "mantrafication"
+      ]
+    }
   },
   {
     "number": 62,
     "title": "State of the Systems 2021, Part 1 (Body & Spirits)",
     "release_date": "2022-01-14",
-    "blurb": "2021 was miserable in most respects, but it\u2019s been another fantastic opportunity to test the true mettle of Everyday Systems. Part 1 reviews Body and Spirits systems: The No S Diet, Shoveglove, Urban Ranger, Lawful Good Biker, Glass Ceiling, Low Smoking.",
+    "blurb": "2021 was miserable in most respects, but it’s been another fantastic opportunity to test the true mettle of Everyday Systems. Part 1 reviews Body and Spirits systems: The No S Diet, Shoveglove, Urban Ranger, Lawful Good Biker, Glass Ceiling, Low Smoking.",
     "youtube_id": "DjwabKO0oiE",
     "youtube_url": "https://www.youtube.com/watch?v=DjwabKO0oiE",
     "mp3_url": "https://media.libsyn.com/media/reinhard/eds-62-state-2021-part-1.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=12605",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 24,
+    "systems": {
+      "focus": [
+        "no-s-diet",
+        "shovelglove",
+        "urban-ranger",
+        "lawful-good-biker",
+        "glass-ceiling",
+        "low-smoking"
+      ],
+      "mentions": [
+        "weekend-luddite",
+        "audiodidact",
+        "study-habit",
+        "g-ray-vision",
+        "demogorgon-vs-asmodeus",
+        "timebox-lord",
+        "vc-cat",
+        "negative-tracking",
+        "personal-punch-cards",
+        "lifelog",
+        "mantrafication",
+        "loose-lips"
+      ]
+    }
   },
   {
     "number": 61,
@@ -642,7 +1245,16 @@
     "image_files": [
       "episode/61/assets/vc-cat.jpg"
     ],
-    "length_minutes": 0
+    "length_minutes": 10,
+    "systems": {
+      "focus": [
+        "vc-cat"
+      ],
+      "mentions": [
+        "personal-punch-cards",
+        "lifelog"
+      ]
+    }
   },
   {
     "number": 60,
@@ -654,7 +1266,19 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/EDS_60_Study_Habit_II.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=12595",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 31,
+    "systems": {
+      "focus": [
+        "study-habit"
+      ],
+      "mentions": [
+        "shovelglove",
+        "urban-ranger",
+        "audiodidact",
+        "timebox-lord",
+        "lifelog"
+      ]
+    }
   },
   {
     "number": 59,
@@ -666,7 +1290,13 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/eds-59-study-habit-part-1.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=12595",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 15,
+    "systems": {
+      "focus": [
+        "study-habit"
+      ],
+      "mentions": []
+    }
   },
   {
     "number": 58,
@@ -678,7 +1308,17 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/eds-58-loose-lips.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=12590",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 6,
+    "systems": {
+      "focus": [
+        "loose-lips"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove",
+        "urban-ranger"
+      ]
+    }
   },
   {
     "number": 57,
@@ -690,7 +1330,13 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/eds-57-posifactive.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=12581",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 6,
+    "systems": {
+      "focus": [
+        "posifactive"
+      ],
+      "mentions": []
+    }
   },
   {
     "number": 56,
@@ -702,7 +1348,20 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/eds-56-good-redundancy.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=12578",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 12,
+    "systems": {
+      "focus": [
+        "good-redundancy"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "intelligent-dietary-defaults",
+        "negative-tracking",
+        "personal-punch-cards",
+        "lifelog",
+        "mantrafication"
+      ]
+    }
   },
   {
     "number": 55,
@@ -721,7 +1380,20 @@
       "episode/55/assets/image5.png",
       "episode/55/assets/image6.png"
     ],
-    "length_minutes": 0
+    "length_minutes": 22,
+    "systems": {
+      "focus": [
+        "lifelog"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove",
+        "glass-ceiling",
+        "habit-traffic-light",
+        "personal-punch-cards",
+        "habitcal"
+      ]
+    }
   },
   {
     "number": 54,
@@ -733,7 +1405,30 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/201231_1750.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=12466",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 20,
+    "systems": {
+      "focus": [
+        "no-s-diet",
+        "shovelglove",
+        "urban-ranger",
+        "weekend-luddite",
+        "study-habit",
+        "timebox-lord",
+        "personal-punch-cards",
+        "lifelog"
+      ],
+      "mentions": [
+        "lawful-good-biker",
+        "glass-ceiling",
+        "low-smoking",
+        "audiodidact",
+        "g-ray-vision",
+        "demogorgon-vs-asmodeus",
+        "habitcal",
+        "mantrafication",
+        "chain-self-command"
+      ]
+    }
   },
   {
     "number": 53,
@@ -745,7 +1440,15 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/eds-53-timebox-lord-final.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=12463",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 16,
+    "systems": {
+      "focus": [
+        "timebox-lord"
+      ],
+      "mentions": [
+        "shovelglove"
+      ]
+    }
   },
   {
     "number": 52,
@@ -759,7 +1462,16 @@
     "image_files": [
       "episode/52/assets/demoVasmo.png"
     ],
-    "length_minutes": 0
+    "length_minutes": 21,
+    "systems": {
+      "focus": [
+        "demogorgon-vs-asmodeus"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "demihuman"
+      ]
+    }
   },
   {
     "number": 51,
@@ -771,7 +1483,19 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/200402_1649.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=12417",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 20,
+    "systems": {
+      "focus": [
+        "mantrafication"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove",
+        "glass-ceiling",
+        "audiodidact",
+        "personal-punch-cards"
+      ]
+    }
   },
   {
     "number": 50,
@@ -785,7 +1509,26 @@
     "image_files": [
       "episode/50/assets/mindbody.gif"
     ],
-    "length_minutes": 0
+    "length_minutes": 22,
+    "systems": {
+      "focus": [
+        "weekend-luddite",
+        "audiodidact",
+        "study-habit",
+        "g-ray-vision",
+        "low-smoking",
+        "lawful-good-biker",
+        "chain-self-command",
+        "monthly-resolution"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove",
+        "urban-ranger",
+        "glass-ceiling",
+        "personal-punch-cards"
+      ]
+    }
   },
   {
     "number": 49,
@@ -799,7 +1542,19 @@
     "image_files": [
       "episode/49/assets/2016-during.jpg"
     ],
-    "length_minutes": 0
+    "length_minutes": 16,
+    "systems": {
+      "focus": [
+        "no-s-diet",
+        "shovelglove",
+        "urban-ranger",
+        "glass-ceiling"
+      ],
+      "mentions": [
+        "intelligent-dietary-defaults",
+        "no-solitary-snacking"
+      ]
+    }
   },
   {
     "number": 48,
@@ -811,7 +1566,15 @@
     "mp3_url": null,
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=10779",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 52,
+    "systems": {
+      "focus": [
+        "no-s-diet"
+      ],
+      "mentions": [
+        "audiodidact"
+      ]
+    }
   },
   {
     "number": 47,
@@ -823,7 +1586,13 @@
     "mp3_url": null,
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=10741",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 16,
+    "systems": {
+      "focus": [],
+      "mentions": [
+        "no-s-diet"
+      ]
+    }
   },
   {
     "number": 46,
@@ -835,7 +1604,15 @@
     "mp3_url": null,
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=10705",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 7,
+    "systems": {
+      "focus": [
+        "no-s-diet"
+      ],
+      "mentions": [
+        "no-solitary-snacking"
+      ]
+    }
   },
   {
     "number": 45,
@@ -847,7 +1624,16 @@
     "mp3_url": null,
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=10699",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 7,
+    "systems": {
+      "focus": [],
+      "mentions": [
+        "no-s-diet",
+        "urban-ranger",
+        "glass-ceiling",
+        "weekend-luddite"
+      ]
+    }
   },
   {
     "number": 44,
@@ -859,7 +1645,15 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/44_Everyday_Systems_44__The_Return_of_the_General.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=9819",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 7,
+    "systems": {
+      "focus": [
+        "chain-self-command"
+      ],
+      "mentions": [
+        "scribal-filter"
+      ]
+    }
   },
   {
     "number": 43,
@@ -871,7 +1665,17 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/43_Everyday_Systems_43__Scribal_Filter_and_medium-term_task_management.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=9819",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 19,
+    "systems": {
+      "focus": [
+        "scribal-filter"
+      ],
+      "mentions": [
+        "audiodidact",
+        "personal-punch-cards",
+        "chain-self-command"
+      ]
+    }
   },
   {
     "number": 42,
@@ -885,7 +1689,15 @@
     "image_files": [
       "episode/42/assets/card_20131203_a.jpg"
     ],
-    "length_minutes": 0
+    "length_minutes": 13,
+    "systems": {
+      "focus": [
+        "personal-punch-cards"
+      ],
+      "mentions": [
+        "chain-self-command"
+      ]
+    }
   },
   {
     "number": 41,
@@ -897,7 +1709,15 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/41_Everyday_Systems_41__The__What_the_Hell__effect_and_negative_qualification.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=8416",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 11,
+    "systems": {
+      "focus": [],
+      "mentions": [
+        "no-s-diet",
+        "glass-ceiling",
+        "habitcal"
+      ]
+    }
   },
   {
     "number": 40,
@@ -909,7 +1729,16 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/40_Everyday_Systems_40__No_Solitary_Snacking_--_Even_on_S_days.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=8183",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 11,
+    "systems": {
+      "focus": [
+        "no-solitary-snacking"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "habitcal"
+      ]
+    }
   },
   {
     "number": 39,
@@ -923,7 +1752,18 @@
     "image_files": [
       "episode/39/assets/Bike_joust64.jpg"
     ],
-    "length_minutes": 0
+    "length_minutes": 5,
+    "systems": {
+      "focus": [
+        "lawful-good-biker"
+      ],
+      "mentions": [
+        "urban-ranger",
+        "audiodidact",
+        "habit-traffic-light",
+        "habitcal"
+      ]
+    }
   },
   {
     "number": 38,
@@ -935,7 +1775,14 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/39_Everyday_Systems_38__14_minutes_of_ANYTHING.MP3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=6273",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 14,
+    "systems": {
+      "focus": [
+        "shovelglove",
+        "fourteen-minutes"
+      ],
+      "mentions": []
+    }
   },
   {
     "number": 37,
@@ -947,7 +1794,18 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/37_Everyday_Systems_37__Mods_and_Tweaks_Trilogy_Part_III__When_a_mere_mod_isnt_enough.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=5387",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 20,
+    "systems": {
+      "focus": [],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove",
+        "glass-ceiling",
+        "personal-punch-cards",
+        "habitcal",
+        "chain-self-command"
+      ]
+    }
   },
   {
     "number": 36,
@@ -959,7 +1817,19 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/36_Everyday_Systems_36__Mods_and_Tweaks_Trilogy_Part_II__How_to_Tweak.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=5082",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 19,
+    "systems": {
+      "focus": [
+        "monthly-resolution"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "intelligent-dietary-defaults",
+        "shovelglove",
+        "urban-ranger",
+        "habitcal"
+      ]
+    }
   },
   {
     "number": 35,
@@ -971,7 +1841,13 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/35_Everyday_Systems_35__Mods_and_Tweaks_Trilogy_Part_I__To_Tweak_Or_Not_To_Tweak.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=4961",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 10,
+    "systems": {
+      "focus": [],
+      "mentions": [
+        "shovelglove"
+      ]
+    }
   },
   {
     "number": 34,
@@ -983,7 +1859,16 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/34_Everyday_Systems_34__S-days_Gone_Wild.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=3401",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 23,
+    "systems": {
+      "focus": [
+        "no-s-diet"
+      ],
+      "mentions": [
+        "negative-tracking",
+        "habitcal"
+      ]
+    }
   },
   {
     "number": 33,
@@ -995,7 +1880,19 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/33_Everyday_Systems_33__2007_Annual_Compliance_Review.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=2577",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 13,
+    "systems": {
+      "focus": [
+        "no-s-diet",
+        "shovelglove",
+        "glass-ceiling",
+        "weekend-luddite"
+      ],
+      "mentions": [
+        "habitcal",
+        "monthly-resolution"
+      ]
+    }
   },
   {
     "number": 32,
@@ -1007,7 +1904,19 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/32_Everyday_Systems_32__The_Bigger_8x11_Picture.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=2505",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 10,
+    "systems": {
+      "focus": [
+        "chain-self-command"
+      ],
+      "mentions": [
+        "shovelglove",
+        "urban-ranger",
+        "audiodidact",
+        "personal-punch-cards",
+        "monthly-resolution"
+      ]
+    }
   },
   {
     "number": 31,
@@ -1019,7 +1928,14 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/31_Everyday_Systems_31__The_best_piece_of_exercise_equipment_you_can_buy.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=2436",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 8,
+    "systems": {
+      "focus": [],
+      "mentions": [
+        "shovelglove",
+        "habitcal"
+      ]
+    }
   },
   {
     "number": 30,
@@ -1031,7 +1947,17 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/30_Everyday_Systems_Podcast_30__Introducing_the_HabitCal.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=2177",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 10,
+    "systems": {
+      "focus": [
+        "habitcal"
+      ],
+      "mentions": [
+        "shovelglove",
+        "glass-ceiling",
+        "habit-traffic-light"
+      ]
+    }
   },
   {
     "number": 29,
@@ -1043,7 +1969,14 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/29_Everyday_Systems_29__Top_5_Health_and_Fitness_Books_sort_of.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=2175",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 5,
+    "systems": {
+      "focus": [],
+      "mentions": [
+        "no-s-diet",
+        "habitcal"
+      ]
+    }
   },
   {
     "number": 28,
@@ -1055,7 +1988,13 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/28_Everyday_Systems_28__A_90_solution_for_diet_in_2_words.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=2063",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 9,
+    "systems": {
+      "focus": [
+        "no-s-diet"
+      ],
+      "mentions": []
+    }
   },
   {
     "number": 27,
@@ -1067,7 +2006,15 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/27_Everyday_Systems_27__Audiodidact_output.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1878",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 10,
+    "systems": {
+      "focus": [
+        "audiodidact"
+      ],
+      "mentions": [
+        "urban-ranger"
+      ]
+    }
   },
   {
     "number": 26,
@@ -1079,7 +2026,15 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/26_Everyday_Systems_26__Audiodidact_input.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1818",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 7,
+    "systems": {
+      "focus": [
+        "audiodidact"
+      ],
+      "mentions": [
+        "urban-ranger"
+      ]
+    }
   },
   {
     "number": 25,
@@ -1091,7 +2046,15 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/25_Everyday_Systems_Podcast_25__Compound_and_Atomic_Tasks.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1792",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 8,
+    "systems": {
+      "focus": [],
+      "mentions": [
+        "shovelglove",
+        "personal-punch-cards",
+        "chain-self-command"
+      ]
+    }
   },
   {
     "number": 24,
@@ -1103,7 +2066,14 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/Everyday_Systems_24__Put_the_scale_in_perspective.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1741",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 8,
+    "systems": {
+      "focus": [],
+      "mentions": [
+        "no-s-diet",
+        "habit-traffic-light"
+      ]
+    }
   },
   {
     "number": 23,
@@ -1115,7 +2085,16 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/Everyday_Systems_23__Intelligent_Dietary_Defaults.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1726",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 10,
+    "systems": {
+      "focus": [
+        "intelligent-dietary-defaults"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "urban-ranger"
+      ]
+    }
   },
   {
     "number": 22,
@@ -1127,7 +2106,14 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/Everyday_Systems_22__In_Defense_of__Failure_.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1699",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 6,
+    "systems": {
+      "focus": [],
+      "mentions": [
+        "no-s-diet",
+        "habit-traffic-light"
+      ]
+    }
   },
   {
     "number": 21,
@@ -1139,7 +2125,16 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/Everyday_Systems_21__Extreme_Moderation.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1669",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 9,
+    "systems": {
+      "focus": [],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove",
+        "urban-ranger",
+        "glass-ceiling"
+      ]
+    }
   },
   {
     "number": 20,
@@ -1151,7 +2146,16 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/Everyday_Systems_20__When_you_dont_have_14_minutes.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1643",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 8,
+    "systems": {
+      "focus": [
+        "shovelglove"
+      ],
+      "mentions": [
+        "habit-traffic-light",
+        "negative-tracking"
+      ]
+    }
   },
   {
     "number": 19,
@@ -1163,7 +2167,19 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/Everyday_Systems_19__Personal_Punch_Cards.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1616",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 11,
+    "systems": {
+      "focus": [
+        "personal-punch-cards"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove",
+        "chain-self-command",
+        "personal-olympics",
+        "monthly-resolution"
+      ]
+    }
   },
   {
     "number": 18,
@@ -1175,7 +2191,17 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/Everyday_Systems_18__Chain_of_Self_Command.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1588",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 10,
+    "systems": {
+      "focus": [
+        "chain-self-command"
+      ],
+      "mentions": [
+        "habit-traffic-light",
+        "personal-punch-cards",
+        "monthly-resolution"
+      ]
+    }
   },
   {
     "number": 17,
@@ -1187,7 +2213,18 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/Everyday_Systems_17__Personal_Olympics.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1523",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 8,
+    "systems": {
+      "focus": [
+        "personal-olympics"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove",
+        "habit-traffic-light",
+        "monthly-resolution"
+      ]
+    }
   },
   {
     "number": 16,
@@ -1199,7 +2236,15 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/Everyday_Systems_16__Monthly_Resolution.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1504",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 5,
+    "systems": {
+      "focus": [
+        "monthly-resolution"
+      ],
+      "mentions": [
+        "habit-traffic-light"
+      ]
+    }
   },
   {
     "number": 15,
@@ -1211,7 +2256,17 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/Everyday_Systems_15__Seasons_Warnings.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1483",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 8,
+    "systems": {
+      "focus": [
+        "seasons-warnings"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove",
+        "negative-tracking"
+      ]
+    }
   },
   {
     "number": 14,
@@ -1223,7 +2278,15 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/Everyday_Systems_14__Top_5_Abitrary_Numbers.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1439",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 6,
+    "systems": {
+      "focus": [],
+      "mentions": [
+        "shovelglove",
+        "personal-olympics",
+        "monthly-resolution"
+      ]
+    }
   },
   {
     "number": 13,
@@ -1235,7 +2298,13 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/Everyday_Systems__13__Strictness.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1424",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 7,
+    "systems": {
+      "focus": [],
+      "mentions": [
+        "no-s-diet"
+      ]
+    }
   },
   {
     "number": 12,
@@ -1247,7 +2316,14 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/Everyday_Systems__12__Negative_Tracking.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1403",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 6,
+    "systems": {
+      "focus": [
+        "negative-tracking",
+        "habit-traffic-light"
+      ],
+      "mentions": []
+    }
   },
   {
     "number": 11,
@@ -1259,7 +2335,16 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/Everyday_Systems_11__Habit_Tracking.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1379",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 7,
+    "systems": {
+      "focus": [
+        "habit-traffic-light"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove"
+      ]
+    }
   },
   {
     "number": 10,
@@ -1271,7 +2356,14 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/Everyday_Systems_10__Habit_Friendly_Behaviors.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1366",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 6,
+    "systems": {
+      "focus": [],
+      "mentions": [
+        "no-s-diet",
+        "shovelglove"
+      ]
+    }
   },
   {
     "number": 9,
@@ -1283,7 +2375,11 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/Everyday_Systems_9__Habit_Management.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1348",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 9,
+    "systems": {
+      "focus": [],
+      "mentions": []
+    }
   },
   {
     "number": 8,
@@ -1295,7 +2391,13 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/Everyday_Systems_8__Glass_Ceiling.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1336",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 9,
+    "systems": {
+      "focus": [
+        "glass-ceiling"
+      ],
+      "mentions": []
+    }
   },
   {
     "number": 7,
@@ -1307,7 +2409,15 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/Everyday_Systems_7__Weekend_Luddite.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1321",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 9,
+    "systems": {
+      "focus": [
+        "weekend-luddite"
+      ],
+      "mentions": [
+        "glass-ceiling"
+      ]
+    }
   },
   {
     "number": 6,
@@ -1319,7 +2429,15 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/Everyday_Systems_6___Urban_Ranger.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1296",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 8,
+    "systems": {
+      "focus": [
+        "urban-ranger"
+      ],
+      "mentions": [
+        "weekend-luddite"
+      ]
+    }
   },
   {
     "number": 5,
@@ -1331,7 +2449,16 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/Everyday_Systems_5__Shovelglove__when_.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1251",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 9,
+    "systems": {
+      "focus": [
+        "shovelglove"
+      ],
+      "mentions": [
+        "no-s-diet",
+        "urban-ranger"
+      ]
+    }
   },
   {
     "number": 4,
@@ -1343,7 +2470,13 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/Everyday_Systems_4__Shovelglove__what_.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1251",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 9,
+    "systems": {
+      "focus": [
+        "shovelglove"
+      ],
+      "mentions": []
+    }
   },
   {
     "number": 3,
@@ -1355,7 +2488,15 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/Everyday_Systems_3__No_S_Diet_Rules.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1201",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 10,
+    "systems": {
+      "focus": [
+        "no-s-diet"
+      ],
+      "mentions": [
+        "shovelglove"
+      ]
+    }
   },
   {
     "number": 2,
@@ -1367,7 +2508,13 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/Everyday_Systems_2__No_S_Diet_Overview.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1201",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 6,
+    "systems": {
+      "focus": [
+        "no-s-diet"
+      ],
+      "mentions": []
+    }
   },
   {
     "number": 1,
@@ -1379,6 +2526,16 @@
     "mp3_url": "https://media.libsyn.com/media/reinhard/Everyday_Systems_1__Introduction.mp3",
     "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=1163",
     "image_files": [],
-    "length_minutes": 0
+    "length_minutes": 16,
+    "systems": {
+      "focus": [
+        "no-s-diet",
+        "shovelglove",
+        "urban-ranger",
+        "glass-ceiling",
+        "weekend-luddite"
+      ],
+      "mentions": []
+    }
   }
 ]

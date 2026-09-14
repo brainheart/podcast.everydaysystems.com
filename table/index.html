@@ -4,214 +4,501 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Everyday Systems Podcast - Table View</title>
-<link rel="canonical" href="https://podcast.everydaysystems.com/table/" />
-<meta name="description" content="Sort and filter Everyday Systems Podcast episodes by episode number, title, release date, duration, and available media." />
+  <link rel="canonical" href="https://podcast.everydaysystems.com/table/" />
+  <meta name="description" content="Sort and filter Everyday Systems Podcast episodes by episode number, title, release date, duration, and referenced systems." />
   <style>
+    :root {
+      --ink: #292929;
+      --muted: #68645f;
+      --paper: #fff;
+      --soft-paper: #f7f5f0;
+      --line: #d8d2c8;
+      --accent: #6e2d34;
+      --accent-dark: #4f2026;
+      --focus-ring: #1d65a6;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
+      color: var(--ink);
       font-family: Arial, Helvetica, Geneva, sans-serif;
       background-image: url(../assets/images/random_grey_variations.png);
       margin: 0;
       padding: 20px;
     }
-    
+
+    button, input { font: inherit; }
+
+    button:focus-visible,
+    input:focus-visible,
+    summary:focus-visible,
+    a:focus-visible {
+      outline: 3px solid color-mix(in srgb, var(--focus-ring) 60%, transparent);
+      outline-offset: 2px;
+    }
+
     #main {
       max-width: 1400px;
       margin: 0 auto;
       background-image: url(../assets/images/white_texture.png);
-      padding: 20px;
+      padding: 22px;
       border-radius: 11px;
     }
-    
+
     h1 {
       font-size: 125%;
-      margin-bottom: 10px;
+      margin: 0 0 10px;
     }
-    
+
     .nav-links {
       margin-bottom: 20px;
       font-size: 90%;
     }
-    
-    .filter-container {
-      margin: 20px 0;
+
+    .controls {
       display: flex;
-      gap: 15px;
       flex-wrap: wrap;
-      align-items: center;
+      align-items: end;
+      gap: 10px;
+      padding: 12px;
+      background: color-mix(in srgb, var(--soft-paper) 88%, transparent);
+      border: 1px solid var(--line);
+      border-radius: 8px;
     }
-    
-    .filter-group {
-      display: flex;
-      align-items: center;
-      gap: 5px;
+
+    .search-field {
+      display: grid;
+      gap: 4px;
+      flex: 1 1 300px;
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 78%;
+      font-weight: bold;
+      letter-spacing: .02em;
+      text-transform: uppercase;
     }
-    
-    .filter-group label {
-      font-size: 90%;
+
+    .search-field input {
+      width: 100%;
+      padding: 8px 10px;
+      color: var(--ink);
+      background: var(--paper);
+      border: 1px solid #aaa39a;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: normal;
+      letter-spacing: normal;
+      text-transform: none;
+    }
+
+    .system-picker { position: relative; }
+
+    .system-picker > summary,
+    .clear-filters {
+      min-height: 35px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 11px;
+      border-radius: 5px;
+      cursor: pointer;
+      user-select: none;
+      list-style: none;
+    }
+
+    .system-picker > summary {
+      color: #fff;
+      background: var(--accent);
+      border: 1px solid var(--accent-dark);
       font-weight: bold;
     }
-    
-    .filter-group input {
-      padding: 5px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-      font-size: 90%;
+
+    .system-picker > summary::-webkit-details-marker { display: none; }
+    .system-picker > summary::after { content: "▾"; font-size: 80%; }
+    .system-picker[open] > summary::after { content: "▴"; }
+
+    .filter-count {
+      display: none;
+      min-width: 19px;
+      padding: 1px 5px;
+      color: var(--accent-dark);
+      background: #fff;
+      border-radius: 999px;
+      font-size: 11px;
+      text-align: center;
     }
-    
-    .clear-filters {
-      padding: 5px 10px;
-      background: #666;
-      color: white;
-      border: none;
-      border-radius: 3px;
+
+    .filter-count.is-visible { display: inline-block; }
+
+    .system-popover {
+      position: absolute;
+      z-index: 20;
+      top: calc(100% + 7px);
+      right: 0;
+      width: min(620px, calc(100vw - 60px));
+      max-height: min(620px, 72vh);
+      overflow: auto;
+      padding: 16px;
+      background: #fff;
+      border: 1px solid #aaa39a;
+      border-radius: 8px;
+      box-shadow: 0 12px 32px rgba(30, 25, 20, .18);
+    }
+
+    .popover-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+
+    .popover-heading strong { font-size: 15px; }
+
+    .popover-help {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .scope-control {
+      display: inline-flex;
+      padding: 2px;
+      background: #e9e5df;
+      border-radius: 6px;
+      margin-bottom: 14px;
+    }
+
+    .scope-control button {
+      padding: 6px 10px;
+      color: #514d48;
+      background: transparent;
+      border: 0;
+      border-radius: 4px;
       cursor: pointer;
-      font-size: 90%;
+      font-size: 12px;
     }
-    
-    .clear-filters:hover {
-      background: #444;
+
+    .scope-control button[aria-pressed="true"] {
+      color: var(--ink);
+      background: #fff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .14);
+      font-weight: bold;
     }
-    
+
+    .system-group + .system-group { margin-top: 13px; }
+
+    .system-group h2 {
+      margin: 0 0 6px;
+      color: #514d48;
+      font-size: 11px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .system-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .system-option,
+    .system-tag,
+    .filter-chip {
+      --tag-color: #666;
+      border: 1px solid var(--tag-color);
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .system-option {
+      padding: 4px 8px;
+      color: var(--tag-color);
+      background: #fff;
+      cursor: pointer;
+      font-size: 11px;
+    }
+
+    .system-option[aria-pressed="true"] {
+      color: #fff;
+      background: var(--tag-color);
+      font-weight: bold;
+    }
+
+    .clear-filters {
+      color: #4e4b47;
+      background: transparent;
+      border: 1px solid #aaa39a;
+      font-size: 13px;
+    }
+
+    .clear-filters:hover { background: #eeebe6; }
+    .clear-filters:disabled { opacity: .45; cursor: default; }
+
+    .active-filters {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      min-height: 25px;
+      margin: 8px 1px 0;
+    }
+
+    .filter-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 7px 3px 9px;
+      color: var(--tag-color);
+      background: #fff;
+      font-size: 11px;
+    }
+
+    .filter-chip button {
+      width: 16px;
+      height: 16px;
+      padding: 0;
+      color: inherit;
+      background: transparent;
+      border: 0;
+      border-radius: 50%;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .scope-chip {
+      color: #fff;
+      background: #5c5853;
+      border-color: #5c5853;
+    }
+
+    .key-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px 18px;
+      margin: 9px 2px 5px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .relationship-key,
+    .group-key {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 5px 10px;
+    }
+
+    .key-tag {
+      display: inline-block;
+      padding: 1px 6px;
+      border: 1px solid #6f6860;
+      border-radius: 999px;
+    }
+
+    .key-tag.focus { color: #fff; background: #6f6860; font-weight: bold; }
+
+    .group-key-item { display: inline-flex; align-items: center; gap: 4px; }
+    .group-dot { width: 8px; height: 8px; background: var(--group-color); border-radius: 50%; }
+
+    .results-count {
+      margin: 10px 2px 6px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .table-scroll {
+      max-height: 72vh;
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(40, 35, 30, .06);
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 10px;
-      font-size: 90%;
+      font-size: 13px;
     }
-    
+
+    caption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
     th {
-      background: #f0f0f0;
-      padding: 10px 8px;
+      position: sticky;
+      z-index: 5;
+      top: 0;
+      padding: 0;
       text-align: left;
-      border-bottom: 2px solid #ccc;
+      background: linear-gradient(#f4f1ec, #e9e5df);
+      border-bottom: 2px solid #bcb4aa;
+    }
+
+    th button {
+      width: 100%;
+      padding: 10px 8px;
+      color: var(--ink);
+      background: transparent;
+      border: 0;
       cursor: pointer;
-      user-select: none;
-      position: relative;
-    }
-    
-    th:hover {
-      background: #e0e0e0;
-    }
-    
-    th.sortable::after {
-      content: ' ⇅';
-      color: #999;
-      font-size: 80%;
-    }
-    
-    th.sort-asc::after {
-      content: ' ↑';
-      color: #333;
-    }
-    
-    th.sort-desc::after {
-      content: ' ↓';
-      color: #333;
-    }
-    
-    td {
-      padding: 8px;
-      border-bottom: 1px solid #eee;
-    }
-    
-    tr:hover {
-      background: #f9f9f9;
-    }
-    
-    .episode-number {
-      text-align: center;
+      text-align: left;
       font-weight: bold;
     }
-    
-    .episode-date {
-      white-space: nowrap;
+
+    th button:hover { background: rgba(255, 255, 255, .45); }
+    th .sort-indicator { color: #77716a; font-size: 10px; }
+
+    td {
+      padding: 8px;
+      vertical-align: top;
+      border-bottom: 1px solid #e8e4de;
     }
-    
-    .episode-title a {
-      color: #0066cc;
-      text-decoration: none;
+
+    tbody tr:nth-child(even) { background: #fbfaf7; }
+    tbody tr:hover { background: #f6f0dd; }
+
+    .episode-number,
+    .episode-length { text-align: center; font-variant-numeric: tabular-nums; }
+    .episode-number { font-weight: bold; }
+    .episode-date { white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .episode-title { min-width: 155px; }
+    .episode-title a { color: #075f9e; text-decoration: none; }
+    .episode-title a:hover { text-decoration: underline; }
+    .episode-description { min-width: 330px; line-height: 1.35; }
+
+    .system-tags {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 4px;
+      margin-top: 6px;
     }
-    
-    .episode-title a:hover {
-      text-decoration: underline;
+
+    .system-tag {
+      display: inline-block;
+      padding: 2px 6px;
+      color: var(--tag-color);
+      background: #fff;
+      font-size: 10px;
+      line-height: 1.25;
     }
-    
-    .episode-length {
-      text-align: center;
+
+    .system-tag.focus { color: #fff; background: var(--tag-color); font-weight: bold; }
+
+    .more-tags { display: inline; }
+    .more-tags summary {
+      display: inline-block;
+      color: #59544e;
+      cursor: pointer;
+      list-style: none;
+      border-bottom: 1px dotted #77716a;
+      font-size: 10px;
     }
-    
+    .more-tags summary::-webkit-details-marker { display: none; }
+    .more-tags[open] { display: flex; flex-basis: 100%; flex-wrap: wrap; gap: 4px; }
+    .more-tags[open] summary { flex-basis: 100%; width: max-content; }
+
     .no-results {
-      text-align: center;
       padding: 40px;
-      color: #666;
+      color: var(--muted);
+      text-align: center;
       font-style: italic;
     }
-    
-    .results-count {
-      margin: 10px 0;
-      font-size: 90%;
-      color: #666;
-    }
-    
+
     footer {
-      margin-top: 30px;
-      padding-top: 20px;
-      border-top: 1px solid #ccc;
-      font-size: 85%;
+      margin-top: 25px;
+      padding-top: 16px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: 12px;
       text-align: center;
-      color: #666;
+    }
+
+    @media (max-width: 760px) {
+      body { padding: 8px; }
+      #main { padding: 14px 10px; }
+      .controls { align-items: stretch; }
+      .system-picker { position: static; }
+      .system-popover { position: fixed; inset: 8vh 10px auto; width: auto; max-height: 82vh; }
+      .table-scroll { max-height: 70vh; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; }
     }
   </style>
 </head>
 <body>
 <div id="main">
   <h1><a href="https://everydaysystems.com">Everyday Systems</a>: <a href="../">Podcast</a> - Table View</h1>
-  
+
   <div class="nav-links">
-    <a href="../">List View</a> | 
-    <a href="http://reinhard.libsyn.com/rss">RSS</a> | 
-    <a href="https://podcasts.apple.com/us/podcast/everyday-systems-podcast/id188988881">Apple Podcasts</a> | 
-    <a href="https://open.spotify.com/show/5ZSps0RuOWK3R1aCHpeeVZ">Spotify</a> | 
+    <a href="../">List View</a> |
+    <a href="http://reinhard.libsyn.com/rss">RSS</a> |
+    <a href="https://podcasts.apple.com/us/podcast/everyday-systems-podcast/id188988881">Apple Podcasts</a> |
+    <a href="https://open.spotify.com/show/5ZSps0RuOWK3R1aCHpeeVZ">Spotify</a> |
     <a href="https://www.youtube.com/playlist?list=PLfC6J9cSGWC8PDkwb6KUWp_QShHr0S8SZ">YouTube</a>
   </div>
-  
-  <div class="filter-container">
-    <div class="filter-group">
-      <label for="filter-number">Episode #:</label>
-      <input type="text" id="filter-number" placeholder="e.g., 99">
+
+  <section aria-label="Episode filters">
+    <div class="controls">
+      <label class="search-field" for="episode-search">
+        Search episodes
+        <input type="search" id="episode-search" placeholder="Title, description, date, or episode number" autocomplete="off" />
+      </label>
+
+      <details class="system-picker" id="system-picker">
+        <summary>Systems <span class="filter-count" id="filter-count">0</span></summary>
+        <div class="system-popover">
+          <div class="popover-heading">
+            <strong>Filter by system</strong>
+          </div>
+          <p class="popover-help">Choose one or more. An episode must match every selected system.</p>
+          <div class="scope-control" aria-label="System relationship">
+            <button type="button" data-scope="any" aria-pressed="true">Any appearance</button>
+            <button type="button" data-scope="focus" aria-pressed="false">Focus only</button>
+          </div>
+          <div id="system-groups"></div>
+        </div>
+      </details>
+
+      <button type="button" class="clear-filters" id="clear-filters" disabled>Clear</button>
     </div>
-    <div class="filter-group">
-      <label for="filter-date">Date:</label>
-      <input type="text" id="filter-date" placeholder="e.g., 2025">
+
+    <div class="active-filters" id="active-filters" aria-label="Active filters"></div>
+
+    <div class="key-row">
+      <div class="relationship-key" aria-label="Tag relationship key">
+        <span class="key-tag focus">Focus</span>
+        <span class="key-tag">Mention</span>
+      </div>
+      <div class="group-key" id="group-key" aria-label="System color groups"></div>
     </div>
-    <div class="filter-group">
-      <label for="filter-title">Title:</label>
-      <input type="text" id="filter-title" placeholder="Search title">
-    </div>
-    <div class="filter-group">
-      <label for="filter-blurb">Blurb:</label>
-      <input type="text" id="filter-blurb" placeholder="Search description">
-    </div>
-    <button class="clear-filters" onclick="clearFilters()">Clear Filters</button>
+  </section>
+
+  <div class="results-count" id="results-count" aria-live="polite">Loading episodes…</div>
+
+  <div class="table-scroll">
+    <table id="episodes-table">
+      <caption>Everyday Systems Podcast episodes</caption>
+      <thead>
+        <tr>
+          <th scope="col" data-column="number" aria-sort="descending"><button type="button">Episode # <span class="sort-indicator">▼</span></button></th>
+          <th scope="col" data-column="date" aria-sort="none"><button type="button">Release Date <span class="sort-indicator">↕</span></button></th>
+          <th scope="col" data-column="title" aria-sort="none"><button type="button">Title <span class="sort-indicator">↕</span></button></th>
+          <th scope="col" data-column="blurb" aria-sort="none"><button type="button">Description <span class="sort-indicator">↕</span></button></th>
+          <th scope="col" data-column="length" aria-sort="none"><button type="button">Length (min) <span class="sort-indicator">↕</span></button></th>
+        </tr>
+      </thead>
+      <tbody id="episodes-tbody">
+        <tr><td colspan="5" class="no-results">Loading episodes…</td></tr>
+      </tbody>
+    </table>
   </div>
-  
-  <div class="results-count" id="results-count"></div>
-  
-  <table id="episodes-table">
-    <thead>
-      <tr>
-        <th class="sortable" data-column="number" onclick="sortTable('number')">Episode #</th>
-        <th class="sortable" data-column="date" onclick="sortTable('date')">Release Date</th>
-        <th class="sortable" data-column="title" onclick="sortTable('title')">Title</th>
-        <th class="sortable" data-column="blurb" onclick="sortTable('blurb')">Description</th>
-        <th class="sortable" data-column="length" onclick="sortTable('length')">Length (min)</th>
-      </tr>
-    </thead>
-    <tbody id="episodes-tbody">
-      <tr><td colspan="5" class="no-results">Loading episodes...</td></tr>
-    </tbody>
-  </table>
-  
+
   <footer>
     <p>By <a href="mailto:reinhard.engels@gmail.com">Reinhard Engels</a></p>
     <p>© 2002-<span id="current-year"></span> Reinhard Engels, All Rights Reserved.</p>
@@ -219,171 +506,302 @@
 </div>
 
 <script>
-  let episodes = [];
-  let currentSort = { column: 'number', direction: 'desc' };
-  
-  // Fetch episodes data
-  fetch('../metadata/episodes.json')
-    .then(response => response.json())
-    .then(data => {
-      episodes = data;
-      renderTable();
-      updateResultsCount();
-    })
-    .catch(error => {
-      document.getElementById('episodes-tbody').innerHTML = 
-        '<tr><td colspan="5" class="no-results">Error loading episodes data.</td></tr>';
-      console.error('Error loading episodes:', error);
-    });
-  
-  function renderTable() {
+  (() => {
+    'use strict';
+
+    const state = {
+      query: '',
+      selectedSystems: [],
+      scope: 'any',
+      sort: 'number',
+      direction: 'desc'
+    };
+
+    let episodes = [];
+    let catalog = { groups: [], systems: [] };
+    let systemsById = new Map();
+    let groupsById = new Map();
+
     const tbody = document.getElementById('episodes-tbody');
-    const filteredEpisodes = getFilteredEpisodes();
-    const sortedEpisodes = sortEpisodes(filteredEpisodes);
-    
-    if (sortedEpisodes.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="5" class="no-results">No episodes match your filters.</td></tr>';
-      return;
+    const searchInput = document.getElementById('episode-search');
+    const picker = document.getElementById('system-picker');
+    const systemGroups = document.getElementById('system-groups');
+    const activeFilters = document.getElementById('active-filters');
+    const filterCount = document.getElementById('filter-count');
+    const clearButton = document.getElementById('clear-filters');
+    const resultsCount = document.getElementById('results-count');
+    const sortableHeaders = [...document.querySelectorAll('th[data-column]')];
+
+    function escapeHtml(value) {
+      return String(value ?? '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
     }
-    
-    tbody.innerHTML = sortedEpisodes.map(ep => {
-      const transcriptUrl = `../episode/${ep.number}/`;
-      const length = ep.length_minutes > 0 ? ep.length_minutes : '—';
-      
-      return `
-        <tr>
-          <td class="episode-number">${ep.number}</td>
-          <td class="episode-date">${ep.release_date || '—'}</td>
-          <td class="episode-title"><a href="${transcriptUrl}">${escapeHtml(ep.title || 'Episode ' + ep.number)}</a></td>
-          <td>${escapeHtml(ep.blurb || '')}</td>
-          <td class="episode-length">${length}</td>
-        </tr>
-      `;
-    }).join('');
-    
-    updateSortIndicators();
-  }
-  
-  function getFilteredEpisodes() {
-    const numberFilter = document.getElementById('filter-number').value.toLowerCase();
-    const dateFilter = document.getElementById('filter-date').value.toLowerCase();
-    const titleFilter = document.getElementById('filter-title').value.toLowerCase();
-    const blurbFilter = document.getElementById('filter-blurb').value.toLowerCase();
-    
-    return episodes.filter(ep => {
-      if (numberFilter && !String(ep.number).includes(numberFilter)) return false;
-      if (dateFilter && !(ep.release_date || '').toLowerCase().includes(dateFilter)) return false;
-      if (titleFilter && !(ep.title || '').toLowerCase().includes(titleFilter)) return false;
-      if (blurbFilter && !(ep.blurb || '').toLowerCase().includes(blurbFilter)) return false;
-      return true;
+
+    function validColor(color) {
+      return /^#[0-9a-f]{6}$/i.test(color || '') ? color : '#666666';
+    }
+
+    function episodeSystems(episode, scope = state.scope) {
+      const relationships = episode.systems || {};
+      const focus = relationships.focus || [];
+      if (scope === 'focus') return focus;
+      return [...new Set([...focus, ...(relationships.mentions || [])])];
+    }
+
+    function filteredEpisodes() {
+      const query = state.query.toLocaleLowerCase();
+      return episodes.filter((episode) => {
+        const searchable = [episode.number, episode.release_date, episode.title, episode.blurb]
+          .join(' ')
+          .toLocaleLowerCase();
+        if (query && !searchable.includes(query)) return false;
+        const availableSystems = new Set(episodeSystems(episode));
+        return state.selectedSystems.every((systemId) => availableSystems.has(systemId));
+      });
+    }
+
+    function sortedEpisodes(list) {
+      const multiplier = state.direction === 'asc' ? 1 : -1;
+      return [...list].sort((a, b) => {
+        let comparison = 0;
+        if (state.sort === 'number') comparison = Number(a.number) - Number(b.number);
+        if (state.sort === 'length') comparison = Number(a.length_minutes) - Number(b.length_minutes);
+        if (state.sort === 'date') comparison = String(a.release_date || '').localeCompare(String(b.release_date || ''));
+        if (state.sort === 'title') comparison = String(a.title || '').localeCompare(String(b.title || ''), undefined, { sensitivity: 'base' });
+        if (state.sort === 'blurb') comparison = String(a.blurb || '').localeCompare(String(b.blurb || ''), undefined, { sensitivity: 'base' });
+        if (comparison === 0) comparison = Number(a.number) - Number(b.number);
+        return comparison * multiplier;
+      });
+    }
+
+    function tagHtml(systemId, relationship) {
+      const system = systemsById.get(systemId);
+      if (!system) return '';
+      const group = groupsById.get(system.group);
+      const relationLabel = relationship === 'focus' ? 'Focus' : 'Mentioned';
+      return `<span class="system-tag ${relationship}" style="--tag-color:${validColor(system.color)}" title="${relationLabel} · ${escapeHtml(group?.label || '')}">${escapeHtml(system.name)}</span>`;
+    }
+
+    function tagsHtml(episode, visibleLimit = 5) {
+      const relationships = episode.systems || {};
+      const tags = [
+        ...(relationships.focus || []).map((id) => tagHtml(id, 'focus')),
+        ...(relationships.mentions || []).map((id) => tagHtml(id, 'mention'))
+      ].filter(Boolean);
+      if (!tags.length) return '';
+      const visible = tags.slice(0, visibleLimit).join('');
+      const hidden = tags.slice(visibleLimit);
+      const more = hidden.length
+        ? `<details class="more-tags"><summary>+${hidden.length} more</summary>${hidden.join('')}</details>`
+        : '';
+      return `<div class="system-tags" aria-label="Episode systems">${visible}${more}</div>`;
+    }
+
+    function renderTable() {
+      const filtered = filteredEpisodes();
+      const sorted = sortedEpisodes(filtered);
+      if (!sorted.length) {
+        tbody.innerHTML = '<tr><td colspan="5" class="no-results">No episodes match these filters.</td></tr>';
+      } else {
+        tbody.innerHTML = sorted.map((episode) => `
+          <tr>
+            <td class="episode-number">${Number(episode.number)}</td>
+            <td class="episode-date">${escapeHtml(episode.release_date || '—')}</td>
+            <td class="episode-title"><a href="../episode/${Number(episode.number)}/">${escapeHtml(episode.title || `Episode ${episode.number}`)}</a></td>
+            <td class="episode-description">${escapeHtml(episode.blurb || '')}${tagsHtml(episode)}</td>
+            <td class="episode-length">${Number(episode.length_minutes) || '—'}</td>
+          </tr>
+        `).join('');
+      }
+
+      resultsCount.textContent = filtered.length === episodes.length
+        ? `Showing all ${episodes.length} episodes`
+        : `Showing ${filtered.length} of ${episodes.length} episodes`;
+      updateSortIndicators();
+    }
+
+    function renderSystemPicker() {
+      systemGroups.innerHTML = catalog.groups.map((group) => {
+        const systems = catalog.systems.filter((system) => system.group === group.id);
+        return `
+          <section class="system-group">
+            <h2 title="${escapeHtml(group.description || '')}">${escapeHtml(group.label)}</h2>
+            <div class="system-options">
+              ${systems.map((system) => `
+                <button type="button" class="system-option" data-system-id="${escapeHtml(system.id)}" style="--tag-color:${validColor(system.color)}" aria-pressed="${state.selectedSystems.includes(system.id)}">${escapeHtml(system.name)}</button>
+              `).join('')}
+            </div>
+          </section>
+        `;
+      }).join('');
+
+      systemGroups.querySelectorAll('[data-system-id]').forEach((button) => {
+        button.addEventListener('click', () => toggleSystem(button.dataset.systemId));
+      });
+
+      document.querySelectorAll('[data-scope]').forEach((button) => {
+        button.setAttribute('aria-pressed', String(button.dataset.scope === state.scope));
+      });
+    }
+
+    function renderGroupKey() {
+      const key = document.getElementById('group-key');
+      key.innerHTML = catalog.groups.map((group) => {
+        const representative = catalog.systems.find((system) => system.group === group.id);
+        return `<span class="group-key-item"><span class="group-dot" style="--group-color:${validColor(representative?.color)}"></span>${escapeHtml(group.label)}</span>`;
+      }).join('');
+    }
+
+    function renderActiveFilters() {
+      const chips = state.selectedSystems.map((systemId) => {
+        const system = systemsById.get(systemId);
+        if (!system) return '';
+        return `<span class="filter-chip" style="--tag-color:${validColor(system.color)}">${escapeHtml(system.name)}<button type="button" data-remove-system="${escapeHtml(system.id)}" aria-label="Remove ${escapeHtml(system.name)} filter">×</button></span>`;
+      });
+      if (state.scope === 'focus' && state.selectedSystems.length) {
+        chips.unshift('<span class="filter-chip scope-chip">Focus only</span>');
+      }
+      activeFilters.innerHTML = chips.join('');
+      activeFilters.querySelectorAll('[data-remove-system]').forEach((button) => {
+        button.addEventListener('click', () => toggleSystem(button.dataset.removeSystem));
+      });
+
+      filterCount.textContent = state.selectedSystems.length;
+      filterCount.classList.toggle('is-visible', state.selectedSystems.length > 0);
+      clearButton.disabled = !(state.query || state.selectedSystems.length);
+    }
+
+    function render() {
+      renderSystemPicker();
+      renderActiveFilters();
+      renderTable();
+    }
+
+    function toggleSystem(systemId) {
+      if (!systemsById.has(systemId)) return;
+      state.selectedSystems = state.selectedSystems.includes(systemId)
+        ? state.selectedSystems.filter((id) => id !== systemId)
+        : [...state.selectedSystems, systemId];
+      syncUrl();
+      render();
+    }
+
+    function updateSortIndicators() {
+      sortableHeaders.forEach((header) => {
+        const active = header.dataset.column === state.sort;
+        header.setAttribute('aria-sort', active ? (state.direction === 'asc' ? 'ascending' : 'descending') : 'none');
+        header.querySelector('.sort-indicator').textContent = active ? (state.direction === 'asc' ? '▲' : '▼') : '↕';
+      });
+    }
+
+    function syncUrl() {
+      const params = new URLSearchParams();
+      if (state.query) params.set('q', state.query);
+      if (state.selectedSystems.length) params.set('systems', state.selectedSystems.join(','));
+      if (state.scope === 'focus' && state.selectedSystems.length) params.set('scope', 'focus');
+      if (state.sort !== 'number') params.set('sort', state.sort);
+      if (state.direction !== 'desc') params.set('dir', state.direction);
+      const query = params.toString();
+      history.replaceState(null, '', `${location.pathname}${query ? `?${query}` : ''}`);
+    }
+
+    function hydrateFromUrl() {
+      const params = new URLSearchParams(location.search);
+      state.query = (params.get('q') || '').slice(0, 200);
+      state.selectedSystems = (params.get('systems') || '')
+        .split(',')
+        .filter((id, index, ids) => systemsById.has(id) && ids.indexOf(id) === index);
+      state.scope = params.get('scope') === 'focus' ? 'focus' : 'any';
+      const validSorts = ['number', 'date', 'title', 'blurb', 'length'];
+      state.sort = validSorts.includes(params.get('sort')) ? params.get('sort') : 'number';
+      state.direction = params.get('dir') === 'asc' ? 'asc' : 'desc';
+      searchInput.value = state.query;
+    }
+
+    sortableHeaders.forEach((header) => {
+      header.querySelector('button').addEventListener('click', () => {
+        const column = header.dataset.column;
+        if (state.sort === column) {
+          state.direction = state.direction === 'asc' ? 'desc' : 'asc';
+        } else {
+          state.sort = column;
+          state.direction = ['number', 'length'].includes(column) ? 'desc' : 'asc';
+        }
+        syncUrl();
+        renderTable();
+      });
     });
-  }
-  
-  function sortEpisodes(episodeList) {
-    const sorted = [...episodeList];
-    const { column, direction } = currentSort;
-    const multiplier = direction === 'asc' ? 1 : -1;
-    
-    sorted.sort((a, b) => {
-      let valA, valB;
-      
-      switch(column) {
-        case 'number':
-          valA = a.number;
-          valB = b.number;
-          return (valA - valB) * multiplier;
-        
-        case 'date':
-          valA = a.release_date || '';
-          valB = b.release_date || '';
-          return valA.localeCompare(valB) * multiplier;
-        
-        case 'title':
-          valA = (a.title || '').toLowerCase();
-          valB = (b.title || '').toLowerCase();
-          return valA.localeCompare(valB) * multiplier;
-        
-        case 'blurb':
-          valA = (a.blurb || '').toLowerCase();
-          valB = (b.blurb || '').toLowerCase();
-          return valA.localeCompare(valB) * multiplier;
-        
-        case 'length':
-          valA = a.length_minutes || 0;
-          valB = b.length_minutes || 0;
-          return (valA - valB) * multiplier;
-        
-        default:
-          return 0;
+
+    searchInput.addEventListener('input', () => {
+      state.query = searchInput.value.trim();
+      syncUrl();
+      renderActiveFilters();
+      renderTable();
+    });
+
+    document.querySelectorAll('[data-scope]').forEach((button) => {
+      button.addEventListener('click', () => {
+        state.scope = button.dataset.scope;
+        syncUrl();
+        render();
+      });
+    });
+
+    clearButton.addEventListener('click', () => {
+      state.query = '';
+      state.selectedSystems = [];
+      state.scope = 'any';
+      searchInput.value = '';
+      syncUrl();
+      render();
+      searchInput.focus();
+    });
+
+    document.addEventListener('click', (event) => {
+      if (picker.open && !picker.contains(event.target)) picker.open = false;
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && picker.open) {
+        picker.open = false;
+        picker.querySelector('summary').focus();
       }
     });
-    
-    return sorted;
-  }
-  
-  function sortTable(column) {
-    if (currentSort.column === column) {
-      // Toggle direction
-      currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
-    } else {
-      // New column, default to descending for numbers, ascending for text
-      currentSort.column = column;
-      currentSort.direction = (column === 'number' || column === 'length') ? 'desc' : 'asc';
-    }
-    
-    renderTable();
-  }
-  
-  function updateSortIndicators() {
-    // Remove all sort classes
-    document.querySelectorAll('th').forEach(th => {
-      th.classList.remove('sort-asc', 'sort-desc');
+
+    window.addEventListener('popstate', () => {
+      hydrateFromUrl();
+      render();
     });
-    
-    // Add class to current sort column
-    const th = document.querySelector(`th[data-column="${currentSort.column}"]`);
-    if (th) {
-      th.classList.add(`sort-${currentSort.direction}`);
-    }
-  }
-  
-  function updateResultsCount() {
-    const filtered = getFilteredEpisodes();
-    const total = episodes.length;
-    const countEl = document.getElementById('results-count');
-    
-    if (filtered.length === total) {
-      countEl.textContent = `Showing all ${total} episodes`;
-    } else {
-      countEl.textContent = `Showing ${filtered.length} of ${total} episodes`;
-    }
-  }
-  
-  function clearFilters() {
-    document.getElementById('filter-number').value = '';
-    document.getElementById('filter-date').value = '';
-    document.getElementById('filter-title').value = '';
-    document.getElementById('filter-blurb').value = '';
-    renderTable();
-    updateResultsCount();
-  }
-  
-  function escapeHtml(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
-  }
-  
-  // Add filter event listeners
-  ['filter-number', 'filter-date', 'filter-title', 'filter-blurb'].forEach(id => {
-    document.getElementById(id).addEventListener('input', () => {
-      renderTable();
-      updateResultsCount();
+
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    Promise.all([
+      fetch('../metadata/episodes.json').then((response) => {
+        if (!response.ok) throw new Error(`Episodes: ${response.status}`);
+        return response.json();
+      }),
+      fetch('../metadata/systems.json').then((response) => {
+        if (!response.ok) throw new Error(`Systems: ${response.status}`);
+        return response.json();
+      })
+    ]).then(([episodeData, systemData]) => {
+      episodes = episodeData;
+      catalog = systemData;
+      systemsById = new Map(catalog.systems.map((system) => [system.id, system]));
+      groupsById = new Map(catalog.groups.map((group) => [group.id, group]));
+      hydrateFromUrl();
+      renderGroupKey();
+      render();
+    }).catch((error) => {
+      tbody.innerHTML = '<tr><td colspan="5" class="no-results">Error loading episode metadata.</td></tr>';
+      resultsCount.textContent = 'Episode data could not be loaded.';
+      console.error(error);
     });
-  });
-  
-  // Update copyright year
-  document.getElementById('current-year').textContent = new Date().getFullYear();
+  })();
 </script>
 </body>
 </html>

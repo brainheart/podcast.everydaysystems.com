@@ -1,0 +1,85 @@
+{
+  "groups": [
+    {
+      "id": "body-input",
+      "label": "Body (input)",
+      "description": "Food and eating systems"
+    },
+    {
+      "id": "body-output",
+      "label": "Body (output)",
+      "description": "Exercise and movement systems"
+    },
+    {
+      "id": "spirits",
+      "label": "Spirits",
+      "description": "Drinking and substance systems"
+    },
+    {
+      "id": "soul",
+      "label": "Soul",
+      "description": "Attention, learning, emotion, and reflection systems"
+    },
+    {
+      "id": "meta",
+      "label": "Meta",
+      "description": "Systems for planning, tracking, and supporting other systems"
+    }
+  ],
+  "systems": [
+    { "id": "no-s-diet", "name": "No S Diet", "group": "body-input", "color": "#8f352d" },
+    { "id": "intelligent-dietary-defaults", "name": "Intelligent Dietary Defaults", "group": "body-input", "color": "#a64b2a" },
+    { "id": "surgical-flogging", "name": "Surgical Flogging", "group": "body-input", "color": "#a85e24" },
+    { "id": "no-solitary-snacking", "name": "No Solitary Snacking", "group": "body-input", "color": "#98503f" },
+    { "id": "seasons-warnings", "name": "Season's Warnings", "group": "body-input", "color": "#7f4638" },
+
+    { "id": "shovelglove", "name": "Shovelglove", "group": "body-output", "color": "#2f6b43" },
+    { "id": "urban-ranger", "name": "Urban Ranger", "group": "body-output", "color": "#3c7550" },
+    { "id": "lawful-good-biker", "name": "Lawful Good Biker", "group": "body-output", "color": "#53763b" },
+    { "id": "zeno-exercise-plan", "name": "Zeno's Exercise Progress Plan", "group": "body-output", "color": "#286f61" },
+    { "id": "fourteen-minutes", "name": "14 Minutes of Anything", "group": "body-output", "color": "#60772f" },
+
+    { "id": "glass-ceiling", "name": "Glass Ceiling", "group": "spirits", "color": "#754b78" },
+    { "id": "low-smoking", "name": "Low Smoking", "group": "spirits", "color": "#87516a" },
+
+    { "id": "weekend-luddite", "name": "Weekend Luddite", "group": "soul", "color": "#315d7a" },
+    { "id": "audiodidact", "name": "Audiodidact", "group": "soul", "color": "#27677a" },
+    { "id": "study-habit", "name": "Study Habit", "group": "soul", "color": "#386a8b" },
+    { "id": "g-ray-vision", "name": "G-Ray Vision", "group": "soul", "color": "#496087" },
+    { "id": "demogorgon-vs-asmodeus", "name": "Demogorgon vs. Asmodeus", "group": "soul", "color": "#4f587e" },
+    { "id": "timebox-lord", "name": "Timebox Lord", "group": "soul", "color": "#356478" },
+    { "id": "vc-cat", "name": "VC Cat", "group": "soul", "color": "#3e7080" },
+    { "id": "posifactive", "name": "Posifactive", "group": "soul", "color": "#2e6f70" },
+    { "id": "mindful-bagful", "name": "Mindful Bagful", "group": "soul", "color": "#3b6870" },
+    { "id": "spider-hunter", "name": "Spider Hunter", "group": "soul", "color": "#575c89" },
+    { "id": "allocation-mind", "name": "Allocation Mind", "group": "soul", "color": "#3f5f91" },
+    { "id": "motive-mixologist", "name": "Motive Mixologist", "group": "soul", "color": "#586783" },
+    { "id": "last-wordism", "name": "Last Wordism", "group": "soul", "color": "#426e8d" },
+    { "id": "narralogue", "name": "Narralogue", "group": "soul", "color": "#28717f" },
+    { "id": "right-relationship-robots", "name": "Right Relationship with Robots", "group": "soul", "color": "#53628f" },
+    { "id": "apps-for-mentats", "name": "Apps for Mentats", "group": "soul", "color": "#3c6d94" },
+    { "id": "my-friend-chatgpt", "name": "My Friend, ChatGPT", "group": "soul", "color": "#28737a" },
+    { "id": "proactive-procrastination", "name": "Proactive Procrastination", "group": "soul", "color": "#536f7c" },
+    { "id": "demihuman", "name": "Demihuman", "group": "soul", "color": "#4a6686" },
+    { "id": "practical-panpsychism", "name": "Practical Panpsychism", "group": "soul", "color": "#586078" },
+
+    { "id": "habit-traffic-light", "name": "Habit Traffic Light", "group": "meta", "color": "#725d22" },
+    { "id": "negative-tracking", "name": "Negative Tracking", "group": "meta", "color": "#80662a" },
+    { "id": "personal-punch-cards", "name": "Personal Punch Cards", "group": "meta", "color": "#7b572c" },
+    { "id": "habitcal", "name": "HabitCal", "group": "meta", "color": "#896e26" },
+    { "id": "lifelog", "name": "Lifelog", "group": "meta", "color": "#6e5b31" },
+    { "id": "mantrafication", "name": "Mantrafication", "group": "meta", "color": "#7b633b" },
+    { "id": "loose-lips", "name": "Loose Lips Sink Ships", "group": "meta", "color": "#82602f" },
+    { "id": "good-redundancy", "name": "Good Redundancy", "group": "meta", "color": "#69602d" },
+    { "id": "greenishness", "name": "Greenishness", "group": "meta", "color": "#67702d" },
+    { "id": "microreflection", "name": "Microreflection", "group": "meta", "color": "#77683c" },
+    { "id": "aristotelian-self-portrait", "name": "Aristotelian Self-Portrait", "group": "meta", "color": "#6a573c" },
+    { "id": "aristocal", "name": "Aristocal", "group": "meta", "color": "#8a6535" },
+    { "id": "bracket-journaling", "name": "Bracket Journaling", "group": "meta", "color": "#6d6538" },
+    { "id": "chain-self-command", "name": "Chain of Self-Command", "group": "meta", "color": "#76522f" },
+    { "id": "personal-olympics", "name": "Personal Olympics", "group": "meta", "color": "#85642a" },
+    { "id": "monthly-resolution", "name": "Monthly Resolution", "group": "meta", "color": "#6f6123" },
+    { "id": "scribal-filter", "name": "Scribal Filter", "group": "meta", "color": "#7f6a3e" },
+    { "id": "spaghetti-western-allocation", "name": "Spaghetti Western Asset Allocation", "group": "meta", "color": "#735134" }
+  ]
+}

@@ -18,6 +18,7 @@ from podcast_index import render_index_html, render_sitemap_xml
 
 ROOT = Path(__file__).resolve().parent.parent
 META = ROOT / 'metadata' / 'episodes.json'
+SYSTEMS_META = ROOT / 'metadata' / 'systems.json'
 DEFAULT_OUT  = ROOT / 'index.html'
 DEFAULT_SITEMAP = ROOT / 'sitemap.xml'
 
@@ -28,6 +29,10 @@ def load_meta():
     return data
 
 
+def load_system_catalog():
+    return json.loads(SYSTEMS_META.read_text())
+
+
 def main():
     import argparse
     parser = argparse.ArgumentParser(description="Build podcast index from metadata")
@@ -35,7 +40,7 @@ def main():
     args = parser.parse_args()
     out_path = Path(args.out).resolve() if args.out else DEFAULT_OUT
     episodes = load_meta()
-    out_path.write_text(render_index_html(episodes), encoding='utf-8')
+    out_path.write_text(render_index_html(episodes, load_system_catalog()), encoding='utf-8')
     print(f"Wrote {out_path} with {len(episodes)} episodes.")
     if not args.out:
         DEFAULT_SITEMAP.write_text(render_sitemap_xml(episodes), encoding='utf-8')

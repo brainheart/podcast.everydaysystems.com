@@ -55,6 +55,15 @@ Each episode object in `metadata/episodes.json` should include:
 - `discuss_url`
 - `image_files`
 - `length_minutes`
+- `systems`, with `focus` and `mentions` arrays of stable IDs from
+  `metadata/systems.json`
+
+System names, category groups, and colors live in `metadata/systems.json` so
+the generated list, table view, and future views share one taxonomy. Use
+`focus` for systems that receive substantial, main-subject treatment in the
+episode. Use `mentions` for systems that are meaningfully discussed or used as
+an example, not merely named in boilerplate. A system ID must not appear in
+both relationships for the same episode.
 
 Use `null` for unknown URLs. Use `0` for unknown length unless a duration can be derived from a local or linked MP3.
 
