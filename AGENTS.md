@@ -25,9 +25,10 @@ For missing external URLs, use `null` in `metadata/episodes.json` and commented 
 - Index rendering logic: `scripts/podcast_index.py`
 - Legacy `/table/` URL: `table/index.html` is a redirect to `/` and should stay that way
 - Tests: `tests/`
-- Self-hosted web font (Libre Caslon Text, OFL): `assets/fonts/`, loaded via
-  `assets/fonts/fonts.css` from both `css/style.css` and the front-page template.
-  Headings and episode body text use it; the front-page table stays in the sans.
+- Self-hosted web fonts (OFL) in `assets/fonts/`, loaded via
+  `assets/fonts/fonts.css` from both `css/style.css` and the front-page template:
+  Libre Caslon Text for headings and episode body text, Libre Franklin
+  (variable weight) for the front page's controls and table.
 
 ## New Episode Workflow
 
