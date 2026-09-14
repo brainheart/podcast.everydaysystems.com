@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Everyday Systems Podcast</title>
+  <link rel="canonical" href="https://podcast.everydaysystems.com/" />
+  <meta name="description" content="Every Everyday Systems Podcast episode by Reinhard Engels: audio, transcripts, and discussion links, sortable and filterable by system and system family." />
+  <style>
+    :root {
+      --ink: #2a2724;
+      --muted: #6b655d;
+      --faint: #8f887e;
+      --paper: #fffdf9;
+      --soft: #f3efe8;
+      --line: #ddd6cb;
+      --line-strong: #c9c0b3;
+      --link: #1a5b9c;
+      --button: #3f3a35;
+      --button-dark: #2a2622;
+      --focus-ring: #1d65a6;
+      --tag-color: #666;
+      --tag-tint: color-mix(in srgb, var(--tag-color) 10%, #fff);
+      --tag-edge: color-mix(in srgb, var(--tag-color) 35%, #fff);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      color: var(--ink);
+      font-family: Arial, Helvetica, Geneva, sans-serif;
+      font-size: 14px;
+      line-height: 1.4;
+      background-image: url(assets/images/random_grey_variations.png);
+    }
+
+    button, input { font: inherit; color: inherit; }
+
+    a { color: var(--link); }
+
+    button:focus-visible,
+    input:focus-visible,
+    summary:focus-visible,
+    a:focus-visible {
+      outline: 3px solid color-mix(in srgb, var(--focus-ring) 60%, transparent);
+      outline-offset: 2px;
+    }
+
+    #main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 22px 24px 18px;
+      background-image: url(assets/images/white_texture.png);
+      border-radius: 11px;
+    }
+
+    header.page-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 6px 18px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 125%;
+    }
+
+    .nav-links {
+      color: var(--faint);
+      font-size: 12px;
+    }
+
+    .nav-links a { color: var(--link); text-decoration: none; }
+    .nav-links a:hover { text-decoration: underline; }
+
+    .intro {
+      margin: -6px 0 16px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .intro a { color: var(--link); text-decoration: none; }
+    .intro a:hover { text-decoration: underline; }
+
+    /* ---------- Filter panel ---------- */
+
+    .filters {
+      padding: 12px 14px 10px;
+      background: color-mix(in srgb, var(--soft) 80%, #fff);
+      border: 1px solid var(--line);
+      border-radius: 9px;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .search-field {
+      position: relative;
+      flex: 1 1 260px;
+      max-width: 560px;
+    }
+
+    .search-field input {
+      width: 100%;
+      min-height: 36px;
+      padding: 7px 32px 7px 32px;
+      color: var(--ink);
+      background: var(--paper);
+      border: 1px solid var(--line-strong);
+      border-radius: 6px;
+    }
+
+    .search-field input::placeholder { color: var(--faint); }
+
+    .search-field .search-icon {
+      position: absolute;
+      top: 50%;
+      left: 11px;
+      width: 13px;
+      height: 13px;
+      transform: translateY(-50%);
+      color: var(--faint);
+      pointer-events: none;
+    }
+
+    .search-field input::-webkit-search-cancel-button { -webkit-appearance: none; }
+
+    .search-field .search-clear {
+      position: absolute;
+      top: 50%;
+      right: 4px;
+      width: 26px;
+      height: 26px;
+      padding: 0;
+      transform: translateY(-50%);
+      color: var(--muted);
+      background: transparent;
+      border: 0;
+      border-radius: 50%;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .search-field .search-clear:hover { background: var(--soft); }
+    .search-field .search-clear[hidden] { display: none; }
+
+    .system-picker,
+    .clear-filters {
+      min-height: 36px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .system-picker {
+      color: #fff;
+      background: var(--button);
+      border: 1px solid var(--button-dark);
+      font-weight: bold;
+    }
+
+    .system-picker:hover { background: var(--button-dark); }
+    .system-picker::after { content: "▾"; font-size: 80%; opacity: .8; }
+    .system-picker[aria-expanded="true"]::after { content: "▴"; }
+
+    .filter-count {
+      display: none;
+      min-width: 19px;
+      padding: 1px 6px;
+      color: var(--button-dark);
+      background: #fff;
+      border-radius: 999px;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .filter-count.is-visible { display: inline-block; }
+
+    .scope-control {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px;
+      background: #e6e1d9;
+      border-radius: 6px;
+    }
+
+    .scope-control button {
+      min-height: 30px;
+      padding: 4px 11px;
+      color: var(--muted);
+      background: transparent;
+      border: 0;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .scope-control button[aria-pressed="true"] {
+      color: var(--ink);
+      background: #fff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .14);
+      font-weight: bold;
+    }
+
+    .clear-filters {
+      margin-left: auto;
+      color: var(--muted);
+      background: transparent;
+      border: 1px solid var(--line-strong);
+      font-size: 13px;
+    }
+
+    .clear-filters:hover { background: #fff; color: var(--ink); }
+    .clear-filters:disabled { opacity: .4; cursor: default; }
+    .clear-filters:disabled:hover { background: transparent; color: var(--muted); }
+
+    /* Family row: doubles as the color legend */
+
+    .family-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px 8px;
+      margin-top: 10px;
+    }
+
+    .row-label {
+      margin-right: 2px;
+      color: var(--faint);
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .family-pill,
+    .system-option,
+    .system-tag,
+    .filter-chip,
+    .key-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--tag-edge);
+      border-radius: 999px;
+      white-space: nowrap;
+      color: var(--tag-color);
+      background: var(--tag-tint);
+    }
+
+    .family-pill {
+      padding: 4px 11px 4px 8px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: background-color .12s, color .12s, border-color .12s;
+    }
+
+    .family-pill:hover { border-color: var(--tag-color); }
+
+    .family-pill .dot {
+      width: 9px;
+      height: 9px;
+      background: var(--tag-color);
+      border-radius: 50%;
+    }
+
+    .family-pill[aria-pressed="true"] {
+      color: #fff;
+      background: var(--tag-color);
+      border-color: var(--tag-color);
+      font-weight: bold;
+    }
+
+    .family-pill[aria-pressed="true"] .dot { background: #fff; }
+
+    .family-pill .count {
+      color: color-mix(in srgb, currentColor 70%, transparent);
+      font-size: 11px;
+      font-weight: normal;
+    }
+
+    .relationship-key {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: auto;
+      color: var(--faint);
+      font-size: 11px;
+    }
+
+    .key-tag {
+      --tag-color: #6f6860;
+      padding: 1px 8px;
+      font-size: 11px;
+    }
+
+    .key-tag.focus { color: #fff; background: var(--tag-color); border-color: var(--tag-color); font-weight: bold; }
+
+    /* Active filter chips */
+
+    .active-filters {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--line);
+    }
+
+    .active-filters[hidden] { display: none; }
+
+    .filter-chip {
+      padding: 3px 5px 3px 10px;
+      font-size: 12px;
+    }
+
+    .filter-chip.family { color: #fff; background: var(--tag-color); border-color: var(--tag-color); font-weight: bold; }
+    .filter-chip.family .chip-hint { font-weight: normal; opacity: .8; }
+
+    .filter-chip.scope-chip {
+      --tag-color: #5c5853;
+      color: #fff;
+      background: var(--tag-color);
+      border-color: var(--tag-color);
+      padding-right: 10px;
+    }
+
+    .filter-chip button {
+      width: 18px;
+      height: 18px;
+      padding: 0;
+      color: inherit;
+      background: transparent;
+      border: 0;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    .filter-chip button:hover { background: rgba(0, 0, 0, .12); }
+
+    .match-note {
+      color: var(--faint);
+      font-size: 11px;
+      font-style: italic;
+    }
+
+    /* ---------- System panel (inline, below the family row) ---------- */
+
+    .system-panel {
+      margin-top: 10px;
+      padding: 12px 14px 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .system-panel[hidden] { display: none; }
+
+    .popover-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .popover-heading strong { font-size: 14px; }
+
+    .popover-help {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .system-find {
+      width: 100%;
+      min-height: 32px;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      background: var(--paper);
+      border: 1px solid var(--line-strong);
+      border-radius: 6px;
+      font-size: 13px;
+    }
+
+    .system-group + .system-group { margin-top: 12px; }
+    .system-group[hidden] { display: none; }
+
+    .system-group-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 6px;
+    }
+
+    .group-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 3px 9px 3px 6px;
+      color: var(--tag-color);
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+
+    .group-toggle:hover { background: var(--tag-tint); border-color: var(--tag-edge); }
+
+    .group-toggle .dot {
+      width: 9px;
+      height: 9px;
+      background: var(--tag-color);
+      border-radius: 50%;
+    }
+
+    .group-toggle[aria-pressed="true"] {
+      color: #fff;
+      background: var(--tag-color);
+      border-color: var(--tag-color);
+    }
+
+    .group-toggle[aria-pressed="true"] .dot { background: #fff; }
+
+    .group-toggle .hint {
+      font-weight: normal;
+      letter-spacing: normal;
+      text-transform: none;
+      opacity: .75;
+    }
+
+    .group-description {
+      color: var(--faint);
+      font-size: 11px;
+    }
+
+    .system-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .system-option {
+      padding: 4px 9px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .system-option:hover { border-color: var(--tag-color); }
+    .system-option[hidden] { display: none; }
+
+    .system-option[aria-pressed="true"] {
+      color: #fff;
+      background: var(--tag-color);
+      border-color: var(--tag-color);
+      font-weight: bold;
+    }
+
+    .system-option .count {
+      color: color-mix(in srgb, currentColor 65%, transparent);
+      font-size: 11px;
+      font-weight: normal;
+    }
+
+    .no-system-matches {
+      color: var(--faint);
+      font-size: 12px;
+      font-style: italic;
+    }
+
+    /* ---------- Results ---------- */
+
+    .results-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 6px 16px;
+      margin: 14px 2px 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .results-bar strong { color: var(--ink); }
+
+    .table-wrap {
+      overflow: clip;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(40, 35, 30, .06);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 13px;
+    }
+
+    caption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+    th {
+      position: sticky;
+      z-index: 5;
+      top: 0;
+      padding: 0;
+      color: var(--muted);
+      text-align: left;
+      background: var(--soft);
+      border-bottom: 1px solid var(--line-strong);
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    th.static { padding: 11px 10px; }
+
+    th button {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      width: 100%;
+      padding: 11px 10px;
+      color: inherit;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      text-align: left;
+      font: inherit;
+      letter-spacing: inherit;
+      text-transform: inherit;
+    }
+
+    th button:hover { color: var(--ink); background: #fff; }
+    th[aria-sort="ascending"] button,
+    th[aria-sort="descending"] button { color: var(--ink); }
+    th .sort-indicator { color: var(--faint); font-size: 10px; letter-spacing: 0; }
+    th[aria-sort="ascending"] .sort-indicator,
+    th[aria-sort="descending"] .sort-indicator { color: var(--link); }
+    th.numeric button { justify-content: flex-end; text-align: right; }
+
+    td {
+      padding: 9px 10px;
+      vertical-align: top;
+      border-bottom: 1px solid #ece7df;
+    }
+
+    tbody tr:last-child td { border-bottom: 0; }
+    tbody tr:hover td { background: #f8f4ea; }
+
+    .episode-number,
+    .episode-length {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .episode-number { color: var(--muted); font-weight: bold; }
+    .episode-date { color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .episode-title { min-width: 160px; font-weight: bold; }
+    .episode-title a { color: var(--link); text-decoration: none; }
+    .episode-title a:hover { text-decoration: underline; }
+    .episode-description { min-width: 320px; line-height: 1.4; }
+    .episode-length { color: var(--muted); }
+
+    .system-tags {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 4px;
+      margin-top: 6px;
+    }
+
+    .system-tag {
+      padding: 2px 8px;
+      cursor: pointer;
+      font-size: 11px;
+      line-height: 1.3;
+      transition: border-color .12s;
+    }
+
+    .system-tag:hover { border-color: var(--tag-color); }
+    .system-tag.focus { color: #fff; background: var(--tag-color); border-color: var(--tag-color); font-weight: bold; }
+    .system-tag.focus:hover { background: color-mix(in srgb, var(--tag-color) 85%, #000); }
+    .system-tag.is-selected { box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--tag-color); }
+
+    .more-tags { display: inline; }
+    .more-tags summary {
+      display: inline-block;
+      padding: 2px 2px;
+      color: var(--muted);
+      cursor: pointer;
+      list-style: none;
+      border-bottom: 1px dotted var(--faint);
+      font-size: 11px;
+    }
+    .more-tags summary::-webkit-details-marker { display: none; }
+    .more-tags[open] { display: flex; flex-basis: 100%; flex-wrap: wrap; gap: 4px; }
+    .more-tags[open] summary { flex-basis: 100%; width: max-content; }
+
+    .no-results {
+      padding: 44px 20px;
+      color: var(--muted);
+      text-align: center;
+      font-style: italic;
+    }
+
+    .no-results button {
+      margin-left: 6px;
+      padding: 2px 8px;
+      color: var(--link);
+      background: transparent;
+      border: 1px solid var(--line-strong);
+      border-radius: 5px;
+      cursor: pointer;
+      font-style: normal;
+    }
+
+    footer {
+      margin-top: 25px;
+      padding-top: 16px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    footer p { margin: 4px 0; }
+
+    @media (max-width: 760px) {
+      body { padding: 8px; }
+      #main { padding: 14px 12px; }
+      header.page-head { margin-bottom: 12px; }
+      .search-field { flex-basis: 100%; max-width: none; }
+      .clear-filters { margin-left: 0; }
+      .relationship-key { margin-left: 0; flex-basis: 100%; }
+      .table-wrap { overflow-x: auto; }
+      th { position: static; }
+      .episode-description { min-width: 260px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+<div id="main">
+  <header class="page-head">
+    <h1><a href="https://everydaysystems.com">Everyday Systems</a>: Podcast</h1>
+    <nav class="nav-links" aria-label="Subscribe links">
+      <a href="http://reinhard.libsyn.com/rss">RSS</a> ·
+      <a href="https://podcasts.apple.com/us/podcast/everyday-systems-podcast/id188988881">Apple Podcasts</a> ·
+      <a href="https://open.spotify.com/show/5ZSps0RuOWK3R1aCHpeeVZ">Spotify</a> ·
+      <a href="https://www.youtube.com/playlist?list=PLfC6J9cSGWC8PDkwb6KUWp_QShHr0S8SZ">YouTube</a>
+    </nav>
+  </header>
+
+  <p class="intro">Audio, approximate transcripts, and discussion links for every episode. Subscribe above, or wherever you get your podcasts.</p>
+
+  <noscript><p class="match-note">Searching, sorting, and filtering need JavaScript. Every episode is listed below.</p></noscript>
+
+  <section class="filters" aria-label="Episode filters">
+    <div class="toolbar">
+      <label class="search-field">
+        <span class="visually-hidden" hidden>Search episodes</span>
+        <svg class="search-icon" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="6.8" cy="6.8" r="4.6"/><path d="M10.4 10.4 14 14"/></svg>
+        <input type="search" id="episode-search" placeholder="Search title, description, date, or episode number" autocomplete="off" aria-label="Search episodes" />
+        <button type="button" class="search-clear" id="search-clear" aria-label="Clear search" hidden>×</button>
+      </label>
+
+      <button type="button" class="system-picker" id="system-picker" aria-expanded="false" aria-controls="system-panel">Systems <span class="filter-count" id="filter-count">0</span></button>
+
+      <div class="scope-control" role="group" aria-label="How strongly an episode must feature a system">
+        <button type="button" data-scope="any" aria-pressed="true" title="Match episodes where the system is a focus or a meaningful mention">Any mention</button>
+        <button type="button" data-scope="focus" aria-pressed="false" title="Match only episodes where the system is a main subject">Focus only</button>
+      </div>
+
+      <button type="button" class="clear-filters" id="clear-filters" disabled>Clear all</button>
+    </div>
+
+    <div class="family-row" id="family-row" aria-label="Filter by system family">
+      <span class="row-label">Family</span>
+      <span id="family-pills"></span>
+      <span class="relationship-key" aria-label="Tag style key">
+        <span class="key-tag focus">Focus</span>
+        <span class="key-tag">Mention</span>
+      </span>
+    </div>
+
+    <div class="system-panel" id="system-panel" hidden>
+      <div class="popover-heading">
+        <strong>Filter by system</strong>
+        <span class="match-note" id="popover-count"></span>
+      </div>
+      <p class="popover-help">Pick individual systems, or press a family name to include any system in that family. Every filter narrows the list.</p>
+      <input type="search" class="system-find" id="system-find" placeholder="Find a system…" autocomplete="off" aria-label="Find a system" />
+      <div id="system-groups"></div>
+    </div>
+
+    <div class="active-filters" id="active-filters" aria-label="Active filters" hidden></div>
+  </section>
+
+  <div class="results-bar">
+    <div id="results-count" aria-live="polite"><!--RESULTS_COUNT--></div>
+    <div class="match-note">Click any tag in the table to filter by it.</div>
+  </div>
+
+  <div class="table-wrap">
+    <table id="episodes-table">
+      <caption>Everyday Systems Podcast episodes</caption>
+      <thead>
+        <tr>
+          <th scope="col" class="numeric" data-column="number" aria-sort="descending"><button type="button"><span class="sort-indicator">▼</span>#</button></th>
+          <th scope="col" data-column="date" aria-sort="none"><button type="button">Date <span class="sort-indicator">⇅</span></button></th>
+          <th scope="col" data-column="title" aria-sort="none"><button type="button">Title <span class="sort-indicator">⇅</span></button></th>
+          <th scope="col" class="static">Description &amp; systems</th>
+          <th scope="col" class="numeric" data-column="length" aria-sort="none"><button type="button"><span class="sort-indicator">⇅</span>Min</button></th>
+        </tr>
+      </thead>
+      <tbody id="episodes-tbody">
+<!--EPISODE_ROWS-->
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    <p>By <a href="mailto:reinhard.engels@gmail.com">Reinhard Engels</a></p>
+    <p>© 2002-<span id="current-year"></span> Reinhard Engels, All Rights Reserved.</p>
+  </footer>
+</div>
+
+<script type="application/json" id="podcast-data"><!--PODCAST_DATA--></script>
+<script>
+  (() => {
+    'use strict';
+
+    const VALID_SORTS = ['number', 'date', 'title', 'length'];
+    const DEFAULT_DIRECTION = { number: 'desc', length: 'desc', date: 'desc', title: 'asc' };
+
+    const state = {
+      query: '',
+      selectedSystems: [],
+      selectedFamilies: [],
+      scope: 'any',
+      sort: 'number',
+      direction: 'desc'
+    };
+
+    let episodes = [];
+    let catalog = { groups: [], systems: [] };
+    let systemsById = new Map();
+    let groupsById = new Map();
+
+    const tbody = document.getElementById('episodes-tbody');
+    const searchInput = document.getElementById('episode-search');
+    const searchClear = document.getElementById('search-clear');
+    const picker = document.getElementById('system-picker');
+    const panel = document.getElementById('system-panel');
+    const systemFind = document.getElementById('system-find');
+    const systemGroups = document.getElementById('system-groups');
+    const popoverCount = document.getElementById('popover-count');
+    const familyPills = document.getElementById('family-pills');
+    const activeFilters = document.getElementById('active-filters');
+    const filterCount = document.getElementById('filter-count');
+    const clearButton = document.getElementById('clear-filters');
+    const resultsCount = document.getElementById('results-count');
+    const sortableHeaders = [...document.querySelectorAll('th[data-column]')];
+
+    function escapeHtml(value) {
+      return String(value ?? '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+    }
+
+    function validColor(color) {
+      return /^#[0-9a-f]{6}$/i.test(color || '') ? color : '#666666';
+    }
+
+    function familyColor(groupId) {
+      return validColor(groupsById.get(groupId)?.color);
+    }
+
+    function systemColor(systemId) {
+      return familyColor(systemsById.get(systemId)?.group);
+    }
+
+    // ---------- Filtering ----------
+
+    function episodeSystems(episode, scope = state.scope) {
+      const relationships = episode.systems || {};
+      const focus = relationships.focus || [];
+      if (scope === 'focus') return focus;
+      return [...new Set([...focus, ...(relationships.mentions || [])])];
+    }
+
+    function episodeFamilies(episode, scope = state.scope) {
+      return new Set(episodeSystems(episode, scope).map((id) => systemsById.get(id)?.group).filter(Boolean));
+    }
+
+    function matchesQuery(episode, query) {
+      if (!query) return true;
+      const searchable = [episode.number, episode.release_date, episode.title, episode.blurb]
+        .join(' ')
+        .toLocaleLowerCase();
+      return searchable.includes(query);
+    }
+
+    function filteredEpisodes() {
+      const query = state.query.toLocaleLowerCase();
+      return episodes.filter((episode) => {
+        if (!matchesQuery(episode, query)) return false;
+        const availableSystems = new Set(episodeSystems(episode));
+        if (!state.selectedSystems.every((id) => availableSystems.has(id))) return false;
+        const availableFamilies = episodeFamilies(episode);
+        return state.selectedFamilies.every((id) => availableFamilies.has(id));
+      });
+    }
+
+    function sortedEpisodes(list) {
+      const multiplier = state.direction === 'asc' ? 1 : -1;
+      return [...list].sort((a, b) => {
+        let comparison = 0;
+        if (state.sort === 'number') comparison = Number(a.number) - Number(b.number);
+        if (state.sort === 'length') comparison = Number(a.length_minutes) - Number(b.length_minutes);
+        if (state.sort === 'date') comparison = String(a.release_date || '').localeCompare(String(b.release_date || ''));
+        if (state.sort === 'title') comparison = String(a.title || '').localeCompare(String(b.title || ''), undefined, { sensitivity: 'base' });
+        if (comparison === 0) comparison = Number(a.number) - Number(b.number);
+        return comparison * multiplier;
+      });
+    }
+
+    // Counts shown in the picker: how many episodes each choice would match
+    // given the current scope, ignoring the system filters themselves.
+    function countsForScope() {
+      const systemCounts = new Map();
+      const familyCounts = new Map();
+      for (const episode of episodes) {
+        for (const id of episodeSystems(episode)) systemCounts.set(id, (systemCounts.get(id) || 0) + 1);
+        for (const id of episodeFamilies(episode)) familyCounts.set(id, (familyCounts.get(id) || 0) + 1);
+      }
+      return { systemCounts, familyCounts };
+    }
+
+    // ---------- Rendering ----------
+
+    function tagHtml(systemId, relationship) {
+      const system = systemsById.get(systemId);
+      if (!system) return '';
+      const group = groupsById.get(system.group);
+      const relationLabel = relationship === 'focus' ? 'Focus' : 'Mentioned';
+      const selected = state.selectedSystems.includes(systemId);
+      const action = selected ? 'Click to remove this filter' : 'Click to filter by this system';
+      return `<button type="button" class="system-tag ${relationship}${selected ? ' is-selected' : ''}" data-tag-system="${escapeHtml(systemId)}" style="--tag-color:${systemColor(systemId)}" title="${relationLabel} · ${escapeHtml(group?.label || '')} family. ${action}." aria-pressed="${selected}">${escapeHtml(system.name)}</button>`;
+    }
+
+    function tagsHtml(episode, visibleLimit = 5) {
+      const relationships = episode.systems || {};
+      const tags = [
+        ...(relationships.focus || []).map((id) => tagHtml(id, 'focus')),
+        ...(relationships.mentions || []).map((id) => tagHtml(id, 'mention'))
+      ].filter(Boolean);
+      if (!tags.length) return '';
+      const visible = tags.slice(0, visibleLimit).join('');
+      const hidden = tags.slice(visibleLimit);
+      const more = hidden.length
+        ? `<details class="more-tags"><summary>+${hidden.length} more</summary>${hidden.join('')}</details>`
+        : '';
+      return `<div class="system-tags" aria-label="Episode systems">${visible}${more}</div>`;
+    }
+
+    function renderTable() {
+      const filtered = filteredEpisodes();
+      const sorted = sortedEpisodes(filtered);
+      if (!sorted.length) {
+        tbody.innerHTML = '<tr><td colspan="5" class="no-results">No episodes match these filters. <button type="button" id="no-results-clear">Clear all</button></td></tr>';
+        tbody.querySelector('#no-results-clear').addEventListener('click', clearAll);
+      } else {
+        tbody.innerHTML = sorted.map((episode) => `
+          <tr>
+            <td class="episode-number">${Number(episode.number)}</td>
+            <td class="episode-date">${escapeHtml(episode.release_date || '—')}</td>
+            <td class="episode-title"><a href="episode/${Number(episode.number)}/">${escapeHtml(episode.title || `Episode ${episode.number}`)}</a></td>
+            <td class="episode-description">${escapeHtml(episode.blurb || '')}${tagsHtml(episode)}</td>
+            <td class="episode-length">${Number(episode.length_minutes) || '—'}</td>
+          </tr>
+        `).join('');
+        tbody.querySelectorAll('[data-tag-system]').forEach((button) => {
+          button.addEventListener('click', () => toggleSystem(button.dataset.tagSystem));
+        });
+      }
+
+      resultsCount.innerHTML = filtered.length === episodes.length
+        ? `<strong>${episodes.length}</strong> episodes`
+        : `<strong>${filtered.length}</strong> of ${episodes.length} episodes match`;
+      updateSortIndicators();
+    }
+
+    function renderFamilyPills() {
+      const { familyCounts } = countsForScope();
+      familyPills.innerHTML = catalog.groups.map((group) => {
+        const pressed = state.selectedFamilies.includes(group.id);
+        return `<button type="button" class="family-pill" data-family-id="${escapeHtml(group.id)}" style="--tag-color:${familyColor(group.id)}" aria-pressed="${pressed}" title="${escapeHtml(group.description || '')}. Show episodes with any ${escapeHtml(group.label)} system."><span class="dot"></span>${escapeHtml(group.label)} <span class="count">${familyCounts.get(group.id) || 0}</span></button> `;
+      }).join('');
+      familyPills.querySelectorAll('[data-family-id]').forEach((button) => {
+        button.addEventListener('click', () => toggleFamily(button.dataset.familyId));
+      });
+    }
+
+    function renderSystemPicker() {
+      const { systemCounts } = countsForScope();
+      systemGroups.innerHTML = catalog.groups.map((group) => {
+        const systems = catalog.systems.filter((system) => system.group === group.id);
+        const pressed = state.selectedFamilies.includes(group.id);
+        return `
+          <section class="system-group" data-group-id="${escapeHtml(group.id)}" style="--tag-color:${familyColor(group.id)}">
+            <div class="system-group-head">
+              <button type="button" class="group-toggle" data-family-id="${escapeHtml(group.id)}" aria-pressed="${pressed}" title="Show episodes with any ${escapeHtml(group.label)} system"><span class="dot"></span>${escapeHtml(group.label)} <span class="hint">${pressed ? '· any' : ''}</span></button>
+              <span class="group-description">${escapeHtml(group.description || '')}</span>
+            </div>
+            <div class="system-options">
+              ${systems.map((system) => `
+                <button type="button" class="system-option" data-system-id="${escapeHtml(system.id)}" data-name="${escapeHtml(system.name.toLocaleLowerCase())}" aria-pressed="${state.selectedSystems.includes(system.id)}">${escapeHtml(system.name)} <span class="count">${systemCounts.get(system.id) || 0}</span></button>
+              `).join('')}
+            </div>
+          </section>
+        `;
+      }).join('') + '<p class="no-system-matches" id="no-system-matches" hidden>No systems match that name.</p>';
+
+      systemGroups.querySelectorAll('[data-system-id]').forEach((button) => {
+        button.addEventListener('click', () => toggleSystem(button.dataset.systemId));
+      });
+      systemGroups.querySelectorAll('[data-family-id]').forEach((button) => {
+        button.addEventListener('click', () => toggleFamily(button.dataset.familyId));
+      });
+
+      document.querySelectorAll('[data-scope]').forEach((button) => {
+        button.setAttribute('aria-pressed', String(button.dataset.scope === state.scope));
+      });
+
+      const chosen = state.selectedSystems.length + state.selectedFamilies.length;
+      popoverCount.textContent = chosen ? `${chosen} selected` : '';
+      applySystemFind();
+    }
+
+    function applySystemFind() {
+      const needle = systemFind.value.trim().toLocaleLowerCase();
+      let anyVisible = false;
+      systemGroups.querySelectorAll('.system-group').forEach((section) => {
+        let groupVisible = false;
+        section.querySelectorAll('.system-option').forEach((option) => {
+          const show = !needle || option.dataset.name.includes(needle);
+          option.hidden = !show;
+          if (show) groupVisible = true;
+        });
+        section.hidden = !groupVisible;
+        if (groupVisible) anyVisible = true;
+      });
+      const empty = document.getElementById('no-system-matches');
+      if (empty) empty.hidden = anyVisible;
+    }
+
+    function renderActiveFilters() {
+      const chips = [];
+      for (const familyId of state.selectedFamilies) {
+        const group = groupsById.get(familyId);
+        if (!group) continue;
+        chips.push(`<span class="filter-chip family" style="--tag-color:${familyColor(familyId)}">${escapeHtml(group.label)} <span class="chip-hint">· any system</span><button type="button" data-remove-family="${escapeHtml(familyId)}" aria-label="Remove ${escapeHtml(group.label)} family filter">×</button></span>`);
+      }
+      for (const systemId of state.selectedSystems) {
+        const system = systemsById.get(systemId);
+        if (!system) continue;
+        chips.push(`<span class="filter-chip" style="--tag-color:${systemColor(systemId)}">${escapeHtml(system.name)}<button type="button" data-remove-system="${escapeHtml(systemId)}" aria-label="Remove ${escapeHtml(system.name)} filter">×</button></span>`);
+      }
+      if (state.scope === 'focus' && chips.length) {
+        chips.unshift('<span class="filter-chip scope-chip">Focus only</span>');
+      }
+      if (state.selectedFamilies.length + state.selectedSystems.length > 1) {
+        chips.push('<span class="match-note">Episodes must match every filter.</span>');
+      }
+
+      activeFilters.innerHTML = chips.join('');
+      activeFilters.hidden = chips.length === 0;
+      activeFilters.querySelectorAll('[data-remove-system]').forEach((button) => {
+        button.addEventListener('click', () => toggleSystem(button.dataset.removeSystem));
+      });
+      activeFilters.querySelectorAll('[data-remove-family]').forEach((button) => {
+        button.addEventListener('click', () => toggleFamily(button.dataset.removeFamily));
+      });
+
+      const selectedTotal = state.selectedSystems.length + state.selectedFamilies.length;
+      filterCount.textContent = selectedTotal;
+      filterCount.classList.toggle('is-visible', selectedTotal > 0);
+      searchClear.hidden = !state.query;
+      clearButton.disabled = !(state.query || selectedTotal || state.scope === 'focus');
+    }
+
+    function render() {
+      renderFamilyPills();
+      renderSystemPicker();
+      renderActiveFilters();
+      renderTable();
+    }
+
+    // ---------- State changes ----------
+
+    function toggleSystem(systemId) {
+      if (!systemsById.has(systemId)) return;
+      state.selectedSystems = state.selectedSystems.includes(systemId)
+        ? state.selectedSystems.filter((id) => id !== systemId)
+        : [...state.selectedSystems, systemId];
+      syncUrl();
+      render();
+    }
+
+    function toggleFamily(familyId) {
+      if (!groupsById.has(familyId)) return;
+      state.selectedFamilies = state.selectedFamilies.includes(familyId)
+        ? state.selectedFamilies.filter((id) => id !== familyId)
+        : [...state.selectedFamilies, familyId];
+      syncUrl();
+      render();
+    }
+
+    function clearAll() {
+      state.query = '';
+      state.selectedSystems = [];
+      state.selectedFamilies = [];
+      state.scope = 'any';
+      searchInput.value = '';
+      systemFind.value = '';
+      syncUrl();
+      render();
+      searchInput.focus();
+    }
+
+    function updateSortIndicators() {
+      sortableHeaders.forEach((header) => {
+        const active = header.dataset.column === state.sort;
+        header.setAttribute('aria-sort', active ? (state.direction === 'asc' ? 'ascending' : 'descending') : 'none');
+        header.querySelector('.sort-indicator').textContent = active ? (state.direction === 'asc' ? '▲' : '▼') : '⇅';
+      });
+    }
+
+    function syncUrl() {
+      const params = new URLSearchParams();
+      if (state.query) params.set('q', state.query);
+      if (state.selectedFamilies.length) params.set('families', state.selectedFamilies.join(','));
+      if (state.selectedSystems.length) params.set('systems', state.selectedSystems.join(','));
+      if (state.scope === 'focus') params.set('scope', 'focus');
+      if (state.sort !== 'number') params.set('sort', state.sort);
+      if (state.direction !== DEFAULT_DIRECTION[state.sort]) params.set('dir', state.direction);
+      const query = params.toString();
+      history.replaceState(null, '', `${location.pathname}${query ? `?${query}` : ''}`);
+    }
+
+    function hydrateFromUrl() {
+      const params = new URLSearchParams(location.search);
+      state.query = (params.get('q') || '').slice(0, 200);
+      state.selectedSystems = (params.get('systems') || '')
+        .split(',')
+        .filter((id, index, ids) => systemsById.has(id) && ids.indexOf(id) === index);
+      state.selectedFamilies = (params.get('families') || '')
+        .split(',')
+        .filter((id, index, ids) => groupsById.has(id) && ids.indexOf(id) === index);
+      state.scope = params.get('scope') === 'focus' ? 'focus' : 'any';
+      state.sort = VALID_SORTS.includes(params.get('sort')) ? params.get('sort') : 'number';
+      const dir = params.get('dir');
+      state.direction = dir === 'asc' || dir === 'desc' ? dir : DEFAULT_DIRECTION[state.sort];
+      searchInput.value = state.query;
+    }
+
+    // ---------- Events ----------
+
+    sortableHeaders.forEach((header) => {
+      header.querySelector('button').addEventListener('click', () => {
+        const column = header.dataset.column;
+        if (state.sort === column) {
+          state.direction = state.direction === 'asc' ? 'desc' : 'asc';
+        } else {
+          state.sort = column;
+          state.direction = DEFAULT_DIRECTION[column];
+        }
+        syncUrl();
+        renderTable();
+      });
+    });
+
+    searchInput.addEventListener('input', () => {
+      state.query = searchInput.value.trim();
+      syncUrl();
+      renderActiveFilters();
+      renderTable();
+    });
+
+    searchClear.addEventListener('click', () => {
+      searchInput.value = '';
+      state.query = '';
+      syncUrl();
+      renderActiveFilters();
+      renderTable();
+      searchInput.focus();
+    });
+
+    systemFind.addEventListener('input', applySystemFind);
+
+    document.querySelectorAll('[data-scope]').forEach((button) => {
+      button.addEventListener('click', () => {
+        state.scope = button.dataset.scope;
+        syncUrl();
+        render();
+      });
+    });
+
+    clearButton.addEventListener('click', clearAll);
+
+    function setPanelOpen(open) {
+      panel.hidden = !open;
+      picker.setAttribute('aria-expanded', String(open));
+      if (open) systemFind.focus({ preventScroll: true });
+    }
+
+    picker.addEventListener('click', () => setPanelOpen(panel.hidden));
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !panel.hidden) {
+        setPanelOpen(false);
+        picker.focus();
+      }
+    });
+
+    window.addEventListener('popstate', () => {
+      hydrateFromUrl();
+      render();
+    });
+
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // ---------- Load ----------
+
+    function loadData() {
+      const inline = document.getElementById('podcast-data');
+      if (inline && inline.textContent.trim()) {
+        return Promise.resolve(JSON.parse(inline.textContent));
+      }
+      return Promise.all([
+        fetch('metadata/episodes.json').then((response) => {
+          if (!response.ok) throw new Error(`Episodes: ${response.status}`);
+          return response.json();
+        }),
+        fetch('metadata/systems.json').then((response) => {
+          if (!response.ok) throw new Error(`Systems: ${response.status}`);
+          return response.json();
+        })
+      ]).then(([episodeData, systemData]) => ({ episodes: episodeData, systems: systemData }));
+    }
+
+    loadData().then((data) => {
+      episodes = [...data.episodes].sort((a, b) => Number(b.number) - Number(a.number));
+      catalog = data.systems;
+      systemsById = new Map(catalog.systems.map((system) => [system.id, system]));
+      groupsById = new Map(catalog.groups.map((group) => [group.id, group]));
+      hydrateFromUrl();
+      render();
+    }).catch((error) => {
+      resultsCount.textContent = 'Episode filters could not be loaded.';
+      console.error(error);
+    });
+  })();
+</script>
+</body>
+</html>

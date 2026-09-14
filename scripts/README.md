@@ -4,7 +4,7 @@ This directory contains maintenance and build scripts for the podcast portion of
 
 ## Permanent Scripts
 
-- `build_index.py` — Generates `index.html` from `metadata/episodes.json`. Run:
+- `build_index.py` — Generates `index.html` (the sortable, filterable episode table, from `index_template.html` with rows pre-rendered and metadata inlined) and `sitemap.xml` from `metadata/episodes.json` and `metadata/systems.json`. Run:
   ```bash
   python scripts/build_index.py
   # or specify an alternate output file
@@ -35,5 +35,4 @@ If a one-off script becomes generally useful, move it up one level and document 
 
 - Add a `make build-index` target (or simple shell wrapper) for convenience.
 - Add a validation script to check that every episode directory has an entry in `episodes.json` and vice-versa.
-- Introduce a lightweight test that asserts the number of `<table>` blocks in `index.html` equals the number of episode objects.
 

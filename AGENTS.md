@@ -15,13 +15,15 @@ For missing external URLs, use `null` in `metadata/episodes.json` and commented 
 
 ## Repository Shape
 
-- Main generated podcast list: `index.html`
+- Main generated front page (sortable, filterable episode table): `index.html`
+- Front page template: `scripts/index_template.html`
 - Episode metadata source: `metadata/episodes.json`
 - Episode pages: `episode/NNN/index.html`
 - Raw transcript files, when provided: `episode/NNN/NNN.txt`
 - Episode-specific assets: `episode/NNN/assets/`
 - Index builder: `scripts/build_index.py`
 - Index rendering logic: `scripts/podcast_index.py`
+- Legacy `/table/` URL: `table/index.html` is a redirect to `/` and should stay that way
 - Tests: `tests/`
 
 ## New Episode Workflow
@@ -58,8 +60,11 @@ Each episode object in `metadata/episodes.json` should include:
 - `systems`, with `focus` and `mentions` arrays of stable IDs from
   `metadata/systems.json`
 
-System names, category groups, and colors live in `metadata/systems.json` so
-the generated list, table view, and future views share one taxonomy. Use
+System names and category groups (families) live in `metadata/systems.json`
+so the front page and any future views share one taxonomy. Color
+is a property of the family, not the individual system: every tag in a family
+shares its group's `color`, and filled versus tinted tags distinguish focus
+from mention. Do not add per-system colors. Use
 `focus` for systems that receive substantial, main-subject treatment in the
 episode. Use `mentions` for systems that are meaningfully discussed or used as
 an example, not merely named in boilerplate. A system ID must not appear in
@@ -86,7 +91,7 @@ For discussion URLs:
 
 - Add the URL to `discuss_url`.
 - Add a centered bottom-of-page `Discuss` link.
-- Rebuild `index.html` so the front page links to the discussion thread.
+- Rebuild `index.html` so the front page row links to the discussion thread.
 - The current forum domain may be either `bb.everydaysystems.com` or an older `everydaysystems.com/bb` URL. Use the URL provided by the user.
 
 ## Episode Page Conventions
@@ -183,9 +188,16 @@ Examples:
 
 ## Generated Files And Tests
 
-`index.html` and `sitemap.xml` are generated from `metadata/episodes.json`. Do not hand-edit the episode list or sitemap; update metadata and run:
+`index.html` and `sitemap.xml` are generated from `metadata/episodes.json`,
+`metadata/systems.json`, and `scripts/index_template.html`. Do not hand-edit
+`index.html` or the sitemap; update metadata (or the template, for layout and
+script changes) and run:
 
 `python3 scripts/build_index.py`
+
+The front page is the only episode listing. Its rows are pre-rendered into the
+static HTML and the metadata is inlined, so it is crawlable and needs no extra
+requests; the page script then adds search, sorting, and system/family filters.
 
 After changes, run:
 

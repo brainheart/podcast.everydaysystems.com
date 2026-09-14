@@ -1,55 +1,47 @@
+"""Render the podcast front page (a sortable, filterable episode table) and sitemap.
+
+The page template lives in ``scripts/index_template.html``. The builder fills in
+pre-rendered episode rows, so the full episode list is present in the static
+HTML for search engines and readers without JavaScript, and inlines the episode
+and system metadata so the page's filtering script needs no extra requests.
+"""
 from __future__ import annotations
 
-from html import escape
+import json
 import re
+from html import escape
+from pathlib import Path
 
 SITE_URL = "https://podcast.everydaysystems.com"
+TEMPLATE_PATH = Path(__file__).resolve().parent / "index_template.html"
 
-HEADER = """<!DOCTYPE html>
-<head>
-  <meta charset=\"utf-8\" />
-  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
-  <title>Everyday Systems Podcast</title>
-  <meta name=\"description\" content=\"Episodes, transcripts, audio, and discussion links for the Everyday Systems Podcast by Reinhard Engels.\" />
-  <link rel=\"canonical\" href=\"https://podcast.everydaysystems.com/\" />
-  <style type=\"text/css\">
-    body { background-image: url(assets/images/random_grey_variations.png) }
-    #main { padding: 7px; max-width:800px; margin-left: auto; margin-right: auto; background-image: url(assets/images/white_texture.png); border-radius: 11px; }
-    h1,h2,h3 { font-family: Arial, Helvetica, Geneva, sans-serif; }
-    h1 { font-size:125%; }
-    h2 { font-size:110%; }
-    h3 { font-size:100%; }
-    .title { font-weight:bold; }
-    .date { font-size:75%; }
-    .system-key { color:#555; font:75% Arial, Helvetica, sans-serif; margin-top:-.35rem; }
-    .system-tags { display:flex; flex-wrap:wrap; gap:4px; align-items:center; margin-top:6px; font:11px Arial, Helvetica, sans-serif; }
-    .system-tag { --tag-color:#666; display:inline-block; border:1px solid var(--tag-color); border-radius:999px; padding:2px 7px; line-height:1.25; white-space:nowrap; }
-    .system-tag--focus { color:#fff; background:var(--tag-color); font-weight:bold; }
-    .system-tag--mention { color:var(--tag-color); background:#fff; }
-    .system-tags-more { display:inline; }
-    .system-tags-more summary { display:inline-block; color:#555; cursor:pointer; list-style:none; border-bottom:1px dotted #777; }
-    .system-tags-more summary::-webkit-details-marker { display:none; }
-    .system-tags-more[open] { display:flex; flex-basis:100%; flex-wrap:wrap; gap:4px; }
-    .system-tags-more[open] summary { flex-basis:100%; width:max-content; }
-  </style>
-</head>
-<body>
-<div id=\"main\">
-<h1><a href=\"https://everydaysystems.com\">Everyday Systems</a>: Podcast [ <a href=\"http://reinhard.libsyn.com/rss\">rss</a> | <a href=\"https://podcasts.apple.com/us/podcast/everyday-systems-podcast/id188988881\">apple podcasts</a> | <a href=\"https://open.spotify.com/show/5ZSps0RuOWK3R1aCHpeeVZ\">spotify</a> | <a href=\"https://www.youtube.com/playlist?list=PLfC6J9cSGWC8PDkwb6KUWp_QShHr0S8SZ\">youtube</a>]</h1>
-<p>On this page you'll find links to Everyday Systems Podcast audio, approximate transcripts,
- and bulletin board discussions.</p>
-<p>Subscribe on  <a href=\"https://podcasts.apple.com/us/podcast/everyday-systems-podcast/id188988881\">Apple Podcasts</a>, <a href=\"https://open.spotify.com/show/5ZSps0RuOWK3R1aCHpeeVZ\">Spotify</a>, <a href=\"https://www.youtube.com/playlist?list=PLfC6J9cSGWC8PDkwb6KUWp_QShHr0S8SZ\">youtube</a>, or wherever you get your podcasts.</p>
-<p class=\"system-key\">System tags: <strong>filled</strong> means a focus of the episode; outlined means meaningfully mentioned.</p>
-"""
+ROWS_MARKER = "<!--EPISODE_ROWS-->"
+COUNT_MARKER = "<!--RESULTS_COUNT-->"
+DATA_MARKER = "<!--PODCAST_DATA-->"
 
-FOOTER = """
-<p>By <a href=\"mailto:reinhard.engels@gmail.com\">Reinhard Engels</a></p>
-<p>© 2002-2025  Reinhard Engels, All Rights Reserved.</p>
-</div><script src=\"/assets/js/year.js?v=2\" defer></script><script src=\"/assets/js/youtube-embeds.js\" defer></script>
-</body>\n"""
+VISIBLE_TAG_LIMIT = 5
 
 
-def render_system_tags(ep: dict, systems_by_id: dict[str, dict], visible_limit: int = 5) -> str:
+def _valid_color(color: str | None) -> str:
+    return color if color and re.fullmatch(r"#[0-9a-fA-F]{6}", color) else "#666666"
+
+
+def enrich_systems(system_catalog: dict) -> dict[str, dict]:
+    """Return systems keyed by ID with their family's label and color attached."""
+    groups_by_id = {group["id"]: group for group in system_catalog.get("groups", [])}
+    systems_by_id: dict[str, dict] = {}
+    for system in system_catalog.get("systems", []):
+        group = groups_by_id.get(system.get("group"), {})
+        enriched = dict(system)
+        enriched["group_label"] = group.get("label", "")
+        # Color belongs to the family (group); systems inherit it.
+        enriched["color"] = _valid_color(group.get("color") or system.get("color"))
+        systems_by_id[system["id"]] = enriched
+    return systems_by_id
+
+
+def render_system_tags(ep: dict, systems_by_id: dict[str, dict], visible_limit: int = VISIBLE_TAG_LIMIT) -> str:
+    """Render an episode's system tags with the same markup the page script produces."""
     relationships = ep.get("systems") or {}
     tagged = [
         (system_id, "focus") for system_id in relationships.get("focus", [])
@@ -61,19 +53,16 @@ def render_system_tags(ep: dict, systems_by_id: dict[str, dict], visible_limit: 
         system = systems_by_id.get(system_id)
         if not system:
             return ""
-        color = system.get("color", "#666666")
-        if not re.fullmatch(r"#[0-9a-fA-F]{6}", color):
-            color = "#666666"
         name = escape(system.get("name") or system_id)
         relation_label = "Focus" if relationship == "focus" else "Mentioned"
-        title = escape(f"{relation_label}: {system.get('group_label', '')}")
+        title = escape(f"{relation_label} · {system.get('group_label', '')} family. Click to filter by this system.")
         return (
-            f'<span class="system-tag system-tag--{relationship}" '
-            f'style="--tag-color:{color}" title="{title}">{name}</span>'
+            f'<button type="button" class="system-tag {relationship}" '
+            f'data-tag-system="{escape(system_id)}" style="--tag-color:{_valid_color(system.get("color"))}" '
+            f'title="{title}" aria-pressed="false">{name}</button>'
         )
 
-    rendered = [render_tag(*tag) for tag in tagged]
-    rendered = [tag for tag in rendered if tag]
+    rendered = [tag for tag in (render_tag(*tag) for tag in tagged) if tag]
     if not rendered:
         return ""
 
@@ -81,7 +70,7 @@ def render_system_tags(ep: dict, systems_by_id: dict[str, dict], visible_limit: 
     hidden = rendered[visible_limit:]
     if hidden:
         visible.append(
-            '<details class="system-tags-more">'
+            '<details class="more-tags">'
             f'<summary>+{len(hidden)} more</summary>'
             + "".join(hidden)
             + "</details>"
@@ -89,64 +78,50 @@ def render_system_tags(ep: dict, systems_by_id: dict[str, dict], visible_limit: 
     return '<div class="system-tags" aria-label="Episode systems">' + "".join(visible) + "</div>"
 
 
-def render_episode_table(ep: dict, systems_by_id: dict[str, dict] | None = None) -> str:
-    num = ep["number"]
-    title = ep.get("title") or f"Episode {num}"
-    safe_title = escape(f"Episode {num}: {title}" if not title.startswith("Episode") else title)
-    date = ep.get("release_date")
-    date_html = f"Posted by Reinhard on {escape(date)}" if date else "&nbsp;"
-    blurb = ep.get("blurb") or ""
-    blurb_html = escape(blurb)
-    tags_html = render_system_tags(ep, systems_by_id or {})
-    transcript_href = f"./episode/{num}/"
-    mp3_url = ep.get("mp3_url") or ""
-    discuss_url = ep.get("discuss_url") or ""
-    youtube_url = ep.get("youtube_url") or ""
-
-    # Prefer youtube listening experience; fallback to mp3 if youtube missing.
-    if youtube_url:
-        listen_fragment = f'<a href="{youtube_url}">Listen on YouTube</a>'
-    elif mp3_url:
-        listen_fragment = f'<a href="{mp3_url}">mp3</a>'
-    else:
-        listen_fragment = "audio"
-
-    parts = [
-        '<table border="0" cellpadding="2" cellspacing="0">',
-        f'  <tr><td class="title">{safe_title}</td></tr>',
-        f'  <tr><td class="date">{date_html}</td></tr>',
-        f'  <tr><td class="content">{blurb_html}{tags_html}</td></tr>',
-        "  <tr><td>"
-        + " | ".join(
-            [
-                f'<a href="{transcript_href}">Transcript</a>',
-                listen_fragment,
-                f'<a href="{discuss_url}">Discuss</a>' if discuss_url else "Discuss",
-            ]
-        )
-        + "</td></tr>",
-        "  <tr><td>&nbsp;</td></tr>",
-        "</table>",
-    ]
-    return "\n".join(parts)
+def render_episode_row(ep: dict, systems_by_id: dict[str, dict] | None = None) -> str:
+    num = int(ep["number"])
+    title = escape(ep.get("title") or f"Episode {num}")
+    date = escape(ep.get("release_date") or "—")
+    blurb = escape(ep.get("blurb") or "")
+    length = ep.get("length_minutes") or ""
+    return "\n".join([
+        "        <tr>",
+        f'          <td class="episode-number">{num}</td>',
+        f'          <td class="episode-date">{date}</td>',
+        f'          <td class="episode-title"><a href="episode/{num}/">{title}</a></td>',
+        f'          <td class="episode-description">{blurb}{render_system_tags(ep, systems_by_id or {})}</td>',
+        f'          <td class="episode-length">{length if length else "—"}</td>',
+        "        </tr>",
+    ])
 
 
-def render_index_html(episodes: list[dict], system_catalog: dict | None = None) -> str:
+def render_inline_data(episodes: list[dict], system_catalog: dict) -> str:
+    payload = json.dumps({"episodes": episodes, "systems": system_catalog}, ensure_ascii=False, separators=(",", ":"))
+    # Keep the JSON safe inside a <script> data block.
+    return payload.replace("</", "<\\/")
+
+
+def render_index_html(episodes: list[dict], system_catalog: dict | None = None, template: str | None = None) -> str:
     system_catalog = system_catalog or {"groups": [], "systems": []}
-    groups_by_id = {group["id"]: group for group in system_catalog.get("groups", [])}
-    systems_by_id = {}
-    for system in system_catalog.get("systems", []):
-        enriched = dict(system)
-        enriched["group_label"] = groups_by_id.get(system.get("group"), {}).get("label", "")
-        systems_by_id[system["id"]] = enriched
-    tables = [render_episode_table(ep, systems_by_id) for ep in episodes]
-    return HEADER + "\n".join(tables) + "\n" + FOOTER
+    systems_by_id = enrich_systems(system_catalog)
+    ordered = sorted(episodes, key=lambda ep: int(ep["number"]), reverse=True)
+    rows = "\n".join(render_episode_row(ep, systems_by_id) for ep in ordered)
+    count = f"<strong>{len(ordered)}</strong> episodes"
+    template = template if template is not None else TEMPLATE_PATH.read_text(encoding="utf-8")
+    for marker in (ROWS_MARKER, COUNT_MARKER, DATA_MARKER):
+        if marker not in template:
+            raise ValueError(f"Template is missing {marker}")
+    return (
+        template
+        .replace(ROWS_MARKER, rows)
+        .replace(COUNT_MARKER, count)
+        .replace(DATA_MARKER, render_inline_data(ordered, system_catalog))
+    )
 
 
 def render_sitemap_xml(episodes: list[dict]) -> str:
     urls = [
         f"{SITE_URL}/",
-        f"{SITE_URL}/table/",
         *(f"{SITE_URL}/episode/{episode['number']}/" for episode in episodes),
     ]
     entries = "\n".join(f"  <url><loc>{escape(url)}</loc></url>" for url in urls)

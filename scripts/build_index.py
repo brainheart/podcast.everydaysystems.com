@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Generate index.html from metadata/episodes.json.
+"""Generate index.html and sitemap.xml from metadata/episodes.json.
 
 Usage:
     python scripts/build_index.py [--out ALT_FILE]
 
-It will read episodes.json, sort episodes descending by number, and emit a static
-HTML file with the same header/footer as the existing index, but prettified.
-
-Null fields (title, release_date, blurb) will fall back to placeholders derived
-from existing episode page filenames or left blank if not available.
+The front page is the sortable, filterable episode table. It is rendered from
+scripts/index_template.html with every episode row pre-rendered and the
+episode/system metadata inlined, so it works without extra requests and is
+fully crawlable. Run this after any change to metadata/episodes.json,
+metadata/systems.json, or the template.
 """
 from __future__ import annotations
 import json
@@ -44,7 +44,7 @@ def main():
     print(f"Wrote {out_path} with {len(episodes)} episodes.")
     if not args.out:
         DEFAULT_SITEMAP.write_text(render_sitemap_xml(episodes), encoding='utf-8')
-        print(f"Wrote {DEFAULT_SITEMAP} with {len(episodes) + 2} URLs.")
+        print(f"Wrote {DEFAULT_SITEMAP} with {len(episodes) + 1} URLs.")
 
 if __name__ == '__main__':
     main()
