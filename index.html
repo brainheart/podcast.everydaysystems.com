@@ -9,16 +9,16 @@
   <meta name="description" content="Every Everyday Systems Podcast episode by Reinhard Engels: audio, transcripts, and discussion links, sortable and filterable by system and system family." />
   <style>
     :root {
-      --ink: #2a2724;
-      --muted: #6b655d;
-      --faint: #8f887e;
-      --paper: #fffdf9;
-      --soft: #f3efe8;
-      --line: #ddd6cb;
-      --line-strong: #c9c0b3;
+      --ink: #222;
+      --muted: #666;
+      --faint: #8a8a8a;
+      --paper: #fff;
+      --soft: #f2f2f2;
+      --line: #dcdcdc;
+      --line-strong: #c6c6c6;
       --link: #1a5b9c;
-      --button: #3f3a35;
-      --button-dark: #2a2622;
+      --button: #3a3a3a;
+      --button-dark: #262626;
       --focus-ring: #1d65a6;
       --tag-color: #666;
       --tag-tint: color-mix(in srgb, var(--tag-color) 10%, #fff);
@@ -69,7 +69,7 @@
     h1 {
       margin: 0;
       font-family: "Libre Caslon Text", Georgia, "Times New Roman", serif;
-      font-size: 150%;
+      font-size: 185%;
       font-weight: normal;
       line-height: 1.2;
     }
@@ -98,7 +98,7 @@
 
     .filters {
       padding: 12px 14px 10px;
-      background: color-mix(in srgb, var(--soft) 80%, #fff);
+      background: #f7f7f7;
       border: 1px solid var(--line);
       border-radius: 9px;
     }
@@ -201,7 +201,7 @@
       display: inline-flex;
       align-items: center;
       padding: 2px;
-      background: #e6e1d9;
+      background: #e4e4e4;
       border-radius: 6px;
     }
 
@@ -258,8 +258,7 @@
     .family-pill,
     .system-option,
     .system-tag,
-    .filter-chip,
-    .key-tag {
+    .filter-chip {
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -301,23 +300,6 @@
       font-weight: normal;
     }
 
-    .relationship-key {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-left: auto;
-      color: var(--faint);
-      font-size: 11px;
-    }
-
-    .key-tag {
-      --tag-color: #6f6860;
-      padding: 1px 8px;
-      font-size: 11px;
-    }
-
-    .key-tag.focus { color: #fff; background: var(--tag-color); border-color: var(--tag-color); font-weight: bold; }
-
     /* Active filter chips */
 
     .active-filters {
@@ -341,7 +323,7 @@
     .filter-chip.family .chip-hint { font-weight: normal; opacity: .8; }
 
     .filter-chip.scope-chip {
-      --tag-color: #5c5853;
+      --tag-color: #5a5a5a;
       color: #fff;
       background: var(--tag-color);
       border-color: var(--tag-color);
@@ -518,7 +500,7 @@
       background: var(--paper);
       border: 1px solid var(--line);
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(40, 35, 30, .06);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
     }
 
     table {
@@ -574,11 +556,11 @@
     td {
       padding: 9px 10px;
       vertical-align: top;
-      border-bottom: 1px solid #ece7df;
+      border-bottom: 1px solid #e8e8e8;
     }
 
     tbody tr:last-child td { border-bottom: 0; }
-    tbody tr:hover td { background: #f8f4ea; }
+    tbody tr:hover td { background: #f3f3f3; }
 
     .episode-number,
     .episode-length {
@@ -665,7 +647,6 @@
       header.page-head { margin-bottom: 12px; }
       .search-field { flex-basis: 100%; max-width: none; }
       .clear-filters { margin-left: 0; }
-      .relationship-key { margin-left: 0; flex-basis: 100%; }
       .table-wrap { overflow-x: auto; }
       th { position: static; }
       .episode-description { min-width: 260px; }
@@ -714,10 +695,6 @@
     <div class="family-row" id="family-row" aria-label="Filter by system family">
       <span class="row-label">Family</span>
       <span id="family-pills"></span>
-      <span class="relationship-key" aria-label="Tag style key">
-        <span class="key-tag focus">Focus</span>
-        <span class="key-tag">Mention</span>
-      </span>
     </div>
 
     <div class="system-panel" id="system-panel" hidden>
@@ -725,7 +702,7 @@
         <strong>Filter by system</strong>
         <span class="match-note" id="popover-count"></span>
       </div>
-      <p class="popover-help">Pick individual systems, or press a family name to include any system in that family. Every filter narrows the list.</p>
+      <p class="popover-help">Pick individual systems, or press a family name to include any system in that family. Every filter narrows the list. In the table, a filled tag means the system is a main subject of the episode; a tinted tag means it is meaningfully mentioned.</p>
       <input type="search" class="system-find" id="system-find" placeholder="Find a system…" autocomplete="off" aria-label="Find a system" />
       <div id="system-groups"></div>
     </div>
