@@ -1648,7 +1648,8 @@
     "length_minutes": 7,
     "systems": {
       "focus": [
-        "chain-self-command"
+        "chain-self-command",
+        "personal-punch-cards"
       ],
       "mentions": [
         "scribal-filter"
