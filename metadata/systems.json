@@ -36,7 +36,6 @@
     { "id": "intelligent-dietary-defaults", "name": "Intelligent Dietary Defaults", "group": "body-input" },
     { "id": "surgical-flogging", "name": "Surgical Flogging", "group": "body-input" },
     { "id": "no-solitary-snacking", "name": "No Solitary Snacking", "group": "body-input" },
-    { "id": "seasons-warnings", "name": "Season's Warnings", "group": "body-input" },
 
     { "id": "shovelglove", "name": "Shovelglove", "group": "body-output" },
     { "id": "urban-ranger", "name": "Urban Ranger", "group": "body-output" },
