@@ -112,6 +112,10 @@ The episode page should include:
 - The breadcrumb paragraph:
   `Everyday Systems: Podcast : Episode NNN`
 - The `<h1>` matching the title.
+- Immediately after the title, a publication date from `release_date` in
+  `metadata/episodes.json`, formatted as:
+  `<p class="episode-date">Published <time datetime="2026-10-29">October 29, 2026</time></p>`.
+  Keep this date in sync when changing an episode's release date.
 - `In this episode: BLURB`
 - YouTube iframe if `youtube_id` is known.
 - Commented YouTube placeholder if YouTube is not yet known.
@@ -124,7 +128,7 @@ The episode page should include:
 - The existing year script:
   `<script src="/assets/js/year.js?v=2" defer></script>`
 - The shared stylesheet with its cache-busting version:
-  `<link rel="stylesheet" href="../../css/style.css?v=2">`
+  `<link rel="stylesheet" href="../../css/style.css?v=3">`
   GitHub Pages caches CSS for hours, so whenever `css/style.css` changes, bump
   the `?v=` number on every episode page (a `sed` across `episode/*/index.html`).
 

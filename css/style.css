@@ -29,8 +29,20 @@ h1 { font-size: 140%; }
 h2 { font-size: 110%; }
 h3 { font-size: 100%; }
 
-/* Episode summary/deck immediately below the title */
-#main > h1 + p {
+/* Publication date between the episode title and summary. */
+#main > h1:has(+ .episode-date) {
+    margin-bottom: 0.35em;
+}
+
+.episode-date {
+    color: #666;
+    font-size: 0.85em;
+    margin: 0 0 0.75em;
+}
+
+/* Episode summary/deck below the title and publication date. */
+#main > h1 + p:not(.episode-date),
+#main > h1 + .episode-date + p {
     font-style: italic;
     color: #444;
     border-left: 3px solid #c8c8c8;
