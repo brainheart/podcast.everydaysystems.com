@@ -47,6 +47,7 @@
     { "id": "low-smoking", "name": "Low Smoking", "group": "spirits" },
 
     { "id": "weekend-luddite", "name": "Weekend Luddite", "group": "soul" },
+    { "id": "digital-methadone", "name": "Digital Methadone", "group": "soul" },
     { "id": "audiodidact", "name": "Audiodidact", "group": "soul" },
     { "id": "study-habit", "name": "Study Habit", "group": "soul" },
     { "id": "g-ray-vision", "name": "G-Ray Vision", "group": "soul" },

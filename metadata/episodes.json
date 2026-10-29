@@ -1,5 +1,31 @@
 [
   {
+    "number": 108,
+    "title": "Digital Methadone",
+    "release_date": "2026-10-29",
+    "blurb": "Screen addict? Take a page from opioid treatment and find your digital methadone.",
+    "youtube_id": "IhCOx9s2c8U",
+    "youtube_url": "https://www.youtube.com/watch?v=IhCOx9s2c8U",
+    "mp3_url": "https://traffic.libsyn.com/secure/reinhard/eds-108-digital-methadone.mp3?dest-id=47156",
+    "discuss_url": "https://bb.everydaysystems.com/viewtopic.php?t=12735",
+    "image_files": [
+      "episode/108/assets/digital-methadone-cafe.png"
+    ],
+    "length_minutes": 13,
+    "systems": {
+      "focus": [
+        "digital-methadone"
+      ],
+      "mentions": [
+        "weekend-luddite",
+        "study-habit",
+        "proactive-procrastination",
+        "motive-mixologist",
+        "no-s-diet"
+      ]
+    }
+  },
+  {
     "number": 107,
     "title": "Spaghetti Western Asset Allocation",
     "release_date": "2026-08-19",
